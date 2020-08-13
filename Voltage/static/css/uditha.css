@@ -1,0 +1,39 @@
+
+
+body{
+    background-color:whitesmoke;
+}
+
+.row{
+
+        position:absolute;
+        top: 25px;
+        left: 150px;
+        display:block;
+    
+    
+}
+
+.name{
+    position:absolute;
+    top: 160px;
+    left: 20px;
+    display:block;
+
+}
+
+.cupload{
+    position:absolute;
+    top: 25px;
+    left: 180px;
+    display:block;
+
+}
+
+.add{
+    position:absolute;
+    top: 500px;
+    left: 400px;
+    display:block;
+}
+
