@@ -10,7 +10,7 @@
 
 
 body{
-    background-color:whitesmoke;
+    background-color:black;
 }
 
 .row{
@@ -57,4 +57,101 @@ body{
 border: 1px solid #ccc;
 display: block;
 cursor: pointer;
+}
+
+h5 {
+    display: block;
+    font-size: 2em;
+    color: skyblue;
+    font-weight: bold;
+}
+
+.viewbox1 {
+    overflow: visible;
+    position: absolute;
+    width: 633.183px;
+    height: 627.287px;
+    left: 39.5px;
+    top: 28.888px;
+    background-color:gray;
+    opacity:0.3;
+    border-radius: 25px;
+    transform: matrix(1,0,0,1,0,0);
+}
+
+#Voltage_Entertainment {
+    left: 95px;
+    top: 159px;
+    position: absolute;
+    overflow: visible;
+    width: 493px;
+    white-space: nowrap;
+    line-height: 110px;
+    margin-top: -30px;
+    text-align: left;
+    font-family: Jaapokki enchance;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    color: rgba(0,177,255,1);
+}
+
+#Photography__Videography_ {
+    left: 351px;
+    top: 299px;
+    position: absolute;
+    overflow: visible;
+    width: 244px;
+    white-space: nowrap;
+    line-height: 101px;
+    margin-top: -40.5px;
+    text-align: left;
+    font-family: Jaapokki enchance;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(93,179,217,1);
+}
+
+#Sound_systems__Decorations_ {
+    left: 351px;
+    top: 352px;
+    position: absolute;
+    overflow: visible;
+    width: 254px;
+    white-space: nowrap;
+    line-height: 101px;
+    margin-top: -40.5px;
+    text-align: left;
+    font-family: Jaapokki enchance;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(93,179,217,1);
+}
+
+#Music_band__LED_walls__lights_ {
+    left: 351px;
+    top: 402px;
+    position: absolute;
+    overflow: visible;
+    width: 276px;
+    white-space: nowrap;
+    line-height: 101px;
+    margin-top: -40.5px;
+    text-align: left;
+    font-family: Jaapokki enchance;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(93,179,217,1);
+}
+
+#logo_1 {
+    position: absolute;
+    width: 205px;
+    height: 204.5px;
+    left: 92px;
+    top: 270px;
+    overflow: visible;
 }
