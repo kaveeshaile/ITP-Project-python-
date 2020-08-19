@@ -1,4 +1,13 @@
 
+.head3{
+
+    position:absolute;
+        top: 45px;
+        left: 150px;
+        display:block;
+        color: darkslategrey;
+}
+
 
 body{
     background-color:whitesmoke;
@@ -7,7 +16,7 @@ body{
 .row{
 
         position:absolute;
-        top: 25px;
+        top: 85px;
         left: 150px;
         display:block;
     
@@ -22,7 +31,7 @@ body{
 
 }
 
-.cupload{
+.upload{
     position:absolute;
     top: 25px;
     left: 180px;
@@ -37,3 +46,15 @@ body{
     display:block;
 }
 
+.vid1{
+    position:absolute;
+    top: 40px;
+    left: 600px;
+    display:block;
+}
+
+.sample_upload{
+border: 1px solid #ccc;
+display: block;
+cursor: pointer;
+}
