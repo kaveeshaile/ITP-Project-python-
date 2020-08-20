@@ -82,9 +82,11 @@ h5 {
     transform: matrix(1,0,0,1,0,0);
 }
 
+
+
 #Voltage_Entertainment {
     left: 95px;
-    top: 159px;
+    top: 120px;
     position: absolute;
     overflow: visible;
     width: 493px;
@@ -160,5 +162,31 @@ h5 {
     border-radius:50%;
 }
 
+.myButton {
+	box-shadow:inset 0px 0px 15px 3px #23395e;
+	background-color:transparent;
+	border-radius:32px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+    font-family:Arial;
+    position:absolute;
+    top: 550px;
+    left: 125px;
+    display:block;
+	font-size:15px;
+	padding:13px 41px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+.myButton:hover {
+	background-color:transparent;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+    
 
 
