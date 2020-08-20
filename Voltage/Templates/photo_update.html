@@ -1,0 +1,244 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+<body style="background-color:rgb(121, 120, 120);">
+    <link rel="stylesheet" type="text/css" href="../css/AdminAdd.css">
+
+
+    </head>
+
+    <body>
+
+
+        <br>
+        <br>
+        <br>
+
+        <center>
+            <h1 style="color:white" font-size:"20px">VOLTAGE ENTERTAINMENT</h1><br>
+            <hr>
+            <h2 style="color:white">Update Photographer's Profile</h2>
+            <p style="color:white">Repalce profile photo here!</p>
+
+
+            <form action="" class="form">
+                <center>
+
+
+                    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                    <script src="../js/myscripts.js"></script>
+
+                    <div class="column">
+
+                        <div class="file-upload ">
+                            <button class="file-upload-btn" type="button"
+                                onclick="$('#file-upload-input-image1').trigger( 'click' )">Replace
+                                Image</button>
+
+                            <div class="image-upload-wrap" id="image-upload-wrap-image1">
+                                <input class="file-upload-input" id="file-upload-input-image1" type='file'
+                                    onchange="readURL(this,'image1');" accept="image/*" />
+                                <div class="drag-text">
+                                    <h3>Drag and drop a file or select add Image</h3>
+                                </div>
+                            </div>
+                            <div class="file-upload-content " id="file-upload-content-image1">
+                                <img class="file-upload-image" id="file-upload-image-image1" src="#" alt="your image" />
+                                <div class="image-title-wrap " id="image-title-wrap-image1">
+
+                                    <button type="button" onclick="removeUpload()" class="remove-image "
+                                        id="remove-image-iamge1">Remove <span class="image-title "
+                                            id="image-title-image1">Uploaded Image</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <label for="Name" style="color:white">Name:</label>
+                    <input type="text" id="name" name="name" size="20"><br><br>
+
+                    <label for="Experience" style="color:white">Experience:</label>
+                    <input type="text" id="Experience" name="Experience" size="20"><br><br>
+
+                    <label for="Description" style="color:white">Description:</label>
+                    <input type="text" id="Description" name="Description" size="20"><br><br>
+                    <p style="color:white">!!Can upload upto 5 images!!</p>
+
+
+
+
+
+                    <div class="row">
+                        <div class="column">
+
+                            <div class="file-upload ">
+                                <button class="file-upload-btn" type="button"
+                                    onclick="$('#file-upload-input-image2').trigger( 'click' )">Replace
+                                    Image</button>
+
+                                <div class="image-upload-wrap" id="image-upload-wrap-image2">
+                                    <input class="file-upload-input" id="file-upload-input-image2" type='file'
+                                        onchange="readURL(this,'image2');" accept="image/*" />
+                                    <div class="drag-text">
+                                        <h3>Drag and drop a file or select add Image</h3>
+                                    </div>
+                                </div>
+                                <div class="file-upload-content " id="file-upload-content-image2">
+                                    <img class="file-upload-image" id="file-upload-image-image2" src="#"
+                                        alt="your image" />
+                                    <div class="image-title-wrap " id="image-title-wrap-image2">
+
+                                        <button type="button" onclick="removeUpload()" class="remove-image "
+                                            id="remove-image-image2">Remove <span class="image-title "
+                                                id="image-title-image2">Uploaded Image</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--3-->
+                        <div class="column">
+
+                            <div class="file-upload ">
+                                <button class="file-upload-btn" type="button"
+                                    onclick="$('#file-upload-input-image3').trigger( 'click' )">Replace
+                                    Image</button>
+
+                                <div class="image-upload-wrap" id="image-upload-wrap-image3">
+                                    <input class="file-upload-input" id="file-upload-input-image3" type='file'
+                                        onchange="readURL(this,'image3');" accept="image/*" />
+                                    <div class="drag-text">
+                                        <h3>Drag and drop a file or select add Image</h3>
+                                    </div>
+                                </div>
+                                <div class="file-upload-content " id="file-upload-content-image3">
+                                    <img class="file-upload-image" id="file-upload-image-image3" src="#"
+                                        alt="your image" />
+                                    <div class="image-title-wrap " id="image-title-wrap-image2">
+
+                                        <button type="button" onclick="removeUpload()" class="remove-image "
+                                            id="remove-image-image3">Remove <span class="image-title "
+                                                id="image-title-image3">Uploaded Image</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--4-->
+                        <div class="column">
+
+                            <div class="file-upload ">
+                                <button class="file-upload-btn" type="button"
+                                    onclick="$('#file-upload-input-image4').trigger( 'click' )">Replace
+                                    Image</button>
+
+                                <div class="image-upload-wrap" id="image-upload-wrap-image4">
+                                    <input class="file-upload-input" id="file-upload-input-image4" type='file'
+                                        onchange="readURL(this,'image4');" accept="image/*" />
+                                    <div class="drag-text">
+                                        <h3>Drag and drop a file or select add Image</h3>
+                                    </div>
+                                </div>
+                                <div class="file-upload-content " id="file-upload-content-image4">
+                                    <img class="file-upload-image" id="file-upload-image-image4" src="#"
+                                        alt="your image" />
+                                    <div class="image-title-wrap " id="image-title-wrap-image4">
+
+                                        <button type="button" onclick="removeUpload()" class="remove-image "
+                                            id="remove-image-image4">Remove <span class="image-title "
+                                                id="image-title-image4">Uploaded Image</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--5-->
+                        <div class="column">
+
+                            <div class="file-upload ">
+                                <button class="file-upload-btn" type="button"
+                                    onclick="$('#file-upload-input-image5').trigger( 'click' )">Replace
+                                    Image</button>
+
+                                <div class="image-upload-wrap" id="image-upload-wrap-image5">
+                                    <input class="file-upload-input" id="file-upload-input-image5" type='file'
+                                        onchange="readURL(this,'image5');" accept="image/*" />
+                                    <div class="drag-text">
+                                        <h3>Drag and drop a file or select add Image</h3>
+                                    </div>
+                                </div>
+                                <div class="file-upload-content " id="file-upload-content-image5">
+                                    <img class="file-upload-image" id="file-upload-image-image5" src="#"
+                                        alt="your image" />
+                                    <div class="image-title-wrap " id="image-title-wrap-image5">
+
+                                        <button type="button" onclick="removeUpload()" class="remove-image "
+                                            id="remove-image-image5">Remove <span class="image-title "
+                                                id="image-title-image5">Uploaded Image</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--6-->
+                        <div class="column">
+
+                            <div class="file-upload ">
+                                <button class="file-upload-btn" type="button"
+                                    onclick="$('#file-upload-input-image6').trigger( 'click' )">Replace
+                                    Image</button>
+
+                                <div class="image-upload-wrap" id="image-upload-wrap-image6">
+                                    <input class="file-upload-input" id="file-upload-input-image6" type='file'
+                                        onchange="readURL(this,'image6');" accept="image/*" />
+                                    <div class="drag-text">
+                                        <h3>Drag and drop a file or select add Image</h3>
+                                    </div>
+                                </div>
+                                <div class="file-upload-content " id="file-upload-content-image6">
+                                    <img class="file-upload-image" id="file-upload-image-image6" src="#"
+                                        alt="your image" />
+                                    <div class="image-title-wrap " id="image-title-wrap-image6">
+
+                                        <button type="button" onclick="removeUpload()" class="remove-image "
+                                            id="remove-image-image6">Remove <span class="image-title "
+                                                id="image-title-image6">Uploaded Image</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!--row-->
+                    <!--contact--> <br>
+                    <p style="color:white"> Replace Contact Details of the Photographer</p>
+
+                    <label for=" Contact Number" style="color:white">Contact Number:</label>
+                    <input type="text" id="Contact Number" name="Contact Number" size="20">
+
+                    <label for="Email" style="color:white">Email:</label>
+                    <input type="text" id="Email" name="Email" size="20">
+                    <label for="FaceBook" style="color:white">FaceBook:</label>
+                    <input type="text" id="FaceBook" name="FaceBook" size="20"><br><br>
+                    <center>
+                        <button
+                            style=" padding: 10px 30px;background-color:red; border-color:blue; color:white">Cancel</button>
+                        <input type="submit"
+                            style=" padding: 10px 30px;background-color:green; border-color:white;color:white" ;
+                            value="Submit">
+
+            </form>
+
+    </body>
+
+
+
+
+</html>
