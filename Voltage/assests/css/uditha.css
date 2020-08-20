@@ -11,9 +11,6 @@
 
 body{
     background-color:black;
-    padding-bottom: 58 px;
-    position: relative;
-    min-height: 100vh;
 }
 
 .row{
@@ -73,11 +70,11 @@ h5 {
     overflow: visible;
     position: absolute;
     width: 633.183px;
-    height: 625.287px;
+    height: 627.287px;
     left: 39.5px;
     top: 28.888px;
     background-color:gray;
-    opacity:0.2;
+    opacity:0.3;
     border-radius: 25px;
     transform: matrix(1,0,0,1,0,0);
 }
@@ -157,8 +154,4 @@ h5 {
     left: 92px;
     top: 270px;
     overflow: visible;
-    border-radius:50%;
 }
-
-
-
