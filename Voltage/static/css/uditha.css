@@ -2,10 +2,10 @@
 .head3{
 
     position:absolute;
-        top: 45px;
-        left: 150px;
+        top: 150px;
+        left: 200px;
         display:block;
-        color: darkslategrey;
+        color: rgb(232, 239, 241);
 }
 
 
@@ -19,8 +19,8 @@ body{
 .row{
 
         position:absolute;
-        top: 85px;
-        left: 150px;
+        top: 200px;
+        left: 100px;
         display:block;
     
     
@@ -42,10 +42,10 @@ body{
 
 }
 
-.add{
+#addvideographer{
     position:absolute;
-    top: 500px;
-    left: 400px;
+    top: 430px;
+    left: 1000px;
     display:block;
 }
 
@@ -56,9 +56,17 @@ body{
     display:block;
 }
 
+.vid2{
+  position:absolute;
+  top: 40px;
+  left: 900px;
+  display:block;
+}
+
 .sample_upload{
 border: 1px solid #ccc;
 display: block;
+width: 230px;
 cursor: pointer;
 }
 
@@ -74,19 +82,68 @@ h5 {
     position: absolute;
     width: 633.183px;
     height: 580.287px;
-    left: 39.5px;
-    top: 28.888px;
+    left: 10.5px;
+    top: 25.888px;
     background-image: linear-gradient(-90deg, black,rgb(53, 158, 207));
     opacity:0.2;
     border-radius: 25px;
     transform: matrix(1,0,0,1,0,0);
 }
 
+.viewbox2 {
+    overflow: visible;
+    position: absolute;
+    width: 633.183px;
+    height: 680.287px;
+    left: 10.5px;
+    top: 28.888px;
+    background-image: linear-gradient(-90deg,black,rgb(66, 170, 202));
+    opacity:0.3;
+    border-radius: 25px;
+    transform: matrix(1,0,0,1,0,0);
+}
+
+input[type=text] {
+  width:250px;
+  padding: 3px 6px;
+  margin: 1px 0;
+  box-sizing: border-box;
+  border: 3px solid skyblue;
+  border-radius: 10px;
+}
+
+input[type=email] {
+  width:250px;
+  padding: 3px 6px;
+  margin: 1px 0;
+  box-sizing: border-box;
+  border: 3px solid skyblue;
+  border-radius: 10px;
+}
+
+#fee{
+  left: 285px;
+  top: 125px;
+  position: absolute;
+  width: 150px;
+
+}
+
+
+#description {
+  padding: 3px 6px;
+  margin: 1px 0;
+  box-sizing: border-box;
+  border: 3px solid skyblue;
+  border-radius: 10px;
+}
+
+
 
 
 #Voltage_Entertainment {
     left: 95px;
-    top: 120px;
+    top: 45px;
     position: absolute;
     overflow: visible;
     width: 493px;
@@ -100,6 +157,24 @@ h5 {
     font-size: 50px;
     color: rgba(0,177,255,1);
 }
+
+#Voltage_Entertainment2 {
+    left: 205px;
+    top: 70px;
+    position: absolute;
+    overflow: visible;
+    width: 493px;
+    white-space: nowrap;
+    line-height: 110px;
+    margin-top: -30px;
+    text-align: left;
+    font-family: Jaapokki enchance;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(0,177,255,1);
+}
+
 
 #Photography__Videography_ {
     left: 351px;
@@ -162,6 +237,16 @@ h5 {
     border-radius:50%;
 }
 
+#logo_2{
+    position: absolute;
+    width: 100px;
+    height: 100.5px;
+    left: 92px;
+    top: 40px;
+    overflow: visible;
+    border-radius:50%;
+}
+
 .myButton {
 	box-shadow:inset 0px 0px 15px 3px #23395e;
 	background-color:transparent;
@@ -188,6 +273,49 @@ h5 {
 	top:1px;
 }
 
+#cat1{
+    position:absolute;
+    top: 220px;
+    left: 125px;
+    padding:30px 60px;
+}
+#cat2{
+    position:absolute;
+    top: 220px;
+    left: 340px;
+    padding:30px 60px;
+}
+#cat3{
+    position:absolute;
+    top: 340px;
+    left: 125px;
+    padding:30px 60px;
+}
+#cat4{
+    position:absolute;
+    top: 340px;
+    left: 340px;
+    padding:30px 60px;
+}
+#cat5{
+    position:absolute;
+    top: 460px;
+    left: 105px;
+    padding:30px 60px;
+}
+#cat6{
+    position:absolute;
+    top: 460px;
+    left: 340px;
+    padding:30px 60px;
+}
+#cat7{
+    position:absolute;
+    top: 580px;
+    left: 180px;
+    padding:30px 80px;
+}
+
 #asktoregister{
     position:absolute;
     top: 500px;
@@ -198,7 +326,7 @@ h5 {
 .nav {
     width: 100%;
     height: 65px;
-    position: fixed;
+    position: relative;
     line-height: 65px;
     text-align: center;
 }
@@ -271,9 +399,181 @@ h5 {
 }
 
 
-
-
-
+  .container1{
+    width:400px;
+    height:250px;
+    position: absolute;;
+    perspective: 1000;
+    -webkit-perspective: 1000;
+    left:800px;
+    top:220px;
+  }
+  .card{
+    width:100%;
+    height:100%;
+    position:absolute;
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    transition:transform 1s ease;
+    cursor:pointer;
+  }
+  .back, .front{
+    border-radius:6px;
+    position:absolute;
+    width:100%;
+    height:100%;
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+  }
+  .contentfront{
+    width:100%;
+    height:100%;
+    float:left;
+    transform:translatez(60px);
+    -webkit-transform:translatez(60px);
+    
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    
+  }
+  .contentback{
+    width:100%;
+    height:100%;
+    float:left;
+    transform:translatez(60px);
+    -webkit-transform:translatez(60px);
+    
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    
+  }
+  .back{
+    transform:rotateY(180deg);
+    background-color:#232227;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .front{
+    text-transform:uppercase;
+    background-color:#232227;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .date{
+    height:100%;
+    width:130px;
+    float:left;
+    background-color:#E76642;
+    border-radius:0 6px 6px 0;
+    text-align:right;
+    padding:10px 30px;
+    box-sizing:border-box;
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+  }
+  .datecont{
+    height:100%;
+    transform:translatez(60px) scale(.9);
+    -webkit-transform:translatez(60px) scale(.9);
+  }
+  #date{
+    font-size:50px;
+    color:#ECECE7;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:500;
+    float:right;
+  }
+  #day{
+    float:right;
+    font-size:14px;
+    color:#232227;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+  }
+  #month{
+    float:right;
+    font-size:10px;
+    color:#232227;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:200;
+  }
+  .date i{
+    color:#ECECE7;
+    position:absolute;
+    bottom:10px;
+    right:0;
+  }
+  .date i:hover{
+    color:#232227;
+    transition:.3s ease;
+  }
+  .month{
+    height:100%;
+    width:270px;
+    float:left;
+    padding:20px 30px;
+    box-sizing:border-box;
+  }
+  .month table{
+    width:100%;
+  }
+  .orangeTr{
+    color:#E76642;
+  }
+  .whiteTr{
+    color:#ECECE7;
+    
+  }
+  .whiteTr th:hover{
+    color:#E76642;
+    transition:.3s ease;
+  }
+  .month tr{
+    height:24px;
+  }
+  .month th{
+    width:20%;
+    font-size:15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+  }
+  
+  .flipped{
+    transform:rotateY(-180deg);
+    /*height:400px;
+    width:200px;
+    left:calc(50% - 100px);
+    top:calc(50vh - 200px);*/
+  }
+  .backcontainer{
+    transform-style:preserve-3d;
+    width:calc(100% - 60px);
+    height:calc(100% - 40px);
+    float:left;
+    margin-left:30px;
+    margin-top:20px;
+    /*transform:translatez(60px) scale();*/
+    
+    background-color:#E76642;
+    border-radius:6px;
+    padding:10px 30px;
+    box-sizing:border-box;
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+  }
 
 
 
