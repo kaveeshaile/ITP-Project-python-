@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('customer_main.urls')),
     path('', include('photo_add.urls')),
     path('', include('photo_update.urls')),
+    path('', include('photo_profile.urls')),
 
 
 

@@ -15,3 +15,6 @@ urlpatterns = [
 urlpatterns = [
     path('', views.photo_checkdelete, name='photo_checkdelete')
 ]
+urlpatterns = [
+    path('', views.photo_profile, name='photo_profile')
+]
