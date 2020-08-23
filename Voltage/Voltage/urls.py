@@ -17,10 +17,19 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+<<<<<<< HEAD
+=======
+
+    path('', include('videography.urls')),
+>>>>>>> 94e5eeb6d0ebaddf6087b872e8c3f1041e8e4d5d
     path('', include('admin_panel.urls')),
     path('', include('videography.urls')),
     path('', include('home.urls')),
     path('admin/', admin.site.urls),
     path('', include('photography.urls')),
+   
+
+
+
 
 ]

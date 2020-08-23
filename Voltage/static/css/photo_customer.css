@@ -1,0 +1,114 @@
+.Details1{
+   
+    color: rgb(22, 22, 22);
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left:-50px;
+    margin: 2px 2px;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    
+    border: 2px solid #008CBA;
+}
+.Details1:hover {
+    background-color: #008CBA;
+    color: aquamarine;
+
+  }
+  .Details2{
+   
+    color: rgb(22, 22, 22);
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left:-50px;
+    margin: 2px 2px;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    
+    border: 2px solid #008CBA;
+}
+.Details2:hover {
+    background-color: #008CBA;
+    color: aquamarine;
+
+  }
+
+  .Details3{
+   
+    color: rgb(22, 22, 22);
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left:-50px;
+    margin: 2px 2px;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    
+    border: 2px solid #008CBA;
+}
+.Details3:hover {
+    background-color: #008CBA;
+    color: aquamarine;
+
+  }
+
+  .Details4{
+   
+    color: rgb(22, 22, 22);
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left:-50px;
+    margin: 2px 2px;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    
+    border: 2px solid #008CBA;
+}
+.Details4:hover {
+    background-color: #008CBA;
+    color: aquamarine;
+
+  }
+
+  .check{
+    
+    color: rgb(22, 22, 22);
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left:-50px;
+    margin: 2px 2px;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  .check:hover{
+    background-color: #4CAF50;
+    color: rgb(27, 104, 3);
+  }
+
+  .Dates{
+color: aqua;
+  }
+  
