@@ -23,11 +23,6 @@ urlpatterns = [
     path('', include('home.urls')),
     path('admin/', admin.site.urls),
     path('', include('photography.urls')),
-    path('', include('photo_checkdelete.urls')),
-    path('', include('customer_main.urls')),
-    path('', include('photo_add.urls')),
-    path('', include('photo_update.urls')),
-    path('', include('photo_profile.urls')),
 
 
 
