@@ -3,11 +3,9 @@ from.import views
 
 urlpatterns = [
     
-    path('',views.review,name = 'review'),
-    path('',views.reservation_manage,name = 'reservation_manage'),
-    path('',views.admin_panel,name = 'admin_panel')
-   
-
+    path('',views.admin_panel,name = 'admin_panel'),
+    path('review',views.review,name = 'review'),
+    path('reservation_manage',views.reservation_manage,name = 'reservation_manage')
     
 ]
 
