@@ -1,0 +1,211 @@
+
+
+
+#logo_2{
+    position: absolute;
+    width: 100px;
+    height: 100.5px;
+    left: 92px;
+    top: 40px;
+    overflow: visible;
+    border-radius:50%;
+}
+
+
+
+body{
+    background-color:black;
+    padding-bottom: 58 px;
+    position: relative;
+    min-height: 100vh;
+}
+
+
+#Voltage_Entertainment2 {
+    left: 205px;
+    top: 70px;
+    position: absolute;
+    overflow: visible;
+    width: 493px;
+    white-space: nowrap;
+    line-height: 110px;
+    margin-top: -30px;
+    text-align: left;
+    font-family: Jaapokki enchance;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(0,177,255,1);
+}
+
+.nav {
+    width: 100%;
+    height: 65px;
+    position: relative;
+    line-height: 65px;
+    text-align: center;
+}
+
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 2rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 0.8 rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+
+
+.viewbox2 {
+    overflow: visible;
+    position: absolute;
+    width: 633.183px;
+    height: 680.287px;
+    left: 10.5px;
+    top: 28.888px;
+    background-image: linear-gradient(-90deg,black,rgb(66, 170, 202));
+    opacity:0.3;
+    border-radius: 25px;
+    transform: matrix(1,0,0,1,0,0);
+}
+
+
+#subhead{
+
+    font-style: normal;
+    font-size: 25px;
+    color: white;
+    position: center;
+    
+    
+}
+
+#packagename1{
+
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    left: 205px;
+    top: 70px;
+    margin-top: 230px;
+    text-align: left;
+    position: absolute;
+}
+
+#packagename2{
+
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    left: 205px;
+    top: px;
+    margin-top: 230px;
+    text-align: left;
+    position: absolute;
+}
+
+
+#packagename3{
+
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    left: 205px;
+    top: 70px;
+    margin-top: 230px;
+    text-align: left;
+    position: absolute;
+}
+
+
+
+#seeinfobtn1{
+
+    right: 205px;
+    top: 100px;
+    margin-top: 220px;
+    position: absolute;
+    width:250px;
+}
+
+#seeinfobtn2{
+
+    right: 205px;
+    top: 40px;
+    margin-top: 390px;
+    position: absolute;
+    width:250px;
+
+}
+
+#seeinfobtn3{
+
+    right: 205px;
+    top: 210px;
+    margin-top: 330px;
+    position: absolute;
+    width:250px;
+
+}
+
+
+
