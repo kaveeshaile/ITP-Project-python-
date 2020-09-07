@@ -5,7 +5,7 @@
 <head>
 
 <meta charset="ISO-8859-1">
-<title>Add new</title>
+<title>See the profile</title>
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Google Fonts -->
@@ -81,7 +81,7 @@
 
 
 
-<form method = "POST" action= {% url 'addvideo' %}>
+
 {% csrf_token %}
 <div class="name">
 <input type="text" name="Name"  placeholder="Name" required><br><br>
@@ -92,24 +92,13 @@
 </textarea>
 </div>
 
-
-<div class="add">
-<input class="myButton" id = "addvideographer" input type="submit" value="Add" name="submit">
-</div>
- </form>
-
-
-<div class="upload">
-<form class="md-form" action="#">
-  <div class="file-field">
-    <div class="btn blue-gradient btn-sm float-left">
-      <span><i class="fas fa-cloud-upload-alt mr-2" aria-hidden="true"></i>Choose files</span>
-      <input type="file" >
-    </div>
-  </div>
+<form method = "post">
+  <label for="birthdaytime">Select the date and time:</label>
+  <input type="datetime-local" id="daytime" name="birthdaytime">
+  <input type="submit" value="Book now" id = "booknow">
 </form>
-</div>
 
+ 
 
 </div>
 <!-- Grid column -->
@@ -119,7 +108,6 @@
 
 
 <div class = "vid1">
-
 <video class="sample" autoplay loop controls muted  width="250" height="180" autoplay>>
 <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
 </video>
@@ -128,53 +116,29 @@
 <source src="{% static 'images/video.mp4' type='video/mp4' %}">
 Your browser does not support the video tag.
 </video>
-<input type="file" multiple class = "sample_upload">
-
 </div>
 
 
 <div class = "vid2">
-
 <video class="sample" autoplay loop controls muted  width="250" height="180" autoplay>>
 <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
 </video>
 
-<input type='file' onchange="readURL(this);" />
-    <video id="blah" src="#"  autoplay loop controls muted  autoplay alt="your image" />
-
-
-</div>
-
-</form>
-
-<div class = "setStatus">
-<div class="custom-control custom-switch">
-  <input type="checkbox" class="custom-control-input" value = "no" id="customSwitches">
-  <label class="custom-control-label" style="color:white;" for="customSwitches">Status</label>
-</div>
+<video width='250' height= '180'autoplay loop controls muted  autoplay>
+<source src="{% static 'images/video.mp4' type='video/mp4' %}">
+Your browser does not support the video tag.
+</video>
 </div>
 
 
 
 
 
-    <script>
-    function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result)
-                        .width(250)
-                        .height(180);
-                };
 
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
 
-        </script>
+
+  
 
 </body>
  
