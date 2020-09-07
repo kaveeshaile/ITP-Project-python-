@@ -23,3 +23,8 @@ def addvideo(request):
      
      
 def displaytocustomer(request):return render(request,'cus_vid_profile.html')
+
+
+def displayall(request):
+    videogrpher = video_add.objects.all()
+    return render(request,"display_all_vid.html",{'videogrpher':videogrpher})

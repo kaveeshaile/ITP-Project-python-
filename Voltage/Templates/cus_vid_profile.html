@@ -84,16 +84,15 @@
 
 {% csrf_token %}
 <div class="name">
-<input type="text" name="Name"  placeholder="Name" required><br><br>
-<input type="text" name="Contact"  placeholder="contact Number" required><br><br>
-<input type="email" placeholder="Email" name = "ContactEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required> <br><br>
-<input type="text" name="fee" id = "fee"  placeholder="Resrvation fee" required>
-<textarea id = "description" class ="textarea description" placeholder="Description" rows="6" cols="50">
+<input type="text" name="Name"   disabled ><br><br>
+<input type="text" name="Contact"   disabled><br><br>
+<input type="text"  name = "ContactEmail" disabled> <br><br>
+<input type="text" name="fee" id = "fee" disabled>
+<textarea id = "description" class ="textarea description" disabled rows="6" cols="50">
 </textarea>
 </div>
 
 <form method = "post">
-  <label for="birthdaytime">Select the date and time:</label>
   <input type="datetime-local" id="daytime" name="birthdaytime">
   <input type="submit" value="Book now" id = "booknow">
 </form>

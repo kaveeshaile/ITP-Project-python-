@@ -1,0 +1,23 @@
+.fill{
+    padding-right: 100;
+    width: 100px;
+    border-radius:50px;
+  
+}
+.addbook{
+    color: rgb(22, 22, 22);
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left:-50px;
+    margin: 2px 2px;
+    border-radius: 25px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  .addbook:hover{
+    background-color: #4CAF50;
+    color: rgb(27, 104, 3);
+  }
