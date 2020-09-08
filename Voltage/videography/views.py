@@ -13,8 +13,8 @@ def addvideo(request):
          saverecord.Name = request.POST.get('Name')
          saverecord.Contact = request.POST.get('Contact')
          saverecord.ContactEmail  = request.POST.get('ContactEmail')
-         saverecord.fee = request.POST.get('fee')
-         saverecord.description = request.POST.get('fee')
+         saverecord.Fee = request.POST.get('fee')
+         saverecord.Description = request.POST.get('description')
          saverecord.save()
         return redirect(displayall)
     else:
