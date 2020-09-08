@@ -17,18 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-
+    
     path('', include('videography.urls')),
     path('', include('admin_panel.urls')),
     path('', include('home.urls')),
-    path('admin/', admin.site.urls),
     path('', include('photography.urls')),
-    path('', include('photo_checkdelete.urls')),
-    path('', include('customer_main.urls')),
-    path('', include('photo_add.urls')),
-    path('', include('photo_update.urls')),
-
-
-
+    path('admin/', admin.site.urls),
+  
 
 ]

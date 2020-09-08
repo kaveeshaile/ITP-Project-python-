@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<body style="background-color:rgb(7, 18, 54);"></body>
+
+<link rel="stylesheet" type="text/css" href="../css/photo_profile.css">
+
+</head>
+
+<body>
+    <center>
+
+        <h1 style="color:white" font-size:"20px">VOLTAGE ENTERTAINMENT</h1><br>
+        <hr>
+        <div class="profile">
+            <h2 style="color:white">Photographer's Profile</h2><br>
+        </div>
+    </center>
+
+
+    <center>
+        <img src="../photo/2.jpg" style=" border-radius: 50%;" width="300" height="300"><br>
+    </center>
+    <div class="fill">
+        <label for="Name" style="color:white">Name:</label><br>
+        <input type="text" id="name" name="name" size="40">
+        <br>
+
+        <label for="Experience" style="color:white">Experience:</label><br>
+        <input type="text" id="Experience" name="Experience" size="40"> <br>
+
+        <label for="Description" style="color:white">Description:</label><br>
+        <textarea id="w3review" name="w3review" rows="2" cols="50">
+
+        </textarea><br>
+
+
+        <label for=" Contact Number" style="color:white">ContactNumber:</label><br>
+        <input type="text" id="Contact Number" name="Contact Number" size="20"><br>
+
+        <label for="Email" style="color:white">Email:</label><br>
+        <input type="text" id="Email" name="Email" size="40"><br>
+        <label for="FaceBook" style="color:white">FaceBook:</label><br>
+        <input type="text" id="FaceBook" name="FaceBook" size="40"><br>
+        <label for=" Contact Number" style="color:white">ReservationFee:</label><br>
+        <input type="text" id="Fee" name="Contact Number" size="40">
+
+    </div>
+    <center>
+
+        <form action="/action_page.php">
+            <label for="calender" style="color:white">Enter the
+                Reservation Date:</label>
+            <input type="date" style="padding:10px 30px;background-color:rgb(196, 199, 3)" id="bookingdate"
+                name="bookingdate">
+
+
+            <input type="submit"
+                style="border-radius: 10px;padding:15px 20px;color:white ;background-color:rgb(12, 151, 7)"
+                value="Add To Reservation">
+
+        </form>
+
+    </center>
+    <center>
+        <br>
+        <img src="../photo/nil.jpg" width="200" height="200">
+        <img src="../photo/2.jpg" width="200" height="200">
+        <img src="../photo/3.jpg" width="200" height="200">
+        <img src="../photo/4.jpg" width="200" height="200">
+        <img src="../photo/5.jpg" width="200" height="200">
+
+    </center>
+
+
+
+
+</body>
+
+</html>

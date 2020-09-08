@@ -12,3 +12,4 @@ def photo_checkdelete(request): return render(
 
 
 def customer_main(request): return render(request, 'customer_main.html')
+def photo_profile(request): return render(request, 'photo_profile.html')

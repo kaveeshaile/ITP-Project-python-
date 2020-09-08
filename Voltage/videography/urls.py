@@ -2,6 +2,9 @@ from django.urls import path
 from.import views
 
 urlpatterns = [
-    path('',views.video_add,name = 'video_add')
+    
+    path('',views.displayall,name = 'displayall'),
+    path('',views.displaytocustomer,name = 'displayvideo'),
+    path('video_add',views.addvideo,name = 'addvideo')
 ]
 

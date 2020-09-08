@@ -42,6 +42,25 @@ body{
 
 }
 
+#daytime{
+  position:absolute;
+  top: 440px;
+  left: 600px;
+}
+#booknow{
+
+  position:absolute;
+  top: 440px;
+  left: 900px;
+
+}
+
+.setStatus{
+  position:absolute;
+  top: 170px;
+  left: 310px;
+}
+
 #addvideographer{
     position:absolute;
     top: 430px;
@@ -101,6 +120,71 @@ h5 {
     opacity:0.3;
     border-radius: 25px;
     transform: matrix(1,0,0,1,0,0);
+}
+
+.viewbox3 {
+  overflow: visible;
+  position: absolute;
+  width: 400.183px;
+  height: auto;
+  left: 10.5px;
+  top: 170.888px;
+  background-image: linear-gradient(-180deg,rgb(48, 30, 151),rgb(66, 170, 202));
+  opacity:0.3;
+  border-radius: 25px;
+  transform: matrix(1,0,0,1,0,0);
+}
+
+.viewbox4 {
+  overflow: visible;
+  position: absolute;
+  width: 400.183px;
+  height: auto;
+  left: 470.5px;
+  top: 170.888px;
+  background-image: linear-gradient(-180deg,rgb(48, 30, 151),rgb(66, 170, 202));
+  opacity:0.3;
+  border-radius: 25px;
+  transform: matrix(1,0,0,1,0,0);
+}
+
+.viewbox5 {
+  overflow: visible;
+  position: absolute;
+  width: 400.183px;
+  height: auto;
+  left: 920.5px;
+  top: 170.888px;
+  background-image: linear-gradient(-180deg,rgb(48, 30, 151),rgb(66, 170, 202));
+  opacity:0.3;
+  border-radius: 25px;
+  transform: matrix(1,0,0,1,0,0);
+}
+
+#section1{
+  overflow: visible;
+  position: absolute;
+  width: 400.183px;
+  height: 400px;
+  left: 60.5px;
+  top: 170.888px;
+  background-image: linear-gradient(-360deg,rgb(5, 5, 8),rgb(66, 170, 202));
+  opacity:0.3;
+  border-radius: 25px;
+  transform: matrix(1,0,0,1,0,0);
+}
+
+#section2{
+  overflow: visible;
+  position: absolute;
+  width: 460.183px;
+  height: auto;
+  left: 480.5px;
+  top: 170.888px;
+  background-image: linear-gradient(-360deg,rgb(5, 5, 8),rgb(66, 170, 202));
+  opacity:0.3;
+  border-radius: 25px;
+  transform: matrix(1,0,0,1,0,0);
 }
 
 input[type=text] {
@@ -173,6 +257,31 @@ input[type=email] {
     font-weight: normal;
     font-size: 30px;
     color: rgba(0,177,255,1);
+}
+
+#upcoming{
+    left: 120px;
+    top: 200px;
+    position: absolute;
+    overflow: visible;
+    color: rgb(100, 197, 152);
+    font-size: 35px;
+}
+#review{
+  left: 590px;
+  top: 200px;
+  position: absolute;
+  overflow: visible;
+  color: rgb(100, 197, 152);
+  font-size: 35px;
+}
+#bin{
+  left: 1090px;
+  top: 200px;
+  position: absolute;
+  overflow: visible;
+  color: rgb(100, 197, 152);
+  font-size: 35px;
 }
 
 
@@ -320,6 +429,31 @@ input[type=email] {
     position:absolute;
     top: 500px;
     left: 300px;
+}
+
+#confirm{
+
+  position:absolute;
+  top:250px;
+  left: 1000px;
+  width: 100px;
+  text-align: center;
+}
+#send{
+
+  position:absolute;
+  top:330px;
+  left: 1000px;
+  width: 100px;
+  text-align: center;
+}
+#back{
+
+  position:absolute;
+  top:410px;
+  left: 1000px;
+  width: 100px;
+  text-align: center;
 }
     
 
