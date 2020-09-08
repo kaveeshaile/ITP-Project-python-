@@ -1,0 +1,50 @@
+.container,h4{
+    text-align: center;
+  }
+h2{
+    border: 3px solid green;
+}
+.col-lg-3 col-md-10 col-12{
+  ruby-align: right;
+
+}
+p{
+  font-size: 20px;;
+}
+body{
+  background-color:black;
+  padding-bottom: 58 px;
+  position: relative;
+  min-height: 100vh;
+  color:blue;
+}
+h2,h3{
+  color:blue;
+}
+h4,p1,p{
+  color:white;
+}
+p2{
+  color:black;
+}
+
+.header {
+  padding: 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: rgb(12, 1, 1);
+  font-size: 30px;
+}
+#slide{
+  height: 500px;
+  width: 200px;
+}
+.paragraph{
+  text-align: left;
+}
+p4{
+    border-left: 6px solid red;
+    background-color: lightgrey;
+    text-align: left;
+    color: black;
+}
