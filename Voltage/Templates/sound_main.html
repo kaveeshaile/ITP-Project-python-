@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 
 <!--Bootstrap 4-->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 <!--My CSS-->
 <link rel="stylesheet" type = "text/css" href="{% static 'css/ravi.css' %}">
@@ -82,9 +82,14 @@
 
     <form action="" id="seede" method="post"> 
 
-	<input type="date" id="checkdate">
-	<input name="button" type="button" id="checkbtn" value="Check Availability">
-	
+
+	<div id="datepick">
+		<input type="date" id="checkdate">	
+	</div>
+
+	<div id="timendate">
+		<button type="button" class="btn btn-warning">Check Availability</button>
+	</div>
 		
 	<div id="packagename1">
 	 	<h4>Package 01</h4>
@@ -100,39 +105,96 @@
 
 
 	 
-	     
-	
 	
 
 	<br>
 
 	<div id="seeinfobtn1">
-		<input type="button" name="button" id="buttonmain" value="See Details">
+		<button type="button" class="btn btn-outline-danger">See Details</button>
 	</div>
 
 	<div id="seeinfobtn2">
-		<input type="button" name="button" id="buttonmain" value="See Details">
+		<button type="button" class="btn btn-outline-danger">See Details</button>
 	</div>
 
 	<div id="seeinfobtn3">
-		<input type="button" name="button" id="buttonmain" value="See Details">
+		<button type="button" class="btn btn-outline-danger">See Details</button>
 	</div>
 
     </form>
 	
 	
-	<button onclick="location.href='Templates/sound_admin_upload.html'">Click Me</button>
-
-
-
+	
 
 	</center>
 	
 		
 		  
 	<hr>
-	<center>
-<footer id="foot">Voltage Entertainment</footer>	
-	</center>
+
+
+
+ <div class="footer">
+
+<footer class="page-footer font-small cyan darken-3">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+		<div id="socialicons">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+          </a>
+
+		  </div>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+ 
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href=""> Voltage Entertainment</a>
+  </div>
+ 
+
+</footer>
+
+	
+	</div>
 </body>
 </html>

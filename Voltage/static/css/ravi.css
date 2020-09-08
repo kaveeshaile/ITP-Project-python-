@@ -134,7 +134,9 @@ body{
     font-style: normal;
     font-size: 25px;
     color: white;
-    position: center;
+    position: absolute;
+    top:160px;
+    right: 670px;
     
     
 }
@@ -145,7 +147,7 @@ body{
     font-size: 20px;
     color: white;
     left: 205px;
-    top: 70px;
+    top: 130px;
     margin-top: 230px;
     text-align: left;
     position: absolute;
@@ -157,8 +159,8 @@ body{
     font-size: 20px;
     color: white;
     left: 205px;
-    top: px;
-    margin-top: 230px;
+    top: 180px;
+    margin-top: 280px;
     text-align: left;
     position: absolute;
 }
@@ -170,7 +172,7 @@ body{
     font-size: 20px;
     color: white;
     left: 205px;
-    top: 70px;
+    top: 340px;
     margin-top: 230px;
     text-align: left;
     position: absolute;
@@ -185,13 +187,17 @@ body{
     margin-top: 220px;
     position: absolute;
     width:250px;
+
+ 
 }
+
+ 
 
 #seeinfobtn2{
 
     right: 205px;
     top: 40px;
-    margin-top: 390px;
+    margin-top: 420px;
     position: absolute;
     width:250px;
 
@@ -201,11 +207,38 @@ body{
 
     right: 205px;
     top: 210px;
-    margin-top: 330px;
+    margin-top: 410px;
     position: absolute;
     width:250px;
 
 }
 
+#timendate{
 
+    position:absolute;
+    right: 640px;
+    top: 250px;
+
+}
+
+#datepick{
+
+    position:absolute;
+    right: 900px;
+    top: 250px;
+    border-style: solid;
+    border-color: red;
+   
+
+}
+
+
+.footer{
+
+    position:absolute;
+    top: 700px;
+    color:white;
+    right: 560px;
+
+}
 
