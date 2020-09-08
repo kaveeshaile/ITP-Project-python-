@@ -5,7 +5,7 @@
 <head>
 
 <meta charset="ISO-8859-1">
-<title>See the profile</title>
+<title>Videographers</title>
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Google Fonts -->
@@ -17,6 +17,8 @@
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+
 <!-- My Css -->
 <link rel="stylesheet" type = "text/css" href="{% static 'css/uditha.css' %}">
 
@@ -55,38 +57,36 @@
 		</linearGradient>
 	</svg>
 
-  
 
-  	<img id="logo_2" img src="{% static 'images/logo.jpg' %}">
+<img id="logo_2" img src="{% static 'images/logo.jpg' %}">
     
- 
 
 <div id="Voltage_Entertainment2">
 		<span>Voltage Entertainment</span>
 	</div>
 
-<br><br>
+<br><br>&nbsp;
+
+<div class = "cards">
+  {% for vid in videography %}  
+	<div class="pricing-box pricing-box-bg-image text-center">
+		<h5><br><img src="https://images.unsplash.com/photo-1541534401786-2077eed87a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" width = "150px"  style = "border-radius:50%" ></h5>
+		<ul class="features-list">
+			<li><strong>{{vid.Name}}</strong></li>
+			<li><strong>{{vid.ContactEmail}}</strong></li>
+		<button class="btn-primary">Profile</button>
+	</div>
+  {% endfor %}
+  </div>
 
 
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-		<th>Name</th>
-      </tr>
-    </thead>
-    <tbody>
-	{% for vid in videography %}  
-      <tr>
-        <td>{{vid.id}}</td>
-        <td>{{vid.Name}}</td>
-
-      </tr>
-	  {% endfor %} 
-	</tbody>
-</table>	
-
-
+<form method = "post">
+  <input type="date" id="daytime" name="birthdaytime">
+  <input type="submit" value="Check availability" id = "booknow">
+</form>
+ 
+     
+ 
 </body>
  
 </html>

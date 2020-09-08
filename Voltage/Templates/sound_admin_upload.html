@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html>
 <head>
@@ -5,19 +6,37 @@
 <title>Sound System Admin Panel</title>
 	
 
+
+<!--Font-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+<!--Google Fonts-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+<!--Bootstrap 4-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+<!--My CSS-->
 <link rel="stylesheet" type = "text/css" href="{% static 'css/ravi.css' %}">
+
+
 
 	
 </head>
 </html>
 
-<html>
-<head>
-</head>
-
-<body style="background-color:#FFEBCD;">
-
+<body>
 	
+
+<img id="logo_2" img src="{% static 'images/logo.jpg' %}"> 
+<div id="Voltage_Entertainment2">
+		<span>Voltage Entertainment</span>
+	</div>
+
+
+
+
 <nav class="nav">
         <div class="container">
            
@@ -57,18 +76,25 @@
 <center>
 	
 	
-	<h1 id="mainhead">Voltage Entertainment</h1>
 	
 		<hr>
 	
-    <h2 id="subhead">SOUND SYSTEMS</h2><br>
+    
+	<div id="subhead">
 
-	<h4 id="subheadad">Add samples up to 5</h4>
+			<h3>SOUND SYSTEMS</h3>
+
+	</div>
+
+
+
 	
 		
 
-    <form action="\.php" id="adup">
+    <form action="" id="adup" method="post">
 	 
+	 <div class="browse">
+
 	   <input type="file" id="img" name="img" accept="image/*"><br>
 	   <label for="img">Upload Image</label>
 	  
@@ -99,6 +125,7 @@
 	   <input type="file" id="img" name="img" accept="image/*"><br>
 	   <label for="img">Upload Image</label>
 
+	</div>
 
 	</form>
 	
@@ -106,30 +133,44 @@
 	<br>
 	
 	
+
+
 	<form action="" id="">
 
-	<textarea id="adddetails"></textarea><br>
+	<div class="inputfield1">
+		<input type="text" name="packname" value="Package Name">
+	</div>
+
+	<div class="inputfield2">
+		<input type="text" name="suitablefor">
+	</div>
+
+	<div class="inputfield3">
+		Package Price: <input type="text" name="packprice">
+	</div>
+
 	
-	<input type="button" name="button" id="btnadcan" value="Cancel">
+		<div class="addcancelinfo">
 
-	<input type="submit" name="button" id="btnadcan" value="Add">
+			<input type="button" name="button" id="btnadcan" value="Cancel">
 
+			<input type="submit" name="button" id="btnadcan" value="Add">
+
+		</div>
 
 	</form>
 	
+	
+
 </center>	
 	
 		
-		  
+	<br>
+	<br>	  
 	<hr>
 
 
 
-
-	<center>
-
-<footer id="foot">Voltage Entertainment</footer>	
-	</center>
 
 
 
