@@ -242,3 +242,65 @@ body{
 
 }
 
+#addsamples{
+
+    color: white;
+    position: absolute;
+    top:150px;
+    right: 670px;
+
+
+}
+
+
+
+.browse{
+
+    position: absolute;
+    top:300px;
+    right: 670px;
+
+}
+
+#textaddarea{
+
+    position: absolute;
+    top:100px;
+    right: 670px;
+
+}
+
+.inputfield1{
+
+    position: absolute;
+    top:800px;
+    right: 900px;
+   
+
+
+}
+
+.inputfield2{
+
+    position: absolute;
+    top:800px;
+    right: 400px;
+   
+    
+}
+
+.inputfield3{
+
+    position: absolute;
+    top:900px;
+    right: 900px;
+}
+
+.addcancelinfo{
+
+    position: absolute;
+    top:1000px;
+    right: 700px;
+
+}
+

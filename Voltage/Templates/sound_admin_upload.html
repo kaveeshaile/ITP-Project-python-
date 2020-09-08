@@ -16,6 +16,7 @@
 <!--Bootstrap 4-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+
 <!--My CSS-->
 <link rel="stylesheet" type = "text/css" href="{% static 'css/ravi.css' %}">
 
@@ -78,14 +79,22 @@
 	
 		<hr>
 	
-    <h2 id="subhead">SOUND SYSTEMS</h2><br>
+    
+	<div id="subhead">
 
-	<h4 id="subheadad">Add samples up to 5</h4>
+			<h3>SOUND SYSTEMS</h3>
+
+	</div>
+
+
+
 	
 		
 
     <form action="" id="adup" method="post">
 	 
+	 <div class="browse">
+
 	   <input type="file" id="img" name="img" accept="image/*"><br>
 	   <label for="img">Upload Image</label>
 	  
@@ -116,6 +125,7 @@
 	   <input type="file" id="img" name="img" accept="image/*"><br>
 	   <label for="img">Upload Image</label>
 
+	</div>
 
 	</form>
 	
@@ -123,30 +133,44 @@
 	<br>
 	
 	
+
+
 	<form action="" id="">
 
-	<textarea id="adddetails"></textarea><br>
+	<div class="inputfield1">
+		<input type="text" name="packname" value="Package Name">
+	</div>
+
+	<div class="inputfield2">
+		<input type="text" name="suitablefor">
+	</div>
+
+	<div class="inputfield3">
+		Package Price: <input type="text" name="packprice">
+	</div>
+
 	
-	<input type="button" name="button" id="btnadcan" value="Cancel">
+		<div class="addcancelinfo">
 
-	<input type="submit" name="button" id="btnadcan" value="Add">
+			<input type="button" name="button" id="btnadcan" value="Cancel">
 
+			<input type="submit" name="button" id="btnadcan" value="Add">
+
+		</div>
 
 	</form>
 	
+	
+
 </center>	
 	
 		
-		  
+	<br>
+	<br>	  
 	<hr>
 
 
 
-
-	<center>
-
-<footer id="foot">Voltage Entertainment</footer>	
-	</center>
 
 
 
