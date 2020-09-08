@@ -22,10 +22,8 @@ urlpatterns = [
     path('', include('videography.urls')),
     path('', include('home.urls')),
     path('', include('photography.urls')),
-    path('', include('user_handling.urls')),
     path('', include('payment.urls')),
-    path('', include('music_band.urls')),
     path('admin/', admin.site.urls)
- 
+
 
 ]
