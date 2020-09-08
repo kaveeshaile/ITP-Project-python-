@@ -18,26 +18,12 @@ from django.urls import path, include
 
 urlpatterns = [
     
-    path('', include('soundsystems.urls')),
-    path('', include('videography.urls')),
     path('', include('admin_panel.urls')),
+    path('', include('videography.urls')),
     path('', include('home.urls')),
     path('', include('photography.urls')),
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-     path('', include('payment.urls')),
->>>>>>> 98aaf075acd870d7f858b6bcbf2a4ea5579c58ef
-    path('admin/', admin.site.urls),
-  
-=======
-    path('', include('photo_checkdelete.urls')),
-    path('', include('customer_main.urls')),
-    path('', include('photo_add.urls')),
-    path('', include('photo_update.urls')),
-    path('', include('music_band.urls')),
+    path('', include('payment.urls')),
+    path('admin/', admin.site.urls)
 
-
->>>>>>> Stashed changes
 
 ]
