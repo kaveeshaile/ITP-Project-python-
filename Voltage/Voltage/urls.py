@@ -24,6 +24,6 @@ urlpatterns = [
     path('', include('photography.urls')),
     path('', include('payment.urls')),
     path('admin/', admin.site.urls)
- 
+
 
 ]
