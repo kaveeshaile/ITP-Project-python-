@@ -22,6 +22,9 @@ urlpatterns = [
     path('', include('admin_panel.urls')),
     path('', include('home.urls')),
     path('', include('photography.urls')),
+    path('', include('user_handling.urls')),
+    
+    
     path('admin/', admin.site.urls),
   
 
