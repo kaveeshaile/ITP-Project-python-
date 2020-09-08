@@ -42,6 +42,25 @@ body{
 
 }
 
+#daytime{
+  position:absolute;
+  top: 440px;
+  left: 600px;
+}
+#booknow{
+
+  position:absolute;
+  top: 440px;
+  left: 900px;
+
+}
+
+.setStatus{
+  position:absolute;
+  top: 170px;
+  left: 310px;
+}
+
 #addvideographer{
     position:absolute;
     top: 430px;

@@ -78,14 +78,25 @@
 <img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" src="https://mdbootstrap.com/img/Others/documentation/img (20)-mini.jpg"
         alt="Avatar">
 <div class="media-body text-center text-md-left ml-md-3 ml-0">
+
+
+
+<form method = "POST" action= {% url 'addvideo' %}>
+{% csrf_token %}
 <div class="name">
-<input type="text" name="name"  placeholder="Name" required><br><br>
-<input type="text" name="contact"  placeholder="contact Number" required><br><br>
-<input type="email" id="myemail" placeholder="Email" name = "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required> <br><br>
+<input type="text" name="Name"  placeholder="Name" required><br><br>
+<input type="text" name="Contact"  placeholder="contact Number" required><br><br>
+<input type="email" placeholder="Email" name = "ContactEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required> <br><br>
 <input type="text" name="fee" id = "fee"  placeholder="Resrvation fee" required>
 <textarea id = "description" class ="textarea description" placeholder="Description" rows="6" cols="50">
 </textarea>
 </div>
+
+
+<div class="add">
+<input class="myButton" id = "addvideographer" input type="submit" value="Add" name="submit">
+</div>
+ </form>
 
 
 <div class="upload">
@@ -98,7 +109,6 @@
   </div>
 </form>
 </div>
-
 
 
 </div>
@@ -133,15 +143,17 @@ Your browser does not support the video tag.
     <video id="blah" src="#"  autoplay loop controls muted  autoplay alt="your image" />
 
 
-
-
 </div>
 
-<div class="add">
-<input class="myButton" id = "addvideographer" <input type="submit" value="Add" name="submit">
-</div>
- 
 </form>
+
+<div class = "setStatus">
+<div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" value = "no" id="customSwitches">
+  <label class="custom-control-label" style="color:white;" for="customSwitches">Status</label>
+</div>
+</div>
+
 
 
 
