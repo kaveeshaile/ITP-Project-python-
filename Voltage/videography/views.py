@@ -2,8 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib import messages
 from videography.models import video_add
-from videography.models import video_add2
-
+from django.shortcuts import redirect
 # Create your views here.
 
 
@@ -17,14 +16,14 @@ def addvideo(request):
          saverecord.fee = request.POST.get('fee')
          saverecord.description = request.POST.get('fee')
          saverecord.save()
-        return render(request,'video_add.html')
+        return redirect(displayall)
     else:
          return render(request,'video_add.html')
      
-     
-def displaytocustomer(request):return render(request,'cus_vid_profile.html')
-
-
 def displayall(request):
-    videogrpher = video_add.objects.all()
-    return render(request,"display_all_vid.html",{'videogrpher':videogrpher})
+        videogrpher = video_add.objects.all()
+        return render(request,'display_all_vid.html',{'videography':videogrpher})
+     
+     
+def displaytocustomer(request):
+         return render(request,'cus_vid_profile.html')
