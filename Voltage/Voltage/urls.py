@@ -22,7 +22,17 @@ urlpatterns = [
     path('', include('admin_panel.urls')),
     path('', include('home.urls')),
     path('', include('photography.urls')),
+<<<<<<< Updated upstream
     path('admin/', admin.site.urls),
   
+=======
+    path('', include('photo_checkdelete.urls')),
+    path('', include('customer_main.urls')),
+    path('', include('photo_add.urls')),
+    path('', include('photo_update.urls')),
+    path('', include('music_band.urls')),
+
+
+>>>>>>> Stashed changes
 
 ]
