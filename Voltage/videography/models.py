@@ -11,7 +11,3 @@ class video_add(models.Model):
  class Meta:
     db_table = "videography"
     
-class video_add2(models.Model):
- fee=models.CharField(max_length=45)
- class Meta:
-    db_table = "child"

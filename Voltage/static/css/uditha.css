@@ -710,5 +710,94 @@ input[type=email] {
   }
 
 
+  .text-center {
+    text-align: center;
+  }
+  
+  .pricing-box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow:visible;
+    flex-wrap: wrap;
+  }
+  
+  .pricing-box {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    flex: 1;
+    overflow:visible;
+    padding: 0 30px 30px;
+    margin: 2%;
+    min-width: 250px;
+    max-width: 350px;
+  }
+  
+  .pricing-box h5 {
+    text-transform: uppercase;
+    overflow:visible;
+  }
+  
+  
+  .features-list {
+    padding: 0;
+    list-style-type: none;
+    overflow:visible;
+  }
+  
+  .features-list li {
+    font-weight: 100;
+    padding: 12px 0;
+    font-weight: 100;
+    overflow:visible;
+  }
+  
+  .features-list li:not(:last-of-type) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow:visible;
+  }
+  
+  .btn-primary {
+    border-radius: 25px;
+    border: none;
+    background-color: #EC1362;
+    overflow:visible;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.5);
+    overflow:visible;
+    transform: translateY(-3px);
+  }
+  
+  .pricing-box-bg-image {
+    background-image: url('https://images.unsplash.com/photo-1550029402-226115b7c579?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80');
+    background-size: cover;
+    overflow:visible;
+    background-position: center center;
+    color: #ffffff;
+  }
+  
+  .pricing-box-bg-image .features-list li {
+    border-bottom-color: rgba(255, 255, 255, 1);
+  }
+  
+  .pricing-box-bg-image .btn-primary {
+    background-color: #ffffff;
+    color: #000;
+  }
+  
+.cards{
+  position: relative;
+  display: -moz-grid-group;
+}
+
 
 
