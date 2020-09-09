@@ -23,6 +23,11 @@ urlpatterns = [
     path('', include('home.urls')),
     path('', include('photography.urls')),
     path('', include('payment.urls')),
+<<<<<<< Updated upstream
+=======
+    path('', include('music_band.urls')),
+    path('', include('decorations.urls')),
+>>>>>>> Stashed changes
     path('admin/', admin.site.urls)
 
 
