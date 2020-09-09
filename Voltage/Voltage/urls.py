@@ -26,6 +26,6 @@ urlpatterns = [
     path('', include('payment.urls')),
     
     path('admin/', admin.site.urls)
- 
+
 
 ]
