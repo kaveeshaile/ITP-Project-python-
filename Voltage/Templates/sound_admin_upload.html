@@ -1,41 +1,29 @@
-{% load static %}
-<!doctype html>
+ {% load static %}
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Sound System Admin Panel</title>
-	
+	<meta charset="utf-8">
 
+<title>Sound System Admin</title>
 
-<!--Font-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-<!--Google Fonts-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<!--Bootstrap 4-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="{% static 'js/ravijs/custom.js' %}"></script>
 
-
-<!--My CSS-->
-<link rel="stylesheet" type = "text/css" href="{% static 'css/ravi.css' %}">
+<link rel="stylesheet" type = "text/css" href="{% static 'css/ravi/custom.css' %}">
 
 
 
-	
 </head>
-</html>
-
-<body>
-	
-
-<img id="logo_2" img src="{% static 'images/logo.jpg' %}"> 
-<div id="Voltage_Entertainment2">
-		<span>Voltage Entertainment</span>
-	</div>
+<body style="background-color:black;">
 
 
-
+<!--Navigation Bar-->
 
 <nav class="nav">
         <div class="container">
@@ -57,122 +45,258 @@
         </div>
     </nav>
 
+<!--/Navigation Bar-->
+
+			<!--Main Heading-->
+
+				<div id="Voltage_Entertainment2">
+						<span>Voltage Entertainment</span>
+					</div>
+
+			<!--/Main Heading-->		
 
 
+	<!--Image-->
 
-<svg class="viewbox2" viewBox="0 0 633.183 627.287">
+		<img id="logo_2" img src="{% static 'images/logo.jpg' %}">
+	<!--/Image-->
+
+
+		<!--Viewbox-->
+
+		<svg class="viewbox2" viewBox="0 0 633.183 627.287">
+
 		<linearGradient id="Path_3_j" spreadMethod="pad" x1="0.104" x2="0.782" y1="-0.293" y2="1.082">
 		<path id="Path_3_j" d="M 17.1486988067627 0 L 243.2478942871094 0 L 616.0341186523438 0 C 625.5049438476563 0 633.1828002929688 7.851606369018555 633.1828002929688 17.53705596923828 L 633.1828002929688 609.7499389648438 C 633.1828002929688 619.4353637695313 625.5049438476563 627.2869873046875 616.0341186523438 627.2869873046875 L 17.1486988067627 627.2869873046875 C 7.677733898162842 627.2869873046875 0 619.4353637695313 0 609.7499389648438 L 0 17.53705596923828 C 0 7.851606369018555 7.677733898162842 0 17.1486988067627 0 Z">
 		</path>
 			<stop offset="0" stop-color="#f4f5f5" stop-opacity="1"></stop>
 			<stop offset="1" stop-color="#f1e6f1" stop-opacity="0"></stop>
 		</linearGradient>
+
 	</svg>
 
+		<!--/Viewbox-->
 
 
 
 
-<center>
-	
-	
-	
-		<hr>
-	
-    
-	<div id="subhead">
-
-			<h3>SOUND SYSTEMS</h3>
-
-	</div>
 
 
 
-	
-		
-
-    <form action="" id="adup" method="post">
-	 
-	 <div class="browse">
-
-	   <input type="file" id="img" name="img" accept="image/*"><br>
-	   <label for="img">Upload Image</label>
-	  
-	  <br>
-	  <br>
-	  
-	   <input type="file" id="img" name="img" accept="image/*"><br>
-	   <label for="img">Upload Image</label>
-
-	   <br>
-	  <br>
- 
-		
-	   <input type="file" id="img" name="img" accept="image/*"><br>
-	   <label for="img">Upload Image</label>
+	<h3 class="title">Sound Systems Uploading</h3>
 
 
-		<br>
-	  <br>
+		<!--Image uploader-->
 
-	  
-	   <input type="file" id="img" name="img" accept="image/*"><br>
-	   <label for="img">Upload Image</label>
+	<div class="uploadimg">
 
-	   	<br>
-	  <br>
-	
-	   <input type="file" id="img" name="img" accept="image/*"><br>
-	   <label for="img">Upload Image</label>
-
-	</div>
-
-	</form>
-	
-	<br>
-	<br>
-	
-	
-
-
-	<form action="" id="">
-
-	<div class="inputfield1">
-		<input type="text" name="packname" value="Package Name">
-	</div>
-
-	<div class="inputfield2">
-		<input type="text" name="suitablefor">
-	</div>
-
-	<div class="inputfield3">
-		Package Price: <input type="text" name="packprice">
-	</div>
-
-	
-		<div class="addcancelinfo">
-
-			<input type="button" name="button" id="btnadcan" value="Cancel">
-
-			<input type="submit" name="button" id="btnadcan" value="Add">
-
+		<div class="container">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label style="color:red">Upload Image</label>
+				<div class="input-group">
+					<span class="input-group-btn">
+						<span class="btn btn-default btn-file">
+							Browse… <input type="file" id="imgInp">
+						</span>
+					</span>
+					<input type="text" class="form-control" readonly>
+				</div>
+				<img id='img-upload'/>
+			</div>
+		</div>
 		</div>
 
-	</form>
+		</div>
+	</div>
 	
-	
+		<!--/Image uploader-->
 
-</center>	
-	
+
+
 		
-	<br>
-	<br>	  
-	<hr>
 
+			<!--Image uploader-->
+
+	<div class="uploadimg1">
+
+		<div class="container">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label style="color:red">Upload Image</label>
+				<div class="input-group">
+					<span class="input-group-btn">
+						<span class="btn btn-default btn-file">
+							Browse… <input type="file" id="imgInp">
+						</span>
+					</span>
+					<input type="text" class="form-control" readonly>
+				</div>
+				<img id='img-upload'/>
+			</div>
+		</div>
+		</div>
+
+		</div>
+	</div>
+	
+		<!--/Image uploader-->
+
+
+
+			<!--Image uploader-->
+
+	<div class="uploadimg2">
+
+		<div class="container">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label style="color:red">Upload Image</label>
+				<div class="input-group">
+					<span class="input-group-btn">
+						<span class="btn btn-default btn-file">
+							Browse… <input type="file" id="imgInp">
+						</span>
+					</span>
+					<input type="text" class="form-control" readonly>
+				</div>
+				<img id='img-upload'/>
+			</div>
+		</div>
+		</div>
+
+		</div>
+	</div>
+	
+		<!--/Image uploader-->
+
+
+
+		
+			<!--Image uploader-->
+
+	<div class="uploadimg3">
+
+		<div class="container">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label style="color:red">Upload Image</label>
+				<div class="input-group">
+					<span class="input-group-btn">
+						<span class="btn btn-default btn-file">
+							Browse… <input type="file" id="imgInp">
+						</span>
+					</span>
+					<input type="text" class="form-control" readonly>
+				</div>
+				<img id='img-upload'/>
+			</div>
+		</div>
+		</div>
+
+		</div>
+	</div>
+	
+		<!--/Image uploader-->
+
+
+	<!--Add and Cancel Buttons-->
+
+		<div id="addbtn">
+
+			<button type="button" class="btn btn-warning">Upload</button>
+		
+		</div>	
+
+		<div id="cancelbtn">
+
+			<button type="button" class="btn btn-warning">Cancel</button>
+		</div>	
+		
+
+	<!--/Add and Cancel Buttons-->
+
+
+	<!--Add information about the package-->
+
+				<div class="packname">
+
+					<form class="form-inline">
+
+				<div class="form-group mx-sm-3 mb-2">
+					<label for="" class="sr-only"></label>
+					<input type="text" class="form-control" id="inputPassword2" placeholder="Package Name" required>
+				</div>
+
+				</form>
+
+				</div>
+
+
+					<div class="suitable">
+
+					<form class="form-inline">
+
+				<div class="form-group mx-sm-3 mb-2">
+					<label for="" class="sr-only"></label>
+					<input type="text" class="form-control" id="inputPassword2" placeholder="Suitable For" required>
+				</div>
+
+				</form>
+
+				</div>
+
+
+
+				
+					<div class="brand">
+
+					<form class="form-inline">
+
+				<div class="form-group mx-sm-3 mb-2">
+					<label for="" class="sr-only"></label>
+					<input type="text" class="form-control" id="inputPassword2" placeholder="Brand" required>
+				</div>
+
+				</form>
+
+				</div>
+
+
+				
+					<div class="price">
+
+					<form class="form-inline">
+
+				<div class="form-group mx-sm-3 mb-2">
+					<label for="" class="sr-only"></label>
+					<input type="text" class="form-control" id="inputPassword2" placeholder="Price" required>
+				</div>
+
+				</form>
+
+				</div>
+
+
+	<!--/Add information about the package-->
+
+
+	<div id="uploadsubmitbtn">
+
+		<button type="button" class="btn btn-warning">Cancel</button>
+
+	</div>
+
+
+	<div id="uploadcancelbtn">
+
+		<button type="button" class="btn btn-warning">Submit</button>
+
+	</div>
 
 
 
 
 
 </body>
-</html>
+</html> 

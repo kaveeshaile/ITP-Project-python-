@@ -1,0 +1,258 @@
+
+.title{
+
+    position: absolute;
+    top:100px;
+    right: 600px;
+    text-transform:uppercase;
+    color:white;
+
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+
+.uploadimg{
+
+    position: absolute;
+    top:300px;
+    right: -100px;
+
+}
+
+.uploadimg1{
+
+    position: absolute;
+    top:400px;
+    right: -100px;
+
+}
+
+.uploadimg2{
+
+    position: absolute;
+    top:500px;
+    right: -100px;
+
+}
+
+
+.uploadimg3{
+
+    position: absolute;
+    top:600px;
+    right: -100px;
+
+}
+
+#addbtn{
+
+    position: absolute;
+    top:700px;
+    right: 600px;
+    
+}
+
+#cancelbtn{
+
+    position: absolute;
+    top:700px;
+    right: 800px;
+}
+
+.packname{
+
+    position: absolute;
+    top:900px;
+    right: 900px;
+    
+}
+
+.suitable{
+
+    position: absolute;
+    top:900px;
+    right: 400px;
+     
+}
+
+
+.brand{
+
+    position: absolute;
+    top:1000px;
+    right: 900px;
+    
+     
+}
+
+.price{
+
+
+    position: absolute;
+    top:1000px;
+    right: 400px;
+
+}
+
+
+#uploadsubmitbtn{
+
+    position: absolute;
+    top:1100px;
+    right: 800px;
+
+
+
+}
+
+#uploadcancelbtn{
+
+
+    position: absolute;
+    top:1100px;
+    right: 600px;
+
+}
+
+
+
+
+
+.nav {
+    width: 100%;
+    height: 65px;
+    position: relative;
+    line-height: 65px;
+    text-align: center;
+}
+
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 2rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 0.8 rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+
+#logo_2{
+    position: absolute;
+    width: 100px;
+    height: 100.5px;
+    left: 92px;
+    top: 40px;
+    overflow: visible;
+    border-radius:50%;
+}
+
+#Voltage_Entertainment2 {
+    left: 205px;
+    top: 70px;
+    position: absolute;
+    overflow: visible;
+    width: 493px;
+    white-space: nowrap;
+    line-height: 110px;
+    margin-top: -30px;
+    text-align: left;
+    font-family: Jaapokki enchance;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(0,177,255,1);
+
+}
+
+.viewbox2 {
+    overflow: visible;
+    position: absolute;
+    width: 633.183px;
+    height: 680.287px;
+    left: 10.5px;
+    top: 28.888px;
+    background-image: linear-gradient(-90deg,black,rgb(66, 170, 202));
+    opacity:0.3;
+    border-radius: 25px;
+    transform: matrix(1,0,0,1,0,0);
+}

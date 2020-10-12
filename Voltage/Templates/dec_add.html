@@ -18,11 +18,11 @@
    
 
     <div class="first_one">
-        
+    </form method="POST">   
         <center>
 
             <label for="Name" style="color:white">Package Name:</label>
-            <input type="text" id="name" name="name" size="20">
+            <input type="text" id="name" name="dec_name" size="20" required>
         </center><br>
 		<center>
 		    <img src="C:\Users\Win 10\Desktop\Chamodi9\Images\a.png" width="200" height="200">
@@ -31,28 +31,37 @@
             <img src="C:\Users\Win 10\Desktop\Chamodi9\Images\a.png" width="200" height="200">
             <img src="C:\Users\Win 10\Desktop\Chamodi9\Images\a.png" width="200" height="200">  
         </center>
-		<br><br>
-		<a href="#" class="myButton" id = "c1">Upload</a>
-		<a href="#" class="myButton" id = "c2">Upload</a>
-		<a href="#" class="myButton" id = "c3">Upload</a>
-		<a href="#" class="myButton" id = "c4">Upload</a>
-		<a href="#" class="myButton" id = "c5">Upload</a>
-	
+        <br><br>
+        
+		
+        <input type="file" class="myButton" id = "c1" value="Upload" name="dec_img1" required>
+        <input type="file" class="myButton" id = "c2" value="Upload" name="dec_img2" required>
+        <input type="file" class="myButton" id = "c3" value="Upload" name="dec_img3" required
+        <input type="file" class="myButton" id = "c4" value="Upload" name="dec_img4" required>
+        <input type="file" class="myButton" id = "c5" value="Upload" name="dec_img5" required>
+
+	    
 		</div>
 		<br><br><br>
 		
 		<div class="sub">
         <center>
          <table>
-		 <th><svg class="viewbox3" ></svg></th>
+         <th><textarea class="viewbox3" required></textarea></th>
 		 
-            <a href="#" class="myButton" id = "confirm">Add</a>
+            <input type="submit" class="myButton" id = "confirm" value="Add">
             <a href="#" class="myButton" id = "send">Cancel</a>
 		
 		</table>
         
         </center>
-		
+        {% if messages %}
+        {% for message in messages %}
+        <h2 style="color:blue;">{{message}}</h2>
+        {% endfor %}
+        {% endif %}
+
+    <form>	
 		
     </div>
      

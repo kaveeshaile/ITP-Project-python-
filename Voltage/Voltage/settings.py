@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'photography',
     'soundsystems',
     'payment',
+    'decorations'
 
 
 ]
