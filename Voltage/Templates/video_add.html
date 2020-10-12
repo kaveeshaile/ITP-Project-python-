@@ -13,6 +13,14 @@
 <!-- Bootstrap core CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -75,23 +83,46 @@
 <div class="col-lg-10 col-xl-8">
 
 <div class="media d-block d-md-flex">
-<img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" src="https://mdbootstrap.com/img/Others/documentation/img (20)-mini.jpg"
+<img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto"  src="https://images.unsplash.com/photo-1541534401786-2077eed87a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id= "vidprofilepic" width = "140px"  style = "border-radius:50%"
         alt="Avatar">
 <div class="media-body text-center text-md-left ml-md-3 ml-0">
 
 
 
-<form method = "POST" action= {% url 'addvideo' %}>
+<form method = "POST">
 {% csrf_token %}
-<div class="name">
-<input type="text" name="Name"  placeholder="Name" required><br><br>
-<input type="text" name="Contact"  placeholder="contact Number" required><br><br>
-<input type="email" placeholder="Email" name = "ContactEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required> <br><br>
-<input type="text" name="fee" id = "fee"  placeholder="Resrvation fee" required>
-<textarea id = "description" class ="textarea description" placeholder="Description" rows="6" cols="50">
-</textarea>
+<div class="details">
+<div class="md-form">
+  <input type="text" id="form1" name = "Name" class="form-control">
+  <label for="form1">Name</label>
+</div> 
+<div class="md-form">
+  <input type="text" id="form1" name = "fee" class="form-control">
+  <label for="form1">Reservation fee</label>
+</div>
+<br>
+<div class="md-form">
+  <textarea id="form7" class="md-textarea form-control" name = description rows="3"></textarea>
+  <label for="form7">Description</label>
 </div>
 
+<div class = "contact">
+<div class="md-form">
+  <input type="text" id="form1" name = "Contact" class="form-control">
+  <label for="form1">Contact</label>
+</div> 
+<div class="md-form">
+  <input type="text" id="form1" name = "ContactEmail" class="form-control">
+  <label for="form1">Email</label>
+</div> 
+</div>
+ <input type="text" id="setStatus" value="out" name = "status" class="form-control">
+<div class = "setStatus">
+<label class="switch">
+  <input type="checkbox" id = "status" >
+  <span class="slider round"></span>
+</label>
+</div>
 
 <div class="add">
 <input class="myButton" id = "addvideographer" input type="submit" value="Add" name="submit">
@@ -140,19 +171,13 @@ Your browser does not support the video tag.
 </video>
 
 <input type='file' onchange="readURL(this);" />
-    <video id="blah" src="#"  autoplay loop controls muted  autoplay alt="your image" />
+    <video id="vid" src="#"  autoplay loop controls muted  autoplay alt="video" />
 
 
 </div>
 
 </form>
 
-<div class = "setStatus">
-<div class="custom-control custom-switch">
-  <input type="checkbox" class="custom-control-input" value = "no" id="customSwitches">
-  <label class="custom-control-label" style="color:white;" for="customSwitches">Status</label>
-</div>
-</div>
 
 
 
@@ -164,7 +189,7 @@ Your browser does not support the video tag.
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    $('#blah')
+                    $('#vid')
                         .attr('src', e.target.result)
                         .width(250)
                         .height(180);
@@ -175,6 +200,21 @@ Your browser does not support the video tag.
         }
 
         </script>
+
+
+ <script>
+
+$('input[type=checkbox]').click(function () {
+    if ($('input[type=checkbox]').is(':checked')) {
+        $('#setStatus').val('In');
+    }
+    else{
+        $('#setStatus').val('Out');
+    }
+});
+    </script>
+
+    
 
 </body>
  

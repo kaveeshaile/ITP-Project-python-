@@ -59,9 +59,44 @@
 		
 </svg>
 
-<a href="#" class="myButton" id = "confirm">confirm</a>
-<a href="#" class="myButton" id = "send">Send a mail</a>
+
+<button type ="button" onclick="location.href= '{% url 'sendmail' %}'" class="myButton" id = "confirm">Send a mail</button>
 <a href="#" class="myButton" id = "back">back</a>
+
+
+
+
+<div class ="UserName">
+{% for cus in customer %} 
+<p><strong>{{cus.F_name}}</strong></p>
+{% endfor %}
+</div>
+
+
+
+
+<div class ="eventDetails">
+
+{% for res in event %} 
+<p><strong>{{res.Contact}}</strong></p>
+<p><strong>{{res.Date}}</strong></p>
+<p><strong>{{res.Location}}</strong></p>
+<p><strong>{{res.Event_type}}</strong></p>
+<button type ="button" onclick="location.href= '{% url 'ConfirmEvent' id=res.Event_ID %}'" class="myButton" id = "confirm">confirm</button>
+
+{% endfor %}
+
+</div>
+
+<div class ="resDetails">
+
+{% for res in reservations %} 
+<p><strong>{{res.Resources_ID}}</strong></p>
+<p><strong>{{res.Date}}</strong></p>
+
+{% endfor %}
+
+</div>
 
 
 
