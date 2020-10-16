@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'admin_panel',
     'photography',
     'soundsystems',
-    'payment',
-    'decorations'
+    'payment'
+    
 
 
 ]
