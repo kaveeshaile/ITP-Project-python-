@@ -61,4 +61,13 @@ VALUES (NEW.id,'videography');
 END;//
 DELIMITER ;
 
+DELIMITER //
+CREATE TRIGGER copy_video_to_samples AFTER INSERT ON videography
+FOR EACH ROW
+BEGIN
+INSERT INTO samples (Resources_ID) 
+VALUES (NEW.id,'videography');  
+END;//
+DELIMITER ;
+
 drop trigger move_video_to_resources; 

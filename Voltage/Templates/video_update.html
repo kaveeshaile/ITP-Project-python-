@@ -75,6 +75,11 @@
 		<span>Voltage Entertainment</span>
 	</div>
 
+  <div class = "h4">
+<h4>Upload sample video</h4>
+</div>
+
+
 <br><br>
 <!-- Grid row -->
 <div class="row">
@@ -82,23 +87,36 @@
 <!-- Grid column -->
 <div class="col-lg-10 col-xl-8">
 
-<div class="media d-block d-md-flex">
-<img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" src="https://images.unsplash.com/photo-1541534401786-2077eed87a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id= "vidprofilepic" width = "140px"  style = "border-radius:50%"
-        alt="Avatar">
-<div class="media-body text-center text-md-left ml-md-3 ml-0">
-
-
 
 
  {% for vid in videography %}
 
-<form method = "POST" action = "{% url 'UpdateVideoGrapher'%}">
+<form method = "POST" action = "{% url 'UpdateVideoGrapher'%}"  enctype = "multipart/form-data">
 {% csrf_token %}
+
+
+<div class="upload">
+
+      <span><i class="fas fa-cloud-upload-alt mr-2"></i>Choose files</span>
+      <input type="file" onchange="readURL(this);" id= "profile_pic" name = "profile_pic" >
+
+</div>
+
+
+<div class="media d-block d-md-flex">
+<img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" src="media\{{vid.profile_pic}}" 
+ id= "vidprofilepic" width = "140px" height = "140px" style = "border-radius:50%"
+        alt="Avatar">
+<div class="media-body text-center text-md-left ml-md-3 ml-0">
+
+
 <input type="text" name="id" id = "idonupdate" value = {{vid.id}} ><br><br>
-<div class="details">
+
+<div class = "vidDetails">
+
 <div class="md-form">
-  <input type="text" name = "Name" id="form1" value = "{{vid.Name}}" class="form-control">
-  <label for="form1">Name</label>
+  <input type="text" name = "Name" id="name" value = "{{vid.Name}}" class="form-control">
+  <label for="form1">Name</label> 
 </div> 
 <div class="md-form">
   <input type="text" Name = "fee" id="form1" value = "{{vid.Fee}}" class="form-control">
@@ -108,6 +126,8 @@
 <div class="md-form">
   <textarea id="form7" name = "description" class="md-textarea form-control" rows="3">{{vid.Description}}</textarea>
   <label for="form7">Description</label>
+</div>
+
 </div>
 
 <div class = "contact">
@@ -120,18 +140,35 @@
   <label for="form1">Email</label>
 </div> 
 </div>
-<div class = "setStatus">
-<div class="custom-control custom-switch">
-  <input type="checkbox" class="custom-control-input" value = "no" id="customSwitches">
-  <label class="custom-control-label" style="color:white;" for="customSwitches">Status</label>
+
+ <input type="text" id="setStatus" value="Out" name = "status" class="form-control">
+<div class = "Status">
+<label class="switch">
+  <input type="checkbox" id = "status" >
+  <span class="slider round"></span>
+</label>
 </div>
+
+
+
+
+ {% for sam in video_samples %}
+<div class = "vid1">
+<video id="vid" src="media\{{sam.Samples}}" width="520" height="450" autoplay loop controls muted  autoplay alt="video"/>
+</video>
+<input type="file" id = "sample" name = "sample"   onchange="readVideoURL(this);" >
+
+
+
 </div>
+
 
 <input class="myButton" id = "update" input type="submit" value="Update" name="submit">
 
  </form>
 <input class="myButton" onclick="location.href='{% url 'RemoveVideoGrapher' id=vid.id %}'"  id = "delete"  value="Delete"</button>
  
+ {% endfor %}
 
   {% endfor %}
 
@@ -143,31 +180,64 @@
 <!-- Grid row -->
 
 
-<div class = "vid1">
-<video class="sample" autoplay loop controls muted  width="270" height="200" autoplay>>
-<source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-</video>
 
-<video width='270' height= '200'autoplay loop controls muted  autoplay>
-<source src="{% static 'images/video.mp4' type='video/mp4' %}">
-Your browser does not support the video tag.
-</video>
-</div>
+  <script>
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#vidprofilepic')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(150);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        </script>
 
 
-<div class = "vid2">
-<video class="sample" autoplay loop controls muted  width="270" height="200" autoplay>>
-<source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-</video>
 
-<video width='270' height= '200'autoplay loop controls muted  autoplay>
-<source src="{% static 'images/video.mp4' type='video/mp4' %}">
-Your browser does not support the video tag.
-</video>
-</div>
+    <script>
+    function readVideoURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#vid')
+                        .attr('src', e.target.result)
+                        .width(520)
+                        .height(450);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        </script>
+
+
+
+
+ <script>
+
+$('input[type=checkbox]').click(function () {
+    if ($('input[type=checkbox]').is(':checked')) {
+        $('#setStatus').val('In');
+    }
+    else{
+        $('#setStatus').val('Out');
+    }
+});
+    </script>
 
   
+
 
 </body>
  
 </html>
+

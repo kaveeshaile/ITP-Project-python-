@@ -9,6 +9,13 @@
 }
 
 
+.h4{
+  color: #00BCD4;
+  position: absolute;
+  left: 870px;
+  top: 180px;
+}
+
 body{
     background-color:black;
     padding-bottom: 58 px;
@@ -78,8 +85,15 @@ body{
 
 .contact{
   position:absolute;
-  top: 0.5px;
-  left: 290px;
+  top: 140px;
+  left: 330px;
+}
+
+
+.vidDetails{
+  position:absolute;
+  top: 140px;
+  left: 30px;
 }
 
 
@@ -94,6 +108,12 @@ body{
   left: 170px;
 }
 
+.updateStatus{
+  position:absolute;
+  top: 90px;
+  left: 170px;
+}
+
 #setStatus{
   position:absolute;
   top: -55px;
@@ -101,6 +121,15 @@ body{
   border: transparent;
   background-color: transparent;
 }
+
+#updateStatus{
+  position:absolute;
+  top: 85px;
+  left: 240px;
+  border: transparent;
+  background-color: transparent;
+}
+
 
 #addvideographer{
     position:absolute;
@@ -111,17 +140,17 @@ body{
 
 .vid1{
     position:absolute;
-    top: 30px;
-    left: 600px;
+    top: -40px;
+    left: 650px;
     display:block;
 }
 
-.vid2{
+/* .vid2{
   position:absolute;
   top: 30px;
   left: 900px;
   display:block;
-}
+} */
 
 .sample_upload{
 border: 1px solid #ccc;

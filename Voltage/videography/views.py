@@ -5,10 +5,13 @@ from django.contrib import messages
 from videography.models import video_add
 from admin_panel.models import reservations
 from videography.models import resources
+from videography.models import video_samples
 from datetime import date
 import datetime
 from django.db.models import Q
 from django.shortcuts import redirect
+import base64
+
 # Create your views here.
 
 
@@ -22,11 +25,15 @@ def addvideo(request):
          saverecord.ContactEmail  = request.POST.get('ContactEmail')
          saverecord.Fee = request.POST.get('fee')
          saverecord.Description = request.POST.get('description')
+         saverecord.profile_pic = request.FILES.get('profile_pic')
          saverecord.save()
          last = resources.objects.last()
          last.Status = request.POST.get('status')
          last.Admin_ID = admin
          last.save()
+         sample1 = video_samples.objects.last()
+         sample1.Samples =  request.FILES.get('sample')
+         sample1.save()
 
         return redirect(displayAlltoAdmin)
     else:
@@ -37,17 +44,25 @@ def addvideo(request):
      
 def displayall(request):
     if request.method == 'POST':
+           
        if request.POST.get('checkdate'):
+              
         date = request.POST.get('checkdate')
         booked = reservations.objects.filter(Q(S_Time__date = date)| Q(E_Time__date = date))
         bookedID = [item.Resources_ID for item in booked]
         videogrpher = video_add.objects.exclude(id__in = bookedID)
         return render(request,'video_customer_main.html',{'videography':videogrpher})
+     
        else:
+              
         messages.warning(request, 'Please Enter the Date!')
         return redirect(request.META.get('HTTP_REFERER'))
+     
     else:
-        videogrpher = video_add.objects.all()
+           
+        check = resources.objects.filter(Status = "Out")
+        checkId = [item.Resources_ID for item in check]
+        videogrpher = video_add.objects.exclude(id__in = checkId)
         return render(request,'video_customer_main.html',{'videography':videogrpher})
     
     
@@ -65,10 +80,12 @@ def displayAlltoAdmin(request):
     if request.method == 'POST':
        if request.POST.get('id'):
         id = request.POST.get('id')
-        videogrpher = video_add.objects.filter(id = id)
-       return render(request,'video_update.html',{'videography':videogrpher})
+        videographer = video_add.objects.filter(id = id)
+        samples = video_samples.objects.filter(Resources_ID=id)
+        context = {'videography':videographer, 'video_samples':samples}
+        return render(request,'video_update.html',context=context)
     else:
-      
+        photo = video_add.objects.all().values('profile_pic')
         videogrpher = video_add.objects.all()
         return render(request,'video_recently_added.html',{'videography':videogrpher})
         
@@ -79,8 +96,10 @@ def RemoveVideoGrapher(request,id):
    
        videogrpher = video_add.objects.filter(id = id)
        resource = resources.objects.filter(Resources_ID = id)
+       sample = video_samples.objects.filter(Resources_ID=id)
        videogrpher.delete()
        resource.delete()
+       sample.delete()
        return redirect(displayAlltoAdmin) 
    
    
@@ -95,22 +114,38 @@ def UpdateVideoGrapher(request):
        if request.POST.get('Name'):
         id =  request.POST.get('id')
         vid = video_add.objects.get(id = id)
+        sam = video_samples.objects.get(Resources_ID = id)
         vid.Name =  request.POST.get('Name')
         vid.Fee =  request.POST.get('fee')
         vid.Contact =  request.POST.get('Contact')
         vid.ContactEmail =  request.POST.get('ContactEmail')
         vid.Description =  request.POST.get('description')
+        sam.Samples =  request.FILES.get('sample')
         vid.save()
+        if request.FILES.get('sample') == None:
+            
+            print('null')
+        else:
+            
+            sam.save()
+           
+        
+        print(sam.Samples)
+     
+      
+  
+          
+            
+            
        return redirect(displayAlltoAdmin) 
     else:
-           
-           
+      
          return render(request,'video_add.html')
    
     
 def bookVideographer(request):
  if request.method == 'POST':
-      if request.POST.get('bookingdate'):
+      if request.POST.get('bookingdate') and request.POST.get('enddate'):
     
          date = request.POST.get('bookingdate')
          videographer=reservations()

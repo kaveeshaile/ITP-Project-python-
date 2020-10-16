@@ -83,14 +83,26 @@
 <div class="col-lg-10 col-xl-8">
 
 <div class="media d-block d-md-flex">
+
 <img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto"  src="https://images.unsplash.com/photo-1541534401786-2077eed87a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id= "vidprofilepic" width = "140px"  style = "border-radius:50%"
         alt="Avatar">
 <div class="media-body text-center text-md-left ml-md-3 ml-0">
 
 
 
-<form method = "POST">
+<form method = "POST" enctype = "multipart/form-data">
 {% csrf_token %}
+
+
+
+<div class="upload">
+
+      <span><i class="fas fa-cloud-upload-alt mr-2"></i>Choose files</span>
+      <input type="file" onchange="readURL(this);" id= "profile_pic" name = "profile_pic" >
+
+</div>
+
+
 <div class="details">
 <div class="md-form">
   <input type="text" id="form1" name = "Name" class="form-control">
@@ -116,7 +128,7 @@
   <label for="form1">Email</label>
 </div> 
 </div>
- <input type="text" id="setStatus" value="out" name = "status" class="form-control">
+ <input type="text" id="setStatus" value="Out" name = "status" class="form-control">
 <div class = "setStatus">
 <label class="switch">
   <input type="checkbox" id = "status" >
@@ -124,22 +136,17 @@
 </label>
 </div>
 
+<div class = "vid1">
+<input type="file" name = "sample" onchange="readVideoURL(this);" >
+<video id="vid" src=""  autoplay loop controls muted  autoplay alt="video"/>
+</div>
+
 <div class="add">
 <input class="myButton" id = "addvideographer" input type="submit" value="Add" name="submit">
 </div>
- </form>
-
-
-<div class="upload">
-<form class="md-form" action="#">
-  <div class="file-field">
-    <div class="btn blue-gradient btn-sm float-left">
-      <span><i class="fas fa-cloud-upload-alt mr-2" aria-hidden="true"></i>Choose files</span>
-      <input type="file" >
-    </div>
-  </div>
 </form>
-</div>
+
+
 
 
 </div>
@@ -149,42 +156,32 @@
 <!-- Grid row -->
 
 
-<div class = "vid1">
-
-<video class="sample" autoplay loop controls muted  width="250" height="180" autoplay>>
-<source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-</video>
-
-<video width='250' height= '180'autoplay loop controls muted  autoplay>
-<source src="{% static 'images/video.mp4' type='video/mp4' %}">
-Your browser does not support the video tag.
-</video>
-<input type="file" multiple class = "sample_upload">
-
-</div>
-
-
-<div class = "vid2">
-
-<video class="sample" autoplay loop controls muted  width="250" height="180" autoplay>>
-<source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-</video>
-
-<input type='file' onchange="readURL(this);" />
-    <video id="vid" src="#"  autoplay loop controls muted  autoplay alt="video" />
-
-
-</div>
-
-</form>
-
-
 
 
 
 
     <script>
     function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#vidprofilepic')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(150);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        </script>
+
+
+
+    <script>
+    function readVideoURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
@@ -200,6 +197,8 @@ Your browser does not support the video tag.
         }
 
         </script>
+
+
 
 
  <script>
