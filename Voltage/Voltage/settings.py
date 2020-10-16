@@ -43,13 +43,8 @@ INSTALLED_APPS = [
     'admin_panel',
     'photography',
     'soundsystems',
-<<<<<<< HEAD
     'payment',
 
-=======
-    'payment'
-    
->>>>>>> eb9dd413c7b9bd13ff3499ab1d3558311555e7cb
 
 
 ]
@@ -93,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'voltage_entertainment',
         'USER': 'root',
-        'PASSWORD': 'mendax99',
+        'PASSWORD': 'mysql',
         'HOST': 'localhost',
         'PORT': '3306',
     }
