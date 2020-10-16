@@ -11,6 +11,7 @@ class events(models.Model):
    Customer_ID = models.CharField(max_length=10)
    Date = models.CharField(max_length=20)
    Status = models.CharField(max_length=100)
+   OnCreateTime = models.DateTimeField(blank=True,null=True)
    class Meta:
      db_table = "event"
      

@@ -141,14 +141,15 @@
 </div> 
 </div>
 
- <input type="text" id="setStatus" value="Out" name = "status" class="form-control">
+{% for res in resources %}
+ <input type="text" id="setStatus" value="{{res.Status}}" name = "status" class="form-control">
 <div class = "Status">
 <label class="switch">
   <input type="checkbox" id = "status" >
   <span class="slider round"></span>
 </label>
 </div>
-
+ {% endfor %}
 
 
 
@@ -157,9 +158,6 @@
 <video id="vid" src="media\{{sam.Samples}}" width="520" height="450" autoplay loop controls muted  autoplay alt="video"/>
 </video>
 <input type="file" id = "sample" name = "sample"   onchange="readVideoURL(this);" >
-
-
-
 </div>
 
 
@@ -234,8 +232,16 @@ $('input[type=checkbox]').click(function () {
 });
     </script>
 
-  
+    <script>
 
+    var input = $('#setStatus').val()
+
+  if(input === "In"){
+  $("#status").prop('checked', true);
+  }
+    </script>
+
+  
 
 </body>
  

@@ -6,6 +6,7 @@ from videography.models import video_add
 from admin_panel.models import reservations
 from videography.models import resources
 from videography.models import video_samples
+from admin_panel.models import events
 from datetime import date
 import datetime
 from django.db.models import Q
@@ -69,8 +70,10 @@ def displayall(request):
           
 def VideographerProfile(request,id):
    
-       videogrpher = video_add.objects.filter(id = id)
-       return render(request,'video_profile.html',{'videography':videogrpher})
+       videographer = video_add.objects.filter(id = id)
+       samples = video_samples.objects.filter(Resources_ID=id)
+       context = {'videography':videographer, 'video_samples':samples}
+       return render(request,'video_profile.html',context=context)
    
    
    
@@ -82,12 +85,12 @@ def displayAlltoAdmin(request):
         id = request.POST.get('id')
         videographer = video_add.objects.filter(id = id)
         samples = video_samples.objects.filter(Resources_ID=id)
-        context = {'videography':videographer, 'video_samples':samples}
+        res = resources.objects.filter(Resources_ID=id)
+        context = {'videography':videographer, 'video_samples':samples, 'resources':res}
         return render(request,'video_update.html',context=context)
     else:
-        photo = video_add.objects.all().values('profile_pic')
-        videogrpher = video_add.objects.all()
-        return render(request,'video_recently_added.html',{'videography':videogrpher})
+        videographer = video_add.objects.all()
+        return render(request,'video_recently_added.html',{'videography':videographer})
         
         
 
@@ -115,43 +118,49 @@ def UpdateVideoGrapher(request):
         id =  request.POST.get('id')
         vid = video_add.objects.get(id = id)
         sam = video_samples.objects.get(Resources_ID = id)
+        res = resources.objects.get(Resources_ID = id)
         vid.Name =  request.POST.get('Name')
         vid.Fee =  request.POST.get('fee')
         vid.Contact =  request.POST.get('Contact')
         vid.ContactEmail =  request.POST.get('ContactEmail')
         vid.Description =  request.POST.get('description')
+        res.Status = request.POST.get('status')
+        profilpic = request.FILES.get('profile_pic')
+        res.save()
+        
+        if profilpic == None: #check if profile picture changed
+             vid.save()
+        else:
+            vid.profile_pic = profilpic
+            vid.save()
+            
         sam.Samples =  request.FILES.get('sample')
-        vid.save()
         if request.FILES.get('sample') == None:
             
             print('null')
         else:
             
             sam.save()
-           
-        
-        print(sam.Samples)
-     
-      
-  
-          
-            
-            
+    
        return redirect(displayAlltoAdmin) 
     else:
       
          return render(request,'video_add.html')
+     
+     
+     
    
     
 def bookVideographer(request):
  if request.method == 'POST':
       if request.POST.get('bookingdate') and request.POST.get('enddate'):
-    
+          
+         eventID = request.session['eventID']
          date = request.POST.get('bookingdate')
          videographer=reservations()
          videographer.S_Time = request.POST.get('bookingdate')
          videographer.E_Time = request.POST.get('enddate')
-         videographer.Event_ID = '2'
+         videographer.Event_ID = eventID
          vid = request.POST.get('vid')
          videographer.Resources_ID = vid
          mydate = date[0:10];
@@ -169,7 +178,7 @@ def bookVideographer(request):
             
             else:
                 videographer.save()
-                return redirect(displayall)
+                return render(request,'main_reservation_page.html')
         
             
       else:
@@ -178,3 +187,56 @@ def bookVideographer(request):
  else:
     return redirect(displayall)
        
+
+def CreateEvent(request):
+    
+     if request.method == 'POST':
+          if request.POST.get('eventDate'):
+              
+              date =  request.POST.get('eventDate')
+              converted_date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
+              
+              if converted_date < datetime.datetime.now().date():
+                  
+                    messages.warning(request, 'Please Enter a valid Date')
+                    return redirect(request.META.get('HTTP_REFERER'))
+              else:
+                   
+                 event=events()
+                 event.Date = request.POST.get('eventDate')
+                 event.Event_type = request.POST.get('type')
+                 event.Location = request.POST.get('location')
+                 event.Contact = request.POST.get('contact')
+                 event.Customer_ID = '12'
+                 event.OnCreateTime = datetime.datetime.now()
+                 event.save()
+                 last = events.objects.last()
+                 eID = last.Event_ID
+                 print(eID)
+                 request.session['eventID'] = eID
+                 eve = events.objects.filter(Event_ID = eID)
+                 return render(request,'main_reservation_page.html',{'event':eve})
+          else:
+                messages.warning(request, 'Please enter the event date!')
+                return redirect(request.META.get('HTTP_REFERER'))
+     else:
+         return render(request,'event_create.html')
+     
+     
+def submitEvent(request):
+     id = request.session['eventID']
+     event = events.objects.get(Event_ID = id)
+     event.Status = 'waiting'
+     event.save()
+     return render(request,'home.html') 
+    
+    
+def CancelEvent(request,id):
+    event = events.objects.filter(Event_ID = id)
+    event.delete()
+    res = reservations.objects.filter(Event_ID=id)
+    if res != None:
+       res.delete()
+    return render(request,'home.html') 
+    
+    
