@@ -219,46 +219,37 @@
 
 	<!--Add information about the package-->
 
+
+				<form method = "POST">
+				{% csrf_token %}
+
 				<div class="packname">
-
-					<form class="form-inline">
-
+	
 				<div class="form-group mx-sm-3 mb-2">
 					<label for="" class="sr-only"></label>
-					<input type="text" class="form-control" id="inputPassword2" placeholder="Package Name" required>
+					<input type="text" class="form-control" id="inputPassword2" name="packname" placeholder="Package Name" required>
 				</div>
-
-				</form>
 
 				</div>
 
 
 					<div class="suitable">
 
-					<form class="form-inline">
-
 				<div class="form-group mx-sm-3 mb-2">
 					<label for="" class="sr-only"></label>
-					<input type="text" class="form-control" id="inputPassword2" placeholder="Suitable For" required>
+					<input type="text" class="form-control" id="inputPassword2" name="suitable" placeholder="Suitable For" required>
 				</div>
 
-				</form>
-
 				</div>
-
-
 
 				
 					<div class="brand">
 
-					<form class="form-inline">
 
 				<div class="form-group mx-sm-3 mb-2">
 					<label for="" class="sr-only"></label>
-					<input type="text" class="form-control" id="inputPassword2" placeholder="Brand" required>
+					<input type="text" class="form-control" id="inputPassword2" name="brand" placeholder="Brand" required>
 				</div>
-
-				</form>
 
 				</div>
 
@@ -266,16 +257,16 @@
 				
 					<div class="price">
 
-					<form class="form-inline">
 
 				<div class="form-group mx-sm-3 mb-2">
 					<label for="" class="sr-only"></label>
-					<input type="text" class="form-control" id="inputPassword2" placeholder="Price" required>
+					<input type="text" class="form-control" id="inputPassword2"  name="price" placeholder="Price" required>
 				</div>
 
-				</form>
 
 				</div>
+
+
 
 
 	<!--/Add information about the package-->
@@ -283,18 +274,20 @@
 
 	<div id="uploadsubmitbtn">
 
-		<button type="button" class="btn btn-warning">Cancel</button>
+		<input type="reset" value="Reset" >
+		<!--<button input type="submit" class="btn btn-warning">Cancel</button>-->
 
 	</div>
 
 
 	<div id="uploadcancelbtn">
 
-		<button type="button" class="btn btn-warning">Submit</button>
+		<input class="myButton" id = "submitinfo" input type="submit" value="SUBMIT" name="submit">
+		<!--<button input type="submit" class="btn btn-warning">Submit</button>-->
 
 	</div>
 
-
+</form>
 
 
 

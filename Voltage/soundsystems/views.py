@@ -6,16 +6,17 @@ from django.shortcuts import redirect
 
 
 
+
 def sound_admin_upload(request): 
     
      if request.method == 'POST':
-             if request.POST.get('Packn') and request.POST.get('Suitable') and request.POST.get('Brand') and request.POST.get('Price'):
+             if request.POST.get('packname') and request.POST.get('suitable') and request.POST.get('brand') and request.POST.get('price'):
                     saverecord=sound_admin_upload()
-                    saverecord.Package_name = request.POST.get('Packn')
-                    saverecord.Suitable_for = request.POST.get('Suitable')
-                    saverecord.Brand  = request.POST.get('Brand')
-                    saverecord.Price = request.POST.get('Price')
-                    saverecord.Description = request.POST.get('sounddescription')
+                    saverecord.Package_name = request.POST.get('packname')
+                    saverecord.Suitable_for = request.POST.get('suitable')
+                    saverecord.Brand  = request.POST.get('brand')
+                    saverecord.Price = request.POST.get('price')
+                    saverecord.Description = request.POST.get('description')
                     saverecord.save()
                     return redirect(sound_update)
      else:
