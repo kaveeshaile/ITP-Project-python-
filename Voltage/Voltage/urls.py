@@ -19,9 +19,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+
+    path('', include('soundsystems.urls')),
+    path('', include('videography.urls')),
     path('', include('home.urls')),
     path('', include('admin_panel.urls')),
-    path('', include('videography.urls')),
     path('', include('photography.urls')),
     path('', include('payment.urls')),
     path('admin/', admin.site.urls)
