@@ -213,6 +213,9 @@ $(document).ready(function(){
 
 
 
+<form method = "POST" action = "{% url 'sound_update'%}"  enctype = "multipart/form-data">
+{% csrf_token %}
+
 <div class="updatetable">
 
 <div class="container-lg">
@@ -238,9 +241,9 @@ $(document).ready(function(){
                 </thead>
                 <tbody>
                     <tr>
-                        <td>John Doe</td>
-                        <td>Administration</td>
-                        <td>(171) 555-2222</td>
+                        <td>{{sound.Package_name}}</td>
+                        <td>{{sound.Suitable_for}}</td>
+                        <td>{{sound.Price}}</td>
                         <td>
                             <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                             <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -248,9 +251,9 @@ $(document).ready(function(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Peter Parker</td>
-                        <td>Customer Service</td>
-                        <td>(313) 555-5735</td>
+                        <td>fdfdf</td>
+                        <td>fdfdfd</td>
+                        <td>fdfdfdf</td>
                         <td>
                             <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                             <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -258,9 +261,9 @@ $(document).ready(function(){
                         </td>
                     </tr>
                     <tr>
-                        <td>Fran Wilson</td>
-                        <td>Human Resources</td>
-                        <td>(503) 555-9931</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
                             <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                             <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -275,6 +278,7 @@ $(document).ready(function(){
 
 </div>
 
+</form>
 
 
 </body>
