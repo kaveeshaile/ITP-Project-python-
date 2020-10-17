@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'admin_panel',
     'photography',
     'soundsystems',
-    'payment'
-    
+    'payment',
+
 
 
 ]
@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'voltage_entertainment',
         'USER': 'root',
-        'PASSWORD': 'mendax99',
+        'PASSWORD': 'mysql',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -132,6 +132,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'static/media')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')

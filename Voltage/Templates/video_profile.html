@@ -74,10 +74,7 @@
 <!-- Grid column -->
 <div class="col-lg-10 col-xl-8">
 
-<div class="media d-block d-md-flex">
-<img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" src="https://images.unsplash.com/photo-1541534401786-2077eed87a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id= "vidprofilepic" width = "140px"  style = "border-radius:50%"
-        alt="Avatar">
-<div class="media-body text-center text-md-left ml-md-3 ml-0">
+
 
 
 
@@ -95,6 +92,14 @@
 
  <form method = "POST"  action = "{% url 'bookVideographer'%}">
 {% csrf_token %}
+
+
+<div class="media d-block d-md-flex">
+<img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" src="\media\{{vid.profile_pic}}" id= "vidprofilepic" width = "140px" height = "140px" style = "border-radius:50%"
+        alt="Avatar">
+<div class="media-body text-center text-md-left ml-md-3 ml-0">
+
+
 <div class="details"> 
 <p>{{vid.Name}}</p>
 <div class = "contact_profile">
@@ -107,6 +112,16 @@
 </div>
 <input type="datetime-local" id="daytime1" name="bookingdate">
 <input type="datetime-local" id="daytime2" name="enddate">
+
+
+ {% for sam in video_samples %}
+<div class = "vid1">
+<video id="vid" src="\media\{{sam.Samples}}" width="520" height="450" autoplay loop controls muted  autoplay alt="video"/>
+</video>
+
+
+
+{% endfor %}
 {% endfor %}
 
 
@@ -122,38 +137,6 @@
 
 </div>
 <!-- Grid row -->
-
-
-<div class = "vid1">
-<video class="sample" autoplay loop controls muted  width="250" height="180" autoplay>>
-<source src="{% static 'images/video2.mp4' type='video/mp4' %}"> type="video/mp4" />
-</video>
-
-<video width='250' height= '180'autoplay loop controls muted  autoplay>
-<source src="{% static 'images/video.mp4' type='video/mp4' %}">
-Your browser does not support the video tag.
-</video>
-</div>
-
-
-<div class = "vid2">
-<video class="sample" autoplay loop controls muted  width="250" height="180" autoplay>>
-<source src="{% static 'images/video2.mp4' type='video/mp4' %}" type="video/mp4" />
-</video>
-
-<video width='250' height= '180'autoplay loop controls muted  autoplay>
-<source src="{% static 'images/video.mp4' type='video/mp4' %}">
-Your browser does not support the video tag.
-</video>
-</div>
-
-
-
-
-
-
-
-
 
   
 

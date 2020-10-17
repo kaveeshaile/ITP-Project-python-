@@ -84,7 +84,7 @@
      <form method = "POST">
 {% csrf_token %}
    <div class="pricing-box pricing-box-bg-image text-center">
-		<h5><br><img src="https://images.unsplash.com/photo-1541534401786-2077eed87a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id= "vidprofilepic" width = "110px"  style = "border-radius:50%" ></h5>
+		<h5><br><img src="media\{{vid.profile_pic}}" id= "vidprofilepic" width = "110px" height = "110px" style = "border-radius:50%" ></h5>
 		<input type="text" name="id" id = "vid_idtoadmin" value = {{vid.id}} ><br><br>
     <ul class="features-list">
 			<li><strong>{{vid.Name}}</strong></li>

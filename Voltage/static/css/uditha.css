@@ -9,6 +9,13 @@
 }
 
 
+.h4{
+  color: #00BCD4;
+  position: absolute;
+  left: 870px;
+  top: 180px;
+}
+
 body{
     background-color:black;
     padding-bottom: 58 px;
@@ -78,8 +85,15 @@ body{
 
 .contact{
   position:absolute;
-  top: 0.5px;
-  left: 290px;
+  top: 140px;
+  left: 330px;
+}
+
+
+.vidDetails{
+  position:absolute;
+  top: 140px;
+  left: 30px;
 }
 
 
@@ -94,6 +108,12 @@ body{
   left: 170px;
 }
 
+.updateStatus{
+  position:absolute;
+  top: 90px;
+  left: 170px;
+}
+
 #setStatus{
   position:absolute;
   top: -55px;
@@ -101,6 +121,15 @@ body{
   border: transparent;
   background-color: transparent;
 }
+
+#updateStatus{
+  position:absolute;
+  top: 85px;
+  left: 240px;
+  border: transparent;
+  background-color: transparent;
+}
+
 
 #addvideographer{
     position:absolute;
@@ -111,17 +140,17 @@ body{
 
 .vid1{
     position:absolute;
-    top: 30px;
-    left: 600px;
+    top: -40px;
+    left: 650px;
     display:block;
 }
 
-.vid2{
+/* .vid2{
   position:absolute;
   top: 30px;
   left: 900px;
   display:block;
-}
+} */
 
 .sample_upload{
 border: 1px solid #ccc;
@@ -822,78 +851,6 @@ input[type=email] {
 }
 
 
-.bg-dark{
-  position:absolute;
-  top:600px;
-  width: 1330px;
-  border-radius: 20px;
-  margin: 10px;
-}
-
-#footer{
-  background-color: rgb(5, 12, 12);
-  transform: matrix(1,0,0,1,0,0);
-  border-radius: 20px;
-}
-
-.copyright{
-  color: #00E676;
-  position: absolute;
-  top: 140px;
-  left: 520px;
-}
-
-#footer .twitter{
-  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  } 
-  #footer .linkedin{
-  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-  background-repeat: no-repeat;
-  background-position: -78px 0;
-  }   
-  #footer .facebook{
-  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-  background-repeat: no-repeat;
-  background-position: -233px 0;
-  }    
-  #footer .skype{
-  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-  background-repeat: no-repeat;
-  background-position: -156px 0;
-  }    
-  #footer .flickr{
-  background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
-  background-repeat: no-repeat;
-  background-position: -310px 0;
-  }    
-  #footer a{
-  height: 56px;
-  width: 56px;
-  display: inline-block;
-  margin: 10px;
-  }                                 
-  #footer a:hover{
-  transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  }   
-  #footer .twitter:hover {
-  background-position: 0 -56px;
-  }
-  #footer .facebook:hover {
-  background-position:-233px -56px;
-  }
-  #footer .skype:hover {
-  background-position: -156px -56px;
-  }
-  #footer .linkedin:hover {
-  background-position: -78px -56px;
-  }
-  #footer .flickr:hover {
-  background-position: -310px -56px;
-  }
-
 
 
  
@@ -993,6 +950,14 @@ input[type=email] {
     left:560px;
   }
 
+  .eventmessages{
+    color: rgb(207, 240, 63);
+    position: absolute;
+    top: 480px;
+    width: 250px;
+    left:520px;
+
+  }
 
   /* Login */
 
@@ -1364,4 +1329,6 @@ font-size: 30px;
 }
 
 
+
+/* Event */
 

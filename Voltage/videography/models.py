@@ -9,8 +9,16 @@ class video_add(models.Model):
  ContactEmail=models.CharField(max_length=45)
  Description=models.CharField(max_length=1200)
  Fee=models.CharField(max_length=45)
+ profile_pic = models.ImageField(null = True,blank = True,upload_to = "samples")
  class Meta:
     db_table = "videography"
+    
+    
+class video_samples(models.Model):
+       Resources_ID = models.CharField(max_length=20, primary_key=True)
+       Samples = models.FileField(null = True, blank = True, upload_to="samples", max_length=100)
+       class Meta:
+              db_table = "video_samples"
     
     
     
@@ -21,3 +29,4 @@ class resources(models.Model):
    Facility_ID = models.CharField(max_length=40)
    class Meta:
     db_table = "resources"
+    

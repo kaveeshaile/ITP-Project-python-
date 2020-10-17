@@ -10,8 +10,16 @@ CREATE TABLE `completed_events` (
   KEY `Customer_ID_idx` (`Customer_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO `voltage_entertainment`.`event`(`Event_type`,`Location`,`Contact`,`Customer_ID`,`Date`,`Status`)
-VALUES('gettogether','Malabe',9784755556,88, '2008-7-08','waiting');
+
+INSERT INTO `voltage_entertainment`.`event`
+(
+`Event_type`,
+`Location`,
+`Contact`,
+`Customer_ID`,
+`Date`)
+VALUES
+('get to gether','Horana', '07863223344','8','2020-12-12');
 
 
 
@@ -61,4 +69,13 @@ VALUES (NEW.id,'videography');
 END;//
 DELIMITER ;
 
-drop trigger move_video_to_resources; 
+DELIMITER //
+CREATE TRIGGER copy_video_to_samples AFTER INSERT ON videography
+FOR EACH ROW
+BEGIN
+INSERT INTO video_samples (Resources_ID) 
+VALUES (NEW.id);  
+END;//
+DELIMITER ;
+
+drop trigger copy_video_to_samples; 
