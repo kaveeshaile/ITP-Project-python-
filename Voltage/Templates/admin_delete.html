@@ -1,0 +1,103 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Review</title>
+
+
+<!-- My Css -->
+<link rel="stylesheet" type = "text/css" href="{% static 'css/uditha.css' %}">
+<style>
+ body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1545158828-4e222fdb1d5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1500&q=80')
+  }
+</style>
+
+</head>
+<body>
+
+
+<img id="logo_2" img src="{% static 'images/logo.jpg' %}"> 
+<div id="Voltage_Entertainment2">
+		<span>Voltage Entertainment</span>
+	</div>
+
+<nav class="nav">
+        <div class="container">
+           
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sign in</a></li>
+					 <li><a href="#">Reservations</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+  
+  
+
+<div class = "box1">
+<div class="login-box">
+</div>
+</div>
+
+<div class="login-box">
+</div>
+
+<div class ="UserName">
+{% for cus in customer %} 
+<p><img id="profile_icon" img src="{% static 'images/profile.png' %}">{{cus.F_name}}</p>
+{% endfor %}
+</div>
+
+
+<div class ="eventDetails">
+{% for eve in completed_events %} 
+<p><img id="contact_icon" img src="{% static 'images/contact.png' %}"> {{eve.Contact}}</p>
+<p><img id="date_icon" img src="{% static 'images/date.png' %}">{{eve.Date}}</p>
+<p><img id="location_icon" img src="{% static 'images/location.png' %}">{{eve.Location}}</p>
+<p><img id="event_icon" img src="{% static 'images/event.png' %}">{{eve.Event_type}}</p>
+<p><img id="status_icon" img src="{% static 'images/status.png' %}">{{eve.Status}}</p>
+
+<button type="button" class="myButton"  onclick="location.href='{% url 'DeleteEvent' id=eve.Event_ID %}'"  id = "confirm">Delete</button>
+
+{% endfor %}
+
+</div>
+
+<div class ="resDetails">
+
+{% for res in reservations %} 
+<p><strong>{{res.Resources_ID}}</strong></p>
+<p><strong>{{res.S_Time}}</strong></p>
+
+{% endfor %}
+
+</div>
+
+
+<a href="#" class="myButton" id = "back">back</a>
+
+
+
+</body>
+
+
+
+
+
+ 
+</html>

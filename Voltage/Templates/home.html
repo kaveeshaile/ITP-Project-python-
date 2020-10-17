@@ -17,7 +17,8 @@
 <!-- My Css -->
 <link rel="stylesheet" type = "text/css" href="{% static 'css/uditha.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'engine1/style.css'%}" >
-	<script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
 
 </head>
 <body>
@@ -70,7 +71,7 @@
 	</div>
 
 <a href="#" class="myButton" id = "explore">Explore</a>
-<a href="#" class="myButton" id = "asktoregister">Be a member</a>
+<a href="{% url 'CreateEvent' %}" class="myButton" id = "asktoregister">Make a reservation</a>
 
 
 <div id="wowslider-container1">
@@ -91,10 +92,19 @@
 
 </div>
 
+<div>
+  <div class="starsec"></div>
+  <div class="starthird"></div>
+  <div class="starfourth"></div>
+  <div class="starfifth"></div>
+</div>
 
 </body>
 
+            
 
+
+</div>
 
  
 </html>
