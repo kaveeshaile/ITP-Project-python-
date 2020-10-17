@@ -7,22 +7,22 @@ from django.shortcuts import redirect
 
 
 
-def sound_admin_info(request): 
+def sound_insert(request): 
     
-     if request.method == 'POST':
+        if request.method == 'POST': 		
              if request.POST.get('packname') and request.POST.get('suitable') and request.POST.get('brand') and request.POST.get('price') and request.POST.get('description'):
+                saverecord=sound_admin_upload()
+                saverecord.Package_name = request.POST.get('packname')
+                saverecord.Suitable_for = request.POST.get('suitable')
+                saverecord.Brand  = request.POST.get('brand')
+                saverecord.Price = request.POST.get('price')
+                saverecord.Description = request.POST.get('description')
+                saverecord.save()
+
+             return redirect(sound_update)
                     
-                    saverecord=sound_admin_upload()
-                    saverecord.Package_name = request.POST.get('packname')
-                    saverecord.Suitable_for = request.POST.get('suitable')
-                    saverecord.Brand  = request.POST.get('brand')
-                    saverecord.Price = request.POST.get('price')
-                    saverecord.Description = request.POST.get('description')
-                    saverecord.save()
-                    return redirect(sound_update)
-                    
-     else:
-                    return render(request,'sound_admin_upload.html')
+        else:
+            return render(request,'sound_admin_upload.html')
     
     
 
