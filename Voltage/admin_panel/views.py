@@ -7,6 +7,10 @@ from admin_panel.models import admin_login
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.core.mail import send_mail
+from datetime import date
+import datetime
+# from django.db.models.functions import ExtractYear
+# from django.db.models.functions import ExtractMonth
 # Create your views here.
 
 # def admin_panel(request):
@@ -67,7 +71,7 @@ def ConfirmEvent(request,id):
     event = events.objects.get(Event_ID = id)
     event.Status = 'upcoming'
     event.save()
-    return redirect(reservation_manage) 
+    return redirect(reservation_manage)
 
 
 def MarkAsCompleted(request,id):
@@ -110,3 +114,19 @@ def sendmail(request):
     ['begaheh976@justlibre.com'],
     fail_silently=False)
     return render(request,'admin_login.html')
+
+
+def getmonthlyreport(request):
+    if request.method == 'POST':
+        getmonth = request.POST.get('month')
+        converted_date = datetime.datetime.strptime(getmonth, "%Y-%m").date()
+        year = converted_date.year
+        month = converted_date.month
+        eve = events.objects.filter(Date__year=year).filter(Date__month=month)
+        ended = eventbin.objects.filter(Date__year=year).filter(Date__month=month)
+        context = {'event':eve,'completed_events':ended,'getmonth':getmonth}
+    
+        return render(request,'main_report.html', context=context)
+        
+    
+    return render(request,'main_report.html')
