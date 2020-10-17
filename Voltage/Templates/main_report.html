@@ -1,0 +1,150 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Report</title>
+
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+<!-- My Css -->
+<link rel="stylesheet" type = "text/css" href="{% static 'css/uditha.css' %}">
+<style>
+ body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1511149521648-612cb6799f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+  }
+</style>
+
+
+</head>
+<body>
+
+{% comment %} <nav class="nav">
+        <div class="container">
+           
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sign in</a></li>
+					 <li><a href="#">Reservations</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav> {% endcomment %}
+  
+
+
+
+
+
+  
+
+
+
+
+	<img id="logo_2" img src="{% static 'images/logo.jpg' %}">
+    
+ 
+
+<div id="Voltage_Entertainment2">
+		<span>Voltage Entertainment</span>
+	</div>
+
+     <div class = "reportheader">
+<span> Monthly Report - {{getmonth}} </span>
+</div>
+  
+<div class = "reporttable">
+
+<section class="tables-page-section" ="service">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-12">
+       </div>
+      </div>
+    </div>
+   <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <th>Event ID</th>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Contact</th>
+              <th>Created Date</th>
+              <th>Status</th>
+            </thead>
+            {% for eve in event %} 
+            <tr>
+              <th>{{eve.Event_ID}}</th>
+              <td>{{eve.Event_type}}</td>
+              <td>{{eve.Date}}</td>
+              <td>{{eve.Location}}</td>
+              <td>{{eve.Contact}}</td>
+              <td>{{eve.OnCreateTime}}</td>
+              <td>{{eve.Status}}</td>
+            </tr>
+              {% endfor %} 
+                  <thead>
+              <th>Event ID</th>
+              <th>Event</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Contact</th>
+              <th>Created Date</th>
+              <th>Status</th>
+            </thead>
+            {% for eve in completed_events %} 
+            <tr>
+              <th>{{eve.Event_ID}}</th>
+              <td>{{eve.Event_type}}</td>
+              <td>{{eve.Date}}</td>
+              <td>{{eve.Location}}</td>
+              <td>{{eve.Contact}}</td>
+              <td>{{eve.OnCreateTime}}</td>
+              <td>{{eve.Status}}</td>
+            </tr>
+              {% endfor %} 
+           
+          </table>
+        </div>
+    </div>
+   </div>
+  </div>
+ </section>
+
+</div>
+
+
+ 
+          
+
+
+
+</body>
+
+            
+
+ 
+</html>

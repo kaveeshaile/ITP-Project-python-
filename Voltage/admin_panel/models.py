@@ -9,7 +9,7 @@ class events(models.Model):
    Location = models.CharField(max_length=100)
    Contact = models.CharField(max_length=100)
    Customer_ID = models.CharField(max_length=10)
-   Date = models.CharField(max_length=20)
+   Date = models.DateField(blank=True, null=True)
    Status = models.CharField(max_length=100)
    OnCreateTime = models.DateTimeField(blank=True,null=True)
    class Meta:
@@ -34,8 +34,9 @@ class eventbin(models.Model):
    Location = models.CharField(max_length=100)
    Contact = models.CharField(max_length=100)
    Customer_ID = models.CharField(max_length=10)
-   Date = models.CharField(max_length=20)
+   Date = models.DateField(blank=True, null=True)
    Status = models.CharField(max_length=100)
+   OnCreateTime = models.DateTimeField(blank=True, null=True)
    class Meta:
      db_table = "completed_events"
      

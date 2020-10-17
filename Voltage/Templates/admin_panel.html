@@ -92,6 +92,14 @@
 
 <div class = "upcoming_panel">
 
+ <form method = "post" action = "{% url 'getmonthlyreport'%}">
+  {% csrf_token %}
+
+<input type="month" id="month" name="month">
+<input type="submit" value="Get montly report" id = "getreport">
+
+</form>
+
 {% for res in event %} 
 
       <p><strong>{{res.Date}}</strong></p>
