@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <center>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/photo_customer.css' %}">
+
+<body style="background-color:rgb(15, 15, 15);"></body>
+
+</center>
+<hr>
+</head>
+
+<body>
+    <!--navigation bar-->
+    <nav class="nav">
+        <div class="container">
+
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sign in</a></li>
+                    <li><a href="#">Reservations</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <img id="logo_2" style="border-radius:400px;" img src="{% static 'images/logo.jpg' %}">
+
+    <center>
+        <h1 style="color:white" font-size:"20px">VOLTAGE ENTERTAINMENT</h1><br>
+    </center>
+
+    <!--<div id="Voltage_Entertainment2">
+        <span>Voltage Entertainment</span>
+    </div>-->
+
+    <hr>
+    <br>
+
+    <!--<div class="check">
+        <button class="button check" onclick="checking">CHECK AVAILABILITY</button>
+        <!--<p>ful name</p>-->
+    </div>
+    <!--<div class="card">
+        {% for photo in photo_test %}
+        <div class="show">
+            <p2 style="color: cornsilk;">name:{{ photo.name }}</p2>
+            {% endfor %}
+        </div>
+    </div>-->
+
+
+    <div class="card">
+        {% for photo in photo_test %}
+        <div class="show">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="first_one">
+
+                    <center>
+
+                        <div class="pic">
+                            <img src="{%static photo.profile_image %}" style=" border-radius: 50%;" width="200"
+                                height="200">
+                        </div>
+                        <br><br>
+                        <label for="Name" style="color:white" name="id">Photographer :{{ photo.name }}</label><br><br>
+                        <label for="Name" style="color:white" name="id">Specialized For :{{ photo.des }}</label><br><br>
+                        <label for="Name" style="color:white" name="id">Industrial Experience
+                            :{{ photo.exp }}</label><br><br>
+                        <label for="Name" style="color:white" name="id"> Contact Details
+                            :{{ photo.phone }}</label><br><br>
+                        <label for="Name" style="color:white" name="id"> Facebook Name :{{ photo.FB }}</label><br><br>
+                        <label for="Name" style="color:white" name="id"> Reaservation Fee
+                            :{{ photo.fee }}</label><br><br>
+
+
+
+                        <!--<input type="text"  id="photoid" value= {{ photo.name }} >-->
+                    </center><br>
+                    <center>
+                        <img src="{%static photo.sample_image1  %}" width="200" height="200">
+                        <img src="{%static photo.sample_image2  %}" width="200" height="200">
+                        <img src="{%static photo.sample_image3  %}" width="200" height="200">
+                        <img src="{%static photo.sample_image4  %}" width="200" height="200">
+
+
+
+
+                    </center>
+                    <div class="Details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </form>
+            <input class="Details2" onclick="location.href='{% url 'admindelete' id=photo.id %}'" id="delete"
+                value="Delete" </button>
+
+            <input class="Details2" onclick="location.href='{% url 'GetDetailsForUpdate' id=photo.id %}'" id="update"
+                value="update" </button>
+
+
+        </div>
+        <hr>
+    </div>
+
+    {% endfor %}
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>

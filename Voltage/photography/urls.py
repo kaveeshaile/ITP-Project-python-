@@ -1,20 +1,23 @@
+from django.conf.urls.static import static
+from django.conf import settings
 from django.urls import path
+from django.contrib import admin
 from.import views
+# upload file
 
 urlpatterns = [
-    path('', views.photo_add, name='photo_add')
-]
 
-urlpatterns = [
-    path('', views.photo_update, name='photo_update')
-]
 
-urlpatterns = [
-    path('', views.customer_main, name='customer_main')
-]
-urlpatterns = [
-    path('', views.photo_checkdelete, name='photo_checkdelete')
-]
-urlpatterns = [
-    path('', views.photo_profile, name='photo_profile')
+
+    path('', views.addPhoto, name='addPhoto'),
+    path('displayone', views.displayone, name='displayone'),
+    path('delete/<id>', views.admindelete, name='admindelete'),
+    path('GetDetailsForUpdate/<id>', views.GetDetailsForUpdate,
+         name='GetDetailsForUpdate'),
+
+    path('update/<id>', views.AdminUpdate, name='AdminUpdate'),
+    path('customer_main', views.displayall, name='displayall'),
+    path('photo_profile', views.bookphotographer, name='bookphotographer'),
+    path('customer_main/<id>', views.photoprofile, name='photoprofile'),
+
 ]
