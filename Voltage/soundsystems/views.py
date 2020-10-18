@@ -19,7 +19,7 @@ def sound_insert(request):
                
                 mydata.save()
 
-             return redirect(sound_update)
+             return redirect(sound_userview)
                     
         else:
             return render(request,'sound_admin_upload.html')
@@ -27,9 +27,10 @@ def sound_insert(request):
     
 
 
-def sound_update(request): 
+def sound_admin_update(request): 
+
    if request.method == 'POST':
-        if request.POST.get('packname'):
+       
          id =  request.POST.get('id')
          sound = sound_admin_upload.objects.get(id = id)
          sound.Package_name =  request.POST.get('packname')
@@ -37,12 +38,41 @@ def sound_update(request):
          sound.Price =  request.POST.get('price')   
          sound.save()
     
-        return redirect(sound_userview) 
+         return redirect(sound_admin_update) 
    else:
       
-        return render(request,'sound_update.html')
+        return render(request,'sound_admin_upload.html')
      
     
+
+
+def displayAlltoAdmin(request):
+      
+    if request.method == 'POST':
+       if request.POST.get('id'):
+        id = request.POST.get('id')
+        videographer = video_add.objects.filter(id = id)
+        samples = video_samples.objects.filter(Resources_ID=id)
+        res = resources.objects.filter(Resources_ID=id)
+        context = {'videography':videographer, 'video_samples':samples, 'resources':res}
+        return render(request,'video_update.html',context=context)
+    else:
+        videographer = video_add.objects.all()
+        return render(request,'video_recently_added.html',{'videography':videographer})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -62,21 +92,13 @@ def sound_userview(request):
                 if request.POST.get('id'):
                         id = request.POST.get('id')
                         sound = sound_admin_upload.objects.filter(id = id)
-                        return render(request, 'sound_reservation.html',{'soundsystems':sound})
+                        return render(request, 'sound_userview.html',{'soundsystems':sound})
         
         else:
 
                 sound = sound_admin_upload.objects.all()
-                return render(request, 'sound_userview.html',{'soundsystems':sound})
+                return render(request, 'sound_admin_update.html',{'soundsystems':sound})
 
-
-
-
-
-     
-     
-   
-       
 
 
 def sound_main(request): 
