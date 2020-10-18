@@ -1,0 +1,192 @@
+ {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Electro - HTML Ecommerce Template</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/ravi/bootstrap.min.css' %}"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/ravi/slick.css' %}"/>
+		<link type="text/css" rel="stylesheet" href="{% static 'css/ravi/slick-theme.css' %}"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/ravi/nouislider.min.css' %}"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="{% static 'css/ravi/font-awesome.min.css' %}">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/ravi/style.css' %}"/>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<link rel="stylesheet" type = "text/css" href="{% static 'css/ravi/custom.css' %}">
+
+		
+
+		<style>
+
+				.packagetab{
+					top: 300px;
+					left: 150px;
+					position:absolute;
+				}
+
+				#userpagetitle{
+
+					top: 200px;
+					left: 580px;
+					position:absolute;
+					color:white;
+
+				}
+
+		</style>
+
+
+
+
+    </head>
+	<body style="background-color:black;">
+		
+
+
+
+			<!--Navigation Bar-->
+
+				<nav class="nav">
+						<div class="container">
+						
+							<div id="mainListDiv" class="main_list">
+								<ul class="navlinks">
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Sign in</a></li>
+									<li><a href="#">Reservations</a></li>
+									<li><a href="#">About us</a></li>
+									<li><a href="#">Logout</a></li>
+								</ul>
+							</div>
+							<span class="navTrigger">
+								<i></i>
+								<i></i>
+								<i></i>
+							</span>
+						</div>
+					</nav>
+
+				<!--/Navigation Bar-->
+
+							<!--Main Heading-->
+
+								<div id="Voltage_Entertainment2">
+										<span>Voltage Entertainment</span>
+									</div>
+
+							<!--/Main Heading-->		
+
+
+					<!--Image-->
+
+						<img id="logo_2" img src="{% static 'images/logo.jpg' %}">
+					<!--/Image-->
+
+
+			<h2 id="userpagetitle"> Available Packages</h2>		
+
+
+	<div class ="packagetab">
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										<!-- product -->
+
+										{% for sound in soundadmin %}
+
+										<div class="product">
+											<div class="product-img">
+												<img src= "media\{{sound.packageImg}}" alt="">
+												<div class="product-label">
+													<span class="sale">-30%</span>
+													<span class="new">NEW</span>
+												</div>
+											</div>
+											<div class="product-body">
+												<p class="product-category">Category</p>
+												<h3 class="product-name"><a href="#">{{ sound.Package_name }}</a></h3>
+												<h4 class="product-price">{{sound.Price}}<del class="product-old-price"></del></h4>
+												<div class="product-rating">
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+													<i class="fa fa-star"></i>
+												</div>
+												<div class="product-btns">
+													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+												</div>
+											</div>
+											<div class="add-to-cart">
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Add to Reservation</button>
+											</div>
+										</div>
+											{% endfor %}
+
+		
+									
+							         </div>
+									<div id="slick-nav-1" class="products-slick-nav"></div>
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+	</div>
+
+
+
+<!-- jQuery Plugins -->
+		<script src="{% static 'js/ravijs/jquery.min.js' %}"></script>
+		<script src="{% static 'js/ravijs/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/ravijs/slick.min.js' %}"></script>
+		<script src="{% static 'js/ravijs/nouislider.min.js' %}"></script>
+		<script src="{% static 'js/ravijs/jquery.zoom.min.js' %}"></script>
+		<script src="{% static 'js/ravijs/main.js' %}"></script>
+
+
+
+
+
+</body>
+</html>

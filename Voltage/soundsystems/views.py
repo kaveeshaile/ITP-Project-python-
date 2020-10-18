@@ -16,11 +16,12 @@ def sound_insert(request):
                 mydata.Suitable_for = request.POST.get('suitable')
                 mydata.Brand = request.POST.get('brand')
                 mydata.Price = request.POST.get('price')
+                #mydata.packageImg = request.FILES.get('packageImg')
                
                 mydata.save()
                 messages.success(request, 'Package Data Saved Successfully')
 
-             return redirect(sound_userview)
+             return redirect(display_customers)
                     
         else:
             return render(request,'sound_admin_upload.html')
@@ -54,7 +55,7 @@ def display_customers(request):
      sound = sound_admin.objects.all();
      context = {'sound_admin': sound_admin}
 
-     return render(request,'sound_update.html',{'soundadmin':sound})
+     return render(request,'sound_userview.html',{'soundadmin':sound})
 
 
 
@@ -63,36 +64,9 @@ def display_customers(request):
 
 
 
-
-
-
-def sound_reservation(request): 
-        
-        
-        
-        
-        
-        return render(request, 'sound_reservation.html')
 
 
  
-def sound_userview(request): 
-        
-        if request.method == "POST":
-                if request.POST.get('id'):
-                        id = request.POST.get('id')
-                        sound = sound_admin.objects.filter(id = id)
-                        return render(request, 'sound_userview.html',{'soundsystems':sound})
-        
-        else:
-
-                sound = sound_admin.objects.all()
-                return render(request, 'sound_admin_update.html',{'soundsystems':sound})
-
-
-
-def sound_main(request): 
-        return render(request, 'sound_main.html')
 
 
 
