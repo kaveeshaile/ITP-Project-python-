@@ -19,7 +19,6 @@ class events(models.Model):
 
 
 class reservations(models.Model):
-<<<<<<< HEAD
     Reservation_ID = models.AutoField(primary_key=True)
     Event_ID = models.CharField(max_length=10)
     S_Time = models.DateTimeField(blank=True, default=now)
@@ -30,19 +29,6 @@ class reservations(models.Model):
         db_table = "reservations"
 
 
-=======
-   Reservation_ID = models.AutoField(primary_key=True)
-   Event_ID = models.CharField(max_length=10)
-   S_Time = models.DateTimeField(blank=True, null=True)
-   E_Time = models.DateTimeField(blank=True, null=True)
-   Resources_ID = models.CharField(max_length=10)
-   Resources_Name = models.CharField(max_length=20)
-   class Meta:
-     db_table = "reservations"
-     
-     
-     
->>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 class eventbin(models.Model):
     Event_ID = models.CharField(max_length=10, primary_key=True)
     Event_type = models.CharField(max_length=200)
@@ -51,7 +37,7 @@ class eventbin(models.Model):
     Customer_ID = models.CharField(max_length=10)
     Date = models.DateField(blank=True, default=now)
     Status = models.CharField(max_length=100)
-    OnCreateTime = models.DateTimeField(blank=True, default=now)
+    # OnCreateTime = models.DateTimeField(blank=True, default=now)
 
     class Meta:
         db_table = "completed_events"
