@@ -78,6 +78,13 @@
 		<span>Voltage Entertainment</span>
 	</div>
 
+{% if messages %}
+<div class="Reportwarning">
+    {% for message in messages %}
+    <p>  {{ message }} </p>
+    {% endfor %}
+</div>
+{% endif %}
 
 
 <a href="{% url 'customer_main' %}" class="myButton" id = "cat1">Photography</a>
@@ -90,19 +97,23 @@
 
 <a href="{% url 'reservation_manage' %}" class="myButton" id = "toreservations">Manage reservations</a>
 
-<div class = "upcoming_panel">
+
 
  <form method = "post" action = "{% url 'getmonthlyreport'%}">
   {% csrf_token %}
 
-<input type="month" id="month" name="month">
-<input type="submit" value="Get montly report" id = "getreport">
+<input type="month" id="monthReport" name="month">
+<input type="submit" value="Get montly report" id = "getreportbtn">
 
 </form>
+
+<div class = "upcoming_panel">
 
 {% for res in event %} 
 
       <p><strong>{{res.Date}}</strong></p>
+      <p><strong>{{res.Location}}</strong></p>
+      <p>---------------------------</p>
   {% endfor %}
 
 </div>        

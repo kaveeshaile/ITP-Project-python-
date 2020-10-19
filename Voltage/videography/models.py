@@ -10,6 +10,7 @@ class video_add(models.Model):
  Description=models.CharField(max_length=1200)
  Fee=models.CharField(max_length=45)
  profile_pic = models.ImageField(null = True,blank = True,upload_to = "samples")
+ Status = models.CharField(max_length=10)
  class Meta:
     db_table = "videography"
     

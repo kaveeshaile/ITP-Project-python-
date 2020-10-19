@@ -23,6 +23,7 @@ class reservations(models.Model):
    S_Time = models.DateTimeField(blank=True, null=True)
    E_Time = models.DateTimeField(blank=True, null=True)
    Resources_ID = models.CharField(max_length=10)
+   Resources_Name = models.CharField(max_length=20)
    class Meta:
      db_table = "reservations"
      

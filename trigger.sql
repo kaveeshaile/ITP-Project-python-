@@ -19,7 +19,7 @@ INSERT INTO `voltage_entertainment`.`event`
 `Customer_ID`,
 `Date`)
 VALUES
-('get to gether','Horana', '07863223344','8','2020-12-12');
+('get to gether','Horana', '0786322334','8','2020-12-12');
 
 
 
@@ -29,8 +29,8 @@ drop trigger  move_to_completed;
 CREATE TRIGGER move_to_completed
 AFTER DELETE ON event
 FOR EACH ROW
-INSERT INTO completed_events(Event_ID, Event_type, Location, Contact, Customer_ID,Date,Status) 
-VALUES (old.Event_ID, old.Event_type, old.Location, old.Contact, old.Customer_ID,old.Date,'canceld');
+INSERT INTO completed_events(Event_ID, Event_type, Location, Contact, Customer_ID,Date,Status,OnCreateTime) 
+VALUES (old.Event_ID, old.Event_type, old.Location, old.Contact, old.Customer_ID,old.Date,'canceld',old.OnCreateTime);
 
 
 -- when event marked as completed--
@@ -39,8 +39,8 @@ CREATE TRIGGER move_after_completed AFTER UPDATE ON event
 FOR EACH ROW
 BEGIN
    IF NEW.Status = 'completed' THEN
-    INSERT INTO completed_events(Event_ID, Event_type, Location, Contact, Customer_ID,Date,Status) 
-VALUES (old.Event_ID, old.Event_type, old.Location, old.Contact, old.Customer_ID,old.Date,'completed'); 
+    INSERT INTO completed_events(Event_ID, Event_type, Location, Contact, Customer_ID,Date,Status,OnCreateTime) 
+VALUES (old.Event_ID, old.Event_type, old.Location, old.Contact, old.Customer_ID,old.Date,'completed',old.OnCreateTime); 
    END IF;
 END;//
 DELIMITER ;
@@ -78,4 +78,15 @@ VALUES (NEW.id);
 END;//
 DELIMITER ;
 
-drop trigger copy_video_to_samples; 
+
+DELIMITER //
+CREATE TRIGGER copy_status_to_video AFTER INSERT ON resources
+FOR EACH ROW
+BEGIN
+INSERT INTO videography (Status) 
+VALUES (NEW.Status);  
+END;//
+DELIMITER ;
+
+
+drop trigger move_after_completed; 
