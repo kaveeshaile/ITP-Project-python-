@@ -9,15 +9,16 @@ urlpatterns = [
 
 
 
-    path('', views.addPhoto, name='addPhoto'),
+    path('addPhoto', views.addPhoto, name='addPhoto'),
     path('displayone', views.displayone, name='displayone'),
     path('delete/<id>', views.admindelete, name='admindelete'),
     path('GetDetailsForUpdate/<id>', views.GetDetailsForUpdate,
          name='GetDetailsForUpdate'),
 
     path('update/<id>', views.AdminUpdate, name='AdminUpdate'),
-    path('customer_main', views.displayall, name='displayall'),
+    path('customer_main', views.displaycustomer, name='displaycustomer'),
     path('photo_profile', views.bookphotographer, name='bookphotographer'),
     path('customer_main/<id>', views.photoprofile, name='photoprofile'),
-
+    path('Photo_admin_display', views.getmonthlyreportforphotographer,
+         name='getmonthlyreportforphotographer')
 ]

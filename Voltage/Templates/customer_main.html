@@ -26,12 +26,13 @@
 
 
         {% if messages %}
-        <div class="">
+        <div class="msg">
             {% for message in messages %}
-            <p> {{ message }} </p>
+            <p style="background-color:blue; text-align: center;font-size: 20px; color: cornsilk;"> {{ message }} </p>
             {% endfor %}
         </div>
         {% endif %}
+
 
 
 
@@ -78,7 +79,7 @@
                     </div>
                     {% endfor %}
                     <input type="date" id="checkdate" style="background-color: yellow;" name="checkdate">
-                    <div class="check">
+                    <div class="Details1">
                         <input type="submit" value="Check availability" style="border-radius: 50px;" id="checkbutton">
                     </div>
             </div>

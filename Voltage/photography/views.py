@@ -2,11 +2,14 @@ from django.shortcuts import render, redirect
 from photography.models import photo_test
 from django.contrib import messages
 from django.http import HttpResponse
-from photography.models import reservations
+from admin_panel.models import reservations
 import base64
 from django.template import RequestContext
 from datetime import date
 import datetime
+from admin_panel.models import events
+from admin_panel.models import eventbin
+
 from django.db.models import Q
 
 # Create your views here.
@@ -100,7 +103,7 @@ def AdminUpdate(request, id):
         return render(request, 'photo_add.html')
 
 
-def displayall(request):
+def displaycustomer(request):
     if request.method == 'POST':
         if request.POST.get('checkdate'):
 
@@ -131,7 +134,7 @@ def bookphotographer(request):
     if request.method == 'POST':
         if request.POST.get('bookingdate') and request.POST.get('enddate'):
 
-            EventID = request.session['E001']
+            EventID = request.session['eventID']
             date = request.POST.get('bookingdate')
             photographer = reservations()
             photographer.S_Time = request.POST.get('bookingdate')
@@ -139,6 +142,7 @@ def bookphotographer(request):
             photographer.Event_ID = EventID
             PID = request.POST.get('PID')
             photographer.Resources_ID = PID
+
             mydate = date[0:10]
             converted_date = datetime.datetime.strptime(
                 mydate, "%Y-%m-%d").date()
@@ -162,4 +166,22 @@ def bookphotographer(request):
             messages.warning(request, 'Please Fill the required Fields!')
             return redirect(request.META.get('HTTP_REFERER'))
     else:
-        return redirect(displayall)
+        return redirect(displaycustomer)
+
+
+def getmonthlyreportforphotographer(request):
+    if request.method == 'POST':
+        getmonth = request.POST.get('month')
+        converted_date = datetime.datetime.strptime(getmonth, "%Y-%m").date()
+        year = converted_date.year
+        month = converted_date.month
+
+        eve = events.objects.filter(Date__year=year).filter(Date__month=month)
+        ended = eventbin.objects.filter(
+            Date__year=year).filter(Date__month=month)
+        context = {'event': eve, 'completed_events': ended,
+                   'getmonth': getmonth}
+
+        return render(request, 'main_report.html', context=context)
+
+    return render(request, 'main_report.html')

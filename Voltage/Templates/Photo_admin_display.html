@@ -40,25 +40,35 @@
         <h1 style="color:white" font-size:"20px">VOLTAGE ENTERTAINMENT</h1><br>
     </center>
 
-    <!--<div id="Voltage_Entertainment2">
-        <span>Voltage Entertainment</span>
-    </div>-->
+
 
     <hr>
     <br>
-
-    <!--<div class="check">
-        <button class="button check" onclick="checking">CHECK AVAILABILITY</button>
-        <!--<p>ful name</p>-->
+    <div class="Details">
+        <button class="Details1">
+            <a href="{% url 'addPhoto' %}">Add New Photographer</a>
+        </button>
     </div>
-    <!--<div class="card">
-        {% for photo in photo_test %}
-        <div class="show">
-            <p2 style="color: cornsilk;">name:{{ photo.name }}</p2>
-            {% endfor %}
-        </div>
-    </div>-->
 
+
+    </div>
+
+    <div class="check">
+
+        <form method="post" action="{% url 'getmonthlyreportforphotographer'%}">
+            {% csrf_token %}
+
+            <input type="month" id="month" name="month">
+            <input type="submit" value="Get montly report" id="getreport">
+
+        </form>
+
+        {% for res in event %}
+
+        <p><strong>{{res.Date}}</strong></p>
+        {% endfor %}
+
+    </div>
 
     <div class="card">
         {% for photo in photo_test %}
