@@ -75,6 +75,13 @@
 
     <img id="logo_2" img src="{% static 'images/logo.jpg' %}">
 
+{% if messages %}
+<div class="Reportwarning">
+    {% for message in messages %}
+    <p>  {{ message }} </p>
+    {% endfor %}
+</div>
+{% endif %}
 
 
     <div id="Voltage_Entertainment2">
@@ -82,6 +89,10 @@
     </div>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
     <a href="{% url 'displayone' %}" class="myButton" id="cat1">Photography</a>
     <a href="{% url 'displayAlltoAdmin' %}" input type="button" class="myButton" id="cat2">Videography</a>
@@ -91,10 +102,16 @@
     <a href="{% url 'addvideo' %}" class="myButton" id="cat6">Graphic design</a>
     <a href="{% url 'addvideo' %}" class="myButton" id="cat7">LED walls & Lights</a>
 
+<<<<<<< HEAD
     <a href="{% url 'reservation_manage' %}" class="myButton" id="toreservations">Manage reservations</a>
+=======
+<input type="month" id="monthReport" name="month">
+<input type="submit" value="Get montly report" id = "getreportbtn">
+>>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
     <div class="upcoming_panel">
 
+<<<<<<< HEAD
         <form method="post" action="{% url 'getmonthlyreport'%}">
             {% csrf_token %}
 
@@ -109,6 +126,16 @@
         {% endfor %}
 
     </div>
+=======
+<div class = "upcoming_panel">
+
+{% for res in event %} 
+
+      <p><strong>{{res.Date}}</strong></p>
+      <p><strong>{{res.Location}}</strong></p>
+      <p>---------------------------</p>
+  {% endfor %}
+>>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
 
 </body>

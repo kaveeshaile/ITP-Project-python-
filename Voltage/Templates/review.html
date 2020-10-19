@@ -40,7 +40,13 @@
         </div>
     </nav>
   
-  
+  <div class = "eventtitle">
+  <p>Event</p>
+  </div>
+
+  <div class = "restitle">
+  <p>Reservations</p>
+  </div>
 
 <svg class="viewbox" id  = "section1" viewBox="0 0 633.183 627.287">
 		<linearGradient id="Path_3_j" spreadMethod="pad" x1="0.104" x2="0.782" y1="-0.293" y2="1.082">
@@ -49,6 +55,8 @@
 		</linearGradient>
 		
 </svg>
+
+
 
 <svg class="viewbox" id  = "section2" viewBox="0 0 633.183 627.287">
 		<linearGradient id="Path_3_j" spreadMethod="pad" x1="0.104" x2="0.782" y1="-0.293" y2="1.082">
@@ -68,21 +76,37 @@
 
 <div class ="UserName">
 {% for cus in customer %} 
-<p><strong>{{cus.F_name}}</strong></p>
+<p><img id="profile_icon" img src="{% static 'images/profile.png' %}">{{cus.F_name}}</p>
 {% endfor %}
 </div>
 
+<div class ="remaining">
+<p>Customer may be update the event within {{diff|floatformat }} min</p>
+</div>
 
+<div class = "allow_to_update_notification">
+<p>{{allow}}</p>
+</div>
+
+{% if messages %}
+<div class="confirmmessages">
+    {% for message in messages %}
+    <p>  {{ message }} </p>
+    {% endfor %}
+</div>
+{% endif %}
+   
 
 
 <div class ="eventDetails">
+{% for eve in event %} 
+<p><img id="contact_icon" img src="{% static 'images/contact.png' %}"> {{eve.Contact}}</p>
+<p><img id="date_icon" img src="{% static 'images/date.png' %}">{{eve.Date}}</p>
+<p><img id="location_icon" img src="{% static 'images/location.png' %}">{{eve.Location}}</p>
+<p><img id="event_icon" img src="{% static 'images/event.png' %}">{{eve.Event_type}}</p>
+<p><img id="status_icon" img src="{% static 'images/status.png' %}">{{eve.Status}}</p>
 
-{% for res in event %} 
-<p><strong>{{res.Contact}}</strong></p>
-<p><strong>{{res.Date}}</strong></p>
-<p><strong>{{res.Location}}</strong></p>
-<p><strong>{{res.Event_type}}</strong></p>
-<button type ="button" onclick="location.href= '{% url 'ConfirmEvent' id=res.Event_ID %}'" class="myButton" id = "confirm">confirm</button>
+<button type="button" class="myButton"  onclick="location.href='{% url 'ConfirmEvent' id=eve.Event_ID %}'"  id = "confirm">Confirm</button>
 
 {% endfor %}
 
@@ -91,8 +115,10 @@
 <div class ="resDetails">
 
 {% for res in reservations %} 
-<p><strong>{{res.Resources_ID}}</strong></p>
-<p><strong>{{res.Date}}</strong></p>
+<p>Resources ID:  <strong>{{res.Resources_ID}}</strong></p>
+<p>From: <strong>{{res.S_Time}}</strong></p>
+<p>To:  <strong>{{res.S_Time}}</strong></p>
+<p>---------------</p>
 
 {% endfor %}
 

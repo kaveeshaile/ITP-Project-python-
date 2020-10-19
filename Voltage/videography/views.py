@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.template.response import TemplateResponse
 from django.contrib import messages
 from videography.models import video_add
@@ -20,14 +21,15 @@ def addvideo(request):
     if request.method == 'POST':
         if request.POST.get('Name') and request.POST.get('Contact') and request.POST.get('ContactEmail') and request.POST.get('fee'):
          admin = request.session['name']
-         saverecord=video_add()
-         saverecord.Name = request.POST.get('Name')
-         saverecord.Contact = request.POST.get('Contact')
-         saverecord.ContactEmail  = request.POST.get('ContactEmail')
-         saverecord.Fee = request.POST.get('fee')
-         saverecord.Description = request.POST.get('description')
-         saverecord.profile_pic = request.FILES.get('profile_pic')
-         saverecord.save()
+         video=video_add()
+         video.Name = request.POST.get('Name')
+         video.Contact = request.POST.get('Contact')
+         video.ContactEmail  = request.POST.get('ContactEmail')
+         video.Fee = request.POST.get('fee')
+         video.Status = request.POST.get('status')
+         video.Description = request.POST.get('description')
+         video.profile_pic = request.FILES.get('profile_pic')
+         video.save()
          last = resources.objects.last()
          last.Status = request.POST.get('status')
          last.Admin_ID = admin
@@ -80,19 +82,17 @@ def VideographerProfile(request,id):
      
 def displayAlltoAdmin(request):
       
-    if request.method == 'POST':
-       if request.POST.get('id'):
-        id = request.POST.get('id')
+        videographer = video_add.objects.all()
+        return render(request,'video_recently_added.html',{'videography':videographer})
+        
+       
+def displayProfiletoAdmin(request,id) :
         videographer = video_add.objects.filter(id = id)
         samples = video_samples.objects.filter(Resources_ID=id)
         res = resources.objects.filter(Resources_ID=id)
         context = {'videography':videographer, 'video_samples':samples, 'resources':res}
         return render(request,'video_update.html',context=context)
-    else:
-        videographer = video_add.objects.all()
-        return render(request,'video_recently_added.html',{'videography':videographer})
-        
-        
+    
 
       
 def RemoveVideoGrapher(request,id):
@@ -122,6 +122,7 @@ def UpdateVideoGrapher(request):
         vid.Name =  request.POST.get('Name')
         vid.Fee =  request.POST.get('fee')
         vid.Contact =  request.POST.get('Contact')
+        vid.Status = request.POST.get('status')
         vid.ContactEmail =  request.POST.get('ContactEmail')
         vid.Description =  request.POST.get('description')
         res.Status = request.POST.get('status')
@@ -161,6 +162,7 @@ def bookVideographer(request):
          videographer.S_Time = request.POST.get('bookingdate')
          videographer.E_Time = request.POST.get('enddate')
          videographer.Event_ID = eventID
+         videographer.Resources_Name = 'Videography'
          vid = request.POST.get('vid')
          videographer.Resources_ID = vid
          mydate = date[0:10];
@@ -178,7 +180,7 @@ def bookVideographer(request):
             
             else:
                 videographer.save()
-                return render(request,'main_reservation_page.html')
+                return redirect(submitEvent)
         
             
       else:
@@ -190,6 +192,7 @@ def bookVideographer(request):
 
 def CreateEvent(request):
     
+     cusID = '12'# temporary hardcode value 
      if request.method == 'POST':
           if request.POST.get('eventDate'):
               
@@ -207,7 +210,7 @@ def CreateEvent(request):
                  event.Event_type = request.POST.get('type')
                  event.Location = request.POST.get('location')
                  event.Contact = request.POST.get('contact')
-                 event.Customer_ID = '12'
+                 event.Customer_ID = cusID
                  event.OnCreateTime = datetime.datetime.now()
                  event.save()
                  last = events.objects.last()
@@ -220,15 +223,38 @@ def CreateEvent(request):
                 messages.warning(request, 'Please enter the event date!')
                 return redirect(request.META.get('HTTP_REFERER'))
      else:
-         return render(request,'event_create.html')
+         if cusID is None:
+              return render(request,'home.html')
+         else:
+              return render(request,'event_create.html')
      
      
 def submitEvent(request):
      id = request.session['eventID']
-     event = events.objects.get(Event_ID = id)
-     event.Status = 'waiting'
-     event.save()
-     return render(request,'home.html') 
+     
+     if request.method == 'POST':
+         
+        if reservations.objects.filter(Event_ID=id): 
+          event = events.objects.get(Event_ID = id)
+          event.Status = 'waiting'
+          event.Event_type = request.POST.get('type')
+          event.Location = request.POST.get('location')
+          event.Contact = request.POST.get('contact')
+          event.save()
+          return render(request,'home.html')
+     
+        else:
+            event = events.objects.get(Event_ID = id)
+            # event.delete()
+            messages.warning(request, 'You can"t submit an empty event! Make at least one')
+            return redirect(submitEvent)
+
+     
+     else:
+          eve = events.objects.filter(Event_ID = id)
+          res = reservations.objects.filter(Event_ID=id)
+          context = {'event':eve, 'reservations':res}
+          return render(request,'main_reservation_page.html',context=context)
     
     
 def CancelEvent(request,id):

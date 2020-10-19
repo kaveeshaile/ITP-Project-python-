@@ -8,22 +8,13 @@ from django.shortcuts import redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from datetime import date
+from datetime import datetime
 import datetime
+from django.utils import timezone
 # from django.db.models.functions import ExtractYear
 # from django.db.models.functions import ExtractMonth
 # Create your views here.
 
-# def admin_panel(request):
-
-#  return render(request,'admin_panel.html')
-        
-
-# def reservation_manage(request):
-    
-#  eve = eventbin.objects.all()
-# #  eve1 = eventbin.objects.all()
-#  return render(request,'reservation_manage.html',{'completed_events':eve})
-#  print(eve)
 
 def reservation_manage(request):
     
@@ -38,15 +29,24 @@ def reservation_manage(request):
 
 def review(request,id,user): 
  eve = events.objects.filter(Event_ID = id)
- res = reservations.objects.filter(Event_ID = 1)
- user = customer.objects.filter(Customer_ID = user)
- context = {'event' : eve, 'reservations' : res, 'customer' : user}
- return render(request,'review.html',context=context)
+ res = reservations.objects.filter(Event_ID = id)
+ user = customer.objects.filter(Customer_ID = 88) #temporary hardcoded value
+ 
+ event = events.objects.get(Event_ID = id)
+ time =  (timezone.now() - event.OnCreateTime).total_seconds()/60.0
+ diff = (10.0 - time)
+ if diff < 0:
+     allow = 'you can confirm'
+     context = {'event' : eve, 'reservations' : res, 'customer' : user, 'allow':allow,'diff':diff}
+     return render(request,'review.html',context=context)
+ else:
+   context = {'event' : eve, 'reservations' : res, 'customer' : user, 'diff':diff}
+   return render(request,'review.html',context=context)
 
 
 def viewReservation(request,id,user): 
  eve = events.objects.filter(Event_ID = id)
- res = reservations.objects.filter(Event_ID = 1)
+ res = reservations.objects.filter(Event_ID = id)
  user = customer.objects.filter(Customer_ID = user)
  context = {'event' : eve, 'reservations' : res, 'customer' : user}
  return render(request,'admin_view.html',context=context)
@@ -54,7 +54,7 @@ def viewReservation(request,id,user):
 
 def deleteReservation(request,id,user): 
  eve = eventbin.objects.filter(Event_ID = id)
- res = reservations.objects.filter(Event_ID = 1)# temporary value
+ res = reservations.objects.filter(Event_ID = id)# temporary value
  user = customer.objects.filter(Customer_ID = user)
  context = {'completed_events' : eve, 'reservations' : res, 'customer' : user}
  return render(request,'admin_delete.html',context=context)
@@ -69,9 +69,15 @@ def DeleteEvent(request,id):
 
 def ConfirmEvent(request,id):
     event = events.objects.get(Event_ID = id)
-    event.Status = 'upcoming'
-    event.save()
-    return redirect(reservation_manage)
+    time =  (timezone.now() - event.OnCreateTime).total_seconds()/60.0
+    if time > 10.0: #if time interval between event created time and current time is less than 1hour, admin cannot confirm
+      event.Status = 'upcoming'
+      event.save()
+      return redirect(reservation_manage)
+
+    else:
+      messages.warning(request, 'Please wait for the remaining time!')
+      return redirect(request.META.get('HTTP_REFERER'))
 
 
 def MarkAsCompleted(request,id):
@@ -88,14 +94,9 @@ def Adminlogin(request):
        
        if admin_login.objects.filter(username = username, password=password):
            
-           user = admin_login.objects.filter(username = username, password=password)
-           AdminID = [item.admin_id for item in user]
-           AdminID = str(AdminID)[1:-1]  #remove [] from result
-           print(AdminID)
+           AdminID = admin_login.objects.filter(username = username, password=password).only('admin_id')[0].admin_id
            request.session['name'] = AdminID
-           eve = events.objects.filter(Status = 'upcoming')
-           context = {'event' : eve, 'admin_login' : user}
-           return render(request,'admin_panel.html',context=context)
+           return redirect(AdminPanel)
        
        else:
             messages.warning(request, 'Invalid username or password')
@@ -103,6 +104,15 @@ def Adminlogin(request):
    
     else:
      return render(request,'admin_login.html')
+ 
+ 
+def AdminPanel(request):
+       admin_ID = request.session['name'] 
+       user = admin_login.objects.filter(admin_id = admin_ID)
+       eve = events.objects.filter(Status = 'upcoming').order_by('Date')[:3]
+       context = {'event' : eve, 'admin_login' : user}
+       return render(request,'admin_panel.html',context=context)
+ 
  
  
  
@@ -118,15 +128,19 @@ def sendmail(request):
 
 def getmonthlyreport(request):
     if request.method == 'POST':
-        getmonth = request.POST.get('month')
-        converted_date = datetime.datetime.strptime(getmonth, "%Y-%m").date()
-        year = converted_date.year
-        month = converted_date.month
-        eve = events.objects.filter(Date__year=year).filter(Date__month=month)
-        ended = eventbin.objects.filter(Date__year=year).filter(Date__month=month)
-        context = {'event':eve,'completed_events':ended,'getmonth':getmonth}
-    
-        return render(request,'main_report.html', context=context)
+          if request.POST.get('checkdate'):
+            getmonth = request.POST.get('month')
+            converted_date = datetime.datetime.strptime(getmonth, "%Y-%m").date()
+            year = converted_date.year
+            month = converted_date.month
+            eve = events.objects.filter(Date__year=year).filter(Date__month=month)
+            ended = eventbin.objects.filter(Date__year=year).filter(Date__month=month)
+            context = {'event':eve,'completed_events':ended,'getmonth':getmonth}
+            return render(request,'main_report.html', context=context)
+          else:
+             messages.warning(request, 'Please Enter the Month!')
+             return redirect(AdminPanel)
+     
         
-    
-    return render(request,'main_report.html')
+    else:
+        return render(request,'main_report.html')

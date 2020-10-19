@@ -63,7 +63,7 @@
 
 <div class ="UserName">
 {% for cus in customer %} 
-<p><strong>{{cus.F_name}}</strong></p>
+<p><img id="profile_icon" img src="{% static 'images/profile.png' %}">{{cus.F_name}}</p>
 {% endfor %}
 </div>
 
@@ -71,12 +71,12 @@
 
 
 <div class ="eventDetails">
-
-{% for res in event %} 
-<p><strong>{{res.Contact}}</strong></p>
-<p><strong>{{res.Date}}</strong></p>
-<p><strong>{{res.Location}}</strong></p>
-<p><strong>{{res.Event_type}}</strong></p>
+{% for eve in event %} 
+<p><img id="contact_icon" img src="{% static 'images/contact.png' %}"> {{eve.Contact}}</p>
+<p><img id="date_icon" img src="{% static 'images/date.png' %}">{{eve.Date}}</p>
+<p><img id="location_icon" img src="{% static 'images/location.png' %}">{{eve.Location}}</p>
+<p><img id="event_icon" img src="{% static 'images/event.png' %}">{{eve.Event_type}}</p>
+<p><img id="status_icon" img src="{% static 'images/status.png' %}">{{eve.Status}}</p>
 
 <button type="button" class="myButton"  onclick="location.href='{% url 'MarkAsCompleted' id=res.Event_ID %}'"  id = "MarkCompleted">Mark As Completed</button>
 {% endfor %}
@@ -86,13 +86,14 @@
 <div class ="resDetails">
 
 {% for res in reservations %} 
-<p><strong>{{res.Resources_ID}}</strong></p>
-<p><strong>{{res.Date}}</strong></p>
+<p>Resources ID:  <strong>{{res.Resources_ID}}</strong></p>
+<p>From: <strong>{{res.S_Time}}</strong></p>
+<p>To:  <strong>{{res.S_Time}}</strong></p>
+<p>---------------</p>
 
 {% endfor %}
 
 </div>
-
 
 <a href="#" class="myButton" id = "back">back</a>
 

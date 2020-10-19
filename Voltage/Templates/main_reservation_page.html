@@ -7,6 +7,7 @@
     <title>reservation page</title>
 
 
+<<<<<<< HEAD
     <!-- My Css -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/uditha.css' %}">
     <style>
@@ -17,6 +18,32 @@
             background-image: url('https://images.unsplash.com/photo-1511149521648-612cb6799f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
         }
     </style>
+=======
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+<!-- My Css -->
+<link rel="stylesheet" type = "text/css" href="{% static 'css/uditha.css' %}">
+<style>
+ body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1511149521648-612cb6799f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+  }
+</style>
+>>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
 
 </head>
@@ -70,6 +97,7 @@
         <span>Voltage Entertainment</span>
     </div>
 
+<<<<<<< HEAD
 
 
     <a href="{% url 'displaycustomer' %}" class="myButton" id="cat1">Photography</a>
@@ -82,22 +110,72 @@
 
     {% for res in event %}
     <div class="upcoming_panel">
+=======
+
+
+{% if messages %}
+<div class="emptysubmitmessages">
+    {% for message in messages %}
+    <p>  {{ message }} </p>
+    {% endfor %}
+</div>
+{% endif %}
+ 
+
+<form method = "POST" action = "{% url 'submitEvent'%}">
+{% csrf_token %}
+
+{% for res in event %}
+
+<div class = "editEvent">
+<div class="md-form">
+  <input type="text" id="form1" name = "type"  value = "{{res.Event_type}}" class="form-control">
+</div>
+<div class="md-form">
+  <input type="text" id="form1"  name = "location"  value = "{{res.Location}}" class="form-control">
+</div>
+<div class="md-form">
+  <input type="text" id="form1"  name = "contact"  value = "{{res.Contact}}" class="form-control">
+</div>
+
+
+<a href="{% url 'CancelEvent' id=res.Event_ID  %}" id = "deleteEvent">Cancel</a>
+</div>
+>>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
         <p><strong>{{res.Event_ID}}</strong></p>
 
+<<<<<<< HEAD
         <a href="{% url 'submitEvent' %}" class="myButton" id="toreservations">Submit</a>
         <a href="{% url 'CancelEvent' id=res.Event_ID  %}" id="deleteEvent">Cancel</a>
+=======
+<input type = "submit" class="myButton" value = "Submit" id = "toreservations">
+>>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
         {% endfor %}
 
+<<<<<<< HEAD
+=======
+{% endfor %}
+>>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
+</form>
 
+<<<<<<< HEAD
 
 
 
 
     </div>
 
+=======
+<div class = "myReservations">
+{% for res in reservations %}
+</p>{{res.Resources_Name}}</p>
+{% endfor %}
+</div> 
+                     
+>>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
 </body>
 

@@ -13,7 +13,8 @@ urlpatterns = [
     path('admin_view/<id>',views.MarkAsCompleted,name = 'MarkAsCompleted'),
     path('admin_login',views.Adminlogin,name = 'Adminlogin'),
     path('review',views.sendmail,name = 'sendmail'),
-    path('main_report',views.getmonthlyreport, name = 'getmonthlyreport')
+    path('main_report',views.getmonthlyreport, name = 'getmonthlyreport'),
+    path('admin_panel',views.AdminPanel, name = 'AdminPanel')
     
 ]
 
