@@ -142,6 +142,7 @@ def bookphotographer(request):
             photographer.Event_ID = EventID
             PID = request.POST.get('PID')
             photographer.Resources_ID = PID
+            photographer.Resources_Name = 'Photography'
 
             mydate = date[0:10]
             converted_date = datetime.datetime.strptime(
