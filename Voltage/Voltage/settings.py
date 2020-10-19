@@ -64,7 +64,7 @@ ROOT_URLCONF = 'Voltage.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'Templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'Templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'voltage_entertainment',
         'USER': 'root',
-        'PASSWORD': 'mysql',
+        'PASSWORD': 'piliyandala123*',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -133,13 +133,19 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'static/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR,'assests')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assests')
+
+#to upload media #
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'assests')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -147,4 +153,4 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'voltage.en@gmail.com'
 EMAIL_HOST_PASSWORD = 'Voltage456'
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL= False
+EMAIL_USE_SSL = False

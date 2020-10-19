@@ -4,7 +4,7 @@
 
 <head>
     <center>
-        <link rel="stylesheet" type="text/css" href="../css/photo_customer.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/photo_customer.css' %}">
 
 <body style="background-color:rgb(15, 15, 15);"></body>
 <h1 style="color:white" font-size:"20px">VOLTAGE ENTERTAINMENT</h1><br>
@@ -14,132 +14,76 @@
 
 <body>
     <br>
-
-    <div class="check">
-        <button class="button check" onclick="checking">CHECK AVAILABILITY</button>
+    <div class="show">
+        <center>
+            <p2 style="color: white; font-size: 40px;">PHOTOGRAPHERS</p2>
+        </center>
 
     </div>
 
 
-    <form action="/action_page.php">
-        <label for="calender" style="color:white">Enter the
-            Reservation Date:</label>
-        <input type="date" style="padding:10px 30px;background-color:rgb(196, 199, 3)" id="bookingdate"
+    <div class="card">
+
+
+        {% if messages %}
+        <div class="">
+            {% for message in messages %}
+            <p> {{ message }} </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+
+
+        <!--<input type="date" style="padding:10px 30px;background-color:rgb(196, 199, 3)" id="bookingdate"
             name="bookingdate">
 
 
         <input type="submit"
             style="border-radius: 10px;padding:15px 20px;color:white ;background-color:rgb(106, 109, 109)"
-            value="submit">
-
-    </form>
+            value="submit">-->
 
 
 
+        <div class="card">
+            {% for photo in photo_test %}
+            <div class="show">
+                <form method="post">
 
 
+                    {% csrf_token %}
+                    <div class="first_one">
 
-    <div class="first_one">
-        <center>
+                        <center>
+                            <div class="pic">
+                                <img src="{%static 'images/pic.jpg' %}" style=" border-radius: 50%;" width="200"
+                                    height="200">
+                            </div>
+                            <br><br>
+                            <label for="Name" style="color:white" name="id">{{ photo.name }}</label><br>
+                            <label for="Name" style="color:white" name="id">{{ photo.des }}</label>
+                        </center><br>
+                        <center>
+                            <img src="{%static 'images/1.jpg' %}" width="200" height="200">
+                            <img src="{%static 'images/2.jpg' %}" width="200" height="200">
+                            <img src="{%static 'images/3.jpg' %}" width="200" height="200">
+                            <img src="{%static 'images/4.jpg' %}" width="200" height="200">
+                        </center>
+                        <div class="Details">
+                        </div>
+                        <input class="Details1" onclick="location.href='{% url 'photoprofile' id=photo.id %}'"
+                            value="More Details">
 
-            <div class="pic">
-                <img src="../photo/nil.jpg" style=" border-radius: 50%;" width="200" height="200">
+                        <hr>
+                    </div>
+                    {% endfor %}
+                    <input type="date" id="checkdate" style="background-color: yellow;" name="checkdate">
+                    <div class="check">
+                        <input type="submit" value="Check availability" style="border-radius: 50px;" id="checkbutton">
+                    </div>
             </div>
-            <br><br>
-            <label for="Name" style="color:white">Photographer Name:</label>
-            <input type="text" id="name" name="name" size="20">
-        </center><br>
-        <center>
-            <img src="../photo/2.jpg" width="200" height="200">
-            <img src="../photo/3.jpg" width="200" height="200">
-            <img src="../photo/4.jpg" width="200" height="200">
-            <img src="../photo/5.jpg" width="200" height="200">
-            <img src="../photo/nil.jpg" width="200" height="200">
-
-
-
-        </center>
-        <div class="Details">
-            <button class="Details1" onclick="checking">More Details</button>
-
         </div>
-
-
-
-        <hr>
-    </div>
-    <div class="second_one">
-        <center>
-
-            <div class="pic">
-                <img src="../photo/nil.jpg" style=" border-radius: 50%;" width="200" height="200">
-            </div>
-            <br><br>
-            <label for="Name" style="color:white">Photographer Name:</label>
-            <input type="text" id="name" name="name" size="20">
-        </center><br>
-        <center>
-            <img src="../photo/2.jpg" width="200" height="200">
-            <img src="../photo/3.jpg" width="200" height="200">
-            <img src="../photo/4.jpg" width="200" height="200">
-            <img src="../photo/5.jpg" width="200" height="200">
-            <img src="../photo/nil.jpg" width="200" height="200">
-        </center>
-        <div class="Details">
-
-            <button class="button Details2" onclick="checking">More Details</button>
-
-        </div>
-
-
-    </div>
-    <hr>
-    <div class="third_one">
-
-        <center>
-
-            <img src="../photo/nil.jpg" style=" border-radius: 50%;" width="200" height="200">
-            <br><br>
-            <label for="Name" style="color:white">Photographer Name:</label>
-            <input type="text" id="name" name="name" size="20">
-        </center><br>
-        <center>
-            <img src="../photo/2.jpg" width="200" height="200">
-            <img src="../photo/3.jpg" width="200" height="200">
-            <img src="../photo/4.jpg" width="200" height="200">
-            <img src="../photo/5.jpg" width="200" height="200">
-            <img src="../photo/nil.jpg" width="200" height="200">
-
-        </center>
-        <div class="Details">
-            <button class="Details3" onclick="checking">More Details</button>
-
-        </div>
-    </div>
-    <hr>
-    <div class="forth_one">
-        <center>
-
-            <img src="../photo/nil.jpg" style=" border-radius: 50%;" width="200" height="200">
-            <br><br>
-            <label for="Name" style="color:white">Photographer Name:</label>
-            <input type="text" id="name" name="name" size="20">
-        </center><br>
-        <center>
-            <img src="../photo/2.jpg" width="200" height="200">
-            <img src="../photo/3.jpg" width="200" height="200">
-            <img src="../photo/4.jpg" width="200" height="200">
-            <img src="../photo/5.jpg" width="200" height="200">
-            <img src="../photo/nil.jpg" width="200" height="200">
-        </center>
-        <div class="Details">
-            <button class="Details4" onclick="checking">More Details</button>
-
-        </div>
-
-    </div>
-
-
+        </form>
 </body>
 
 </html>
