@@ -245,7 +245,6 @@ def submitEvent(request):
      
         else:
             event = events.objects.get(Event_ID = id)
-            # event.delete()
             messages.warning(request, 'You can"t submit an empty event! Make at least one')
             return redirect(submitEvent)
 
@@ -264,5 +263,7 @@ def CancelEvent(request,id):
     if res != None:
        res.delete()
     return render(request,'home.html') 
-    
+
+
+
     

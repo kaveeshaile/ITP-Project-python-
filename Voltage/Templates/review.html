@@ -80,8 +80,8 @@
 {% endfor %}
 </div>
 
-<div class ="remaining">
-<p>Customer may be update the event within {{diff|floatformat }} min</p>
+<div class ="confirmmessages">
+<p>{{warning}}</p>
 </div>
 
 <div class = "allow_to_update_notification">
@@ -89,7 +89,7 @@
 </div>
 
 {% if messages %}
-<div class="confirmmessages">
+<div class="remaining">
     {% for message in messages %}
     <p>  {{ message }} </p>
     {% endfor %}

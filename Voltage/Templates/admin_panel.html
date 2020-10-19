@@ -87,7 +87,7 @@
 {% endif %}
 
 
-<a href="{% url 'customer_main' %}" class="myButton" id = "cat1">Photography</a>
+<a href="{% url 'displayall' %}" class="myButton" id = "cat1">Photography</a>
 <a href="{% url 'displayAlltoAdmin' %}" input type = "button" class="myButton" id = "cat2">Videography</a>
 <a href="{% url 'Adminlogin' %}" class="myButton" id = "cat3">Decorations</a>
 <a href="{% url 'addvideo' %}" class="myButton" id = "cat4">Music Band</a>
@@ -106,6 +106,19 @@
 <input type="submit" value="Get montly report" id = "getreportbtn">
 
 </form>
+
+
+<div class = "adminID">
+
+{% for user in admin_login %} 
+
+    <p>Logged in as <strong>{{user.username}}</strong></p>
+
+  {% endfor %}
+
+</div>
+
+
 
 <div class = "upcoming_panel">
 

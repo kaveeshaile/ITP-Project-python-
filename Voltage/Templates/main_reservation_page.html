@@ -84,7 +84,7 @@
 
 
 
-<a href="{% url 'customer_main' %}" class="myButton" id = "cat1">Photography</a>
+<a href="{% url 'addvideo' %}" class="myButton" id = "cat1">Photography</a>
 <a href="{% url 'displayall' %}" input type = "button" class="myButton" id = "cat2">Videography</a>
 <a href="{% url 'Adminlogin' %}" class="myButton" id = "cat3">Decorations</a>
 <a href="{% url 'addvideo' %}" class="myButton" id = "cat4">Music Band</a>
@@ -134,6 +134,7 @@
 <div class = "myReservations">
 {% for res in reservations %}
 </p>{{res.Resources_Name}}</p>
+<p>__________________</p>
 {% endfor %}
 </div> 
                      

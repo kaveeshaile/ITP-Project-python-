@@ -30,17 +30,19 @@ def reservation_manage(request):
 def review(request,id,user): 
  eve = events.objects.filter(Event_ID = id)
  res = reservations.objects.filter(Event_ID = id)
- user = customer.objects.filter(Customer_ID = 88) #temporary hardcoded value
- 
+ user = customer.objects.filter(Customer_ID = 88) #temporary hardcoded value, Should be user
  event = events.objects.get(Event_ID = id)
  time =  (timezone.now() - event.OnCreateTime).total_seconds()/60.0
- diff = (10.0 - time)
+ diff = (100.0 - time)
+ diffToString = str(diff)[0:5]
  if diff < 0:
      allow = 'you can confirm'
+     messages.warning(request, 'Allowed time for update is over.')
      context = {'event' : eve, 'reservations' : res, 'customer' : user, 'allow':allow,'diff':diff}
      return render(request,'review.html',context=context)
  else:
    context = {'event' : eve, 'reservations' : res, 'customer' : user, 'diff':diff}
+   messages.warning(request, 'Customer may update within  '+diffToString+'min')
    return render(request,'review.html',context=context)
 
 
@@ -70,13 +72,13 @@ def DeleteEvent(request,id):
 def ConfirmEvent(request,id):
     event = events.objects.get(Event_ID = id)
     time =  (timezone.now() - event.OnCreateTime).total_seconds()/60.0
-    if time > 10.0: #if time interval between event created time and current time is less than 1hour, admin cannot confirm
+    if time > 100.0: #if time interval between event created time and current time is less than 1hour, admin cannot confirm
       event.Status = 'upcoming'
       event.save()
       return redirect(reservation_manage)
 
     else:
-      messages.warning(request, 'Please wait for the remaining time!')
+      messages.error(request, 'Please wait for the remaining time!')
       return redirect(request.META.get('HTTP_REFERER'))
 
 
@@ -128,7 +130,7 @@ def sendmail(request):
 
 def getmonthlyreport(request):
     if request.method == 'POST':
-          if request.POST.get('checkdate'):
+          if request.POST.get('month'):
             getmonth = request.POST.get('month')
             converted_date = datetime.datetime.strptime(getmonth, "%Y-%m").date()
             year = converted_date.year

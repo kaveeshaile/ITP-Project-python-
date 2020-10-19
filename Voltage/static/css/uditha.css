@@ -1254,8 +1254,8 @@ font-size: 30px;
 {
   position:absolute;
   top:180px;
-  color: #35da4b;
-  font-size: 20px;
+  color: #1eb6e4;
+  font-size: 15px;
   left:750px;
 }
 
@@ -1290,6 +1290,14 @@ font-size: 30px;
  
 }
 
+
+.adminID{
+  position:absolute;
+  top:130px;
+  left:250px;
+  color: #59df3f;
+}
+
 .eventtitle{
   position:absolute;
   top:150px;
@@ -1308,8 +1316,8 @@ font-size: 30px;
 
 .remaining{
   position:absolute;
-  top:480px;
-  left:1005px;
+  top:460px;
+  left:1040px;
   color: #e6a442;
   font-size: 15px;
   animation: blinker 1s linear infinite;

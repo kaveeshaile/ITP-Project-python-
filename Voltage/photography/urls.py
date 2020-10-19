@@ -16,8 +16,8 @@ urlpatterns = [
          name='GetDetailsForUpdate'),
 
     path('update/<id>', views.AdminUpdate, name='AdminUpdate'),
-    path('customer_main', views.displayall, name='displayall'),
-    path('photo_profile', views.bookphotographer, name='bookphotographer'),
+    # path('customer_main', views.displayall, name='displayall'),
+    # path('photo_profile', views.bookphotographer, name='bookphotographer'),
     path('customer_main/<id>', views.photoprofile, name='photoprofile'),
 
 ]

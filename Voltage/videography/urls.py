@@ -13,7 +13,7 @@ urlpatterns = [
     path('video_profile',views.bookVideographer,name = 'bookVideographer'),
     path('event_create',views.CreateEvent,name = 'CreateEvent'),
     path('main_reservation_page',views.submitEvent,name = 'submitEvent'),
-    path('main_reservation_page/<id>',views.CancelEvent,name = 'CancelEvent'),
+    path('main_reservation_page/<id>',views.CancelEvent,name = 'CancelEvent')
     
     
     
