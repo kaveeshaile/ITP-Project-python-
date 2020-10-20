@@ -52,12 +52,13 @@
  <form method = "POST" >
 {% csrf_token %}
 
+
 Type:<br>
-  <select name="type" id="cars">
+  <select name="type" id="selectType">
     <option value="Birthday">Birthday</option>
     <option value="wedding">wedding</option>
-    <option value="Get to gether">gether</option>
-    <option value="other">other</option>
+    <option value="Get together">gether</option>
+    <option value="Other">other</option>
   </select> 
 
 
@@ -70,6 +71,8 @@ Type:<br>
   <label for="form1">Contact</label>
 </div>
 <br>
+
+
 
 <input type="date" id="eventDate" name="eventDate">
 
