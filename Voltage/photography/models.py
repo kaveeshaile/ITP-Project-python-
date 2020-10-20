@@ -23,14 +23,3 @@ class photo_test(models.Model):
 
 class meta:
     db_table = "photo_test"
-
-
-class reservations(models.Model):
-    Reservation_ID = models.AutoField(primary_key=True)
-    Event_ID = models.CharField(max_length=10)
-    S_Time = models.DateTimeField(blank=True, null=True)
-    E_Time = models.DateTimeField(blank=True, null=True)
-    Resources_ID = models.CharField(max_length=10)
-
-    class meta:
-        db_table = "reservations"
