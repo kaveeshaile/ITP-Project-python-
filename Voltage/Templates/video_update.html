@@ -144,8 +144,10 @@
 </div>
 
 {% for res in resources %}
- <input type="text" id="setStatus" value="{{res.Status}}" name = "status" class="form-control">
-<div class = "Status">
+<div class = "showStatus">
+ <input type="text" id="setStatus" style = "color:cyan;" value="{{res.Status}}" name = "status" class="form-control">
+ </div>
+<div class = "updateStatus">
 <label class="switch">
   <input type="checkbox" id = "status" >
   <span class="slider round"></span>

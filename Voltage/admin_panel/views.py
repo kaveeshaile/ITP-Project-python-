@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import HttpResponse
 from admin_panel.models import events
 from admin_panel.models import reservations
 from admin_panel.models import eventbin
@@ -11,6 +12,9 @@ from datetime import date
 from datetime import datetime
 import datetime
 from django.utils import timezone
+from xhtml2pdf import pisa
+from django.template.loader import get_template
+from io import BytesIO
 # from django.db.models.functions import ExtractYear
 # from django.db.models.functions import ExtractMonth
 # Create your views here.
@@ -138,7 +142,15 @@ def getmonthlyreport(request):
             eve = events.objects.filter(Date__year=year).filter(Date__month=month)
             ended = eventbin.objects.filter(Date__year=year).filter(Date__month=month)
             context = {'event':eve,'completed_events':ended,'getmonth':getmonth}
-            return render(request,'main_report.html', context=context)
+            template = get_template("main_report.html")
+            context_r = template.render(context)
+            response = BytesIO()
+            
+            pdfReport = pisa.pisaDocument(BytesIO(context_r.encode("UTF-8")),response)
+            if not pdfReport.err:
+                return HttpResponse(response.getvalue(),content_type ="application/pdf")
+            else:
+                return HttpResponse("Error generating Report")
           else:
              messages.warning(request, 'Please Enter the Month!')
              return redirect(AdminPanel)

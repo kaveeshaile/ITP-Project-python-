@@ -94,7 +94,6 @@
 {% csrf_token %}
 
 
-
 <div class="upload">
 
       <span><i class="fas fa-cloud-upload-alt mr-2"></i>Choose files</span>
@@ -118,7 +117,7 @@
   <label for="form7">Description</label>
 </div>
 
-<div class = "contact">
+<div class = "Addcontact">
 <div class="md-form">
   <input type="text" id="form1" name = "Contact" class="form-control">
   <label for="form1">Contact</label>
@@ -128,7 +127,7 @@
   <label for="form1">Email</label>
 </div> 
 </div>
- <input type="text" id="setStatus" value="Out" name = "status" class="form-control">
+ <input type="text" style = "color:cyan;" id="setStatus" value="Out" name = "status" class="form-control">
 <div class = "setStatus">
 <label class="switch">
   <input type="checkbox" id = "status" >
@@ -137,8 +136,8 @@
 </div>
 
 <div class = "vid1">
-<input type="file" name = "sample" onchange="readVideoURL(this);" >
-<video id="vid" src=""  autoplay loop controls muted  autoplay alt="video"/>
+<input type="file" name = "sample"   onchange="readVideoURL(this);" >
+<video id="vidpreview" width="520" height="450" src=""  autoplay loop controls muted  autoplay alt="video">
 </div>
 
 <div class="add">
@@ -188,8 +187,8 @@
                 reader.onload = function (e) {
                     $('#vid')
                         .attr('src', e.target.result)
-                        .width(250)
-                        .height(180);
+                        .width(520)
+                        .height(450);
                 };
 
                 reader.readAsDataURL(input.files[0]);
