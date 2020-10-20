@@ -72,7 +72,7 @@
 <p><img id="event_icon" img src="{% static 'images/event.png' %}">{{eve.Event_type}}</p>
 <p><img id="status_icon" img src="{% static 'images/status.png' %}">{{eve.Status}}</p>
 
-<button type="button" class="myButton"  onclick="location.href='{% url 'DeleteEvent' id=eve.Event_ID %}'"  id = "confirm">Delete</button>
+<button type="button" class="myButton"  onclick="location.href='{% url 'DeleteEvent' id=eve.Event_ID %}'"  id = "DeleteCompleted">Delete</button>
 
 {% endfor %}
 
@@ -91,7 +91,7 @@
 </div>
 
 
-<a href="#" class="myButton" id = "back">back</a>
+<a href="#" class="myButton" id = "Deleteback">back</a>
 
 
 

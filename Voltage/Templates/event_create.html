@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin</title>
+<title>Create Event</title>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -47,6 +47,8 @@
 
 <div class="login-box">
   <h2>Create an event</h2>
+
+  
  <form method = "POST" >
 {% csrf_token %}
 
@@ -56,7 +58,8 @@ Type:<br>
     <option value="wedding">wedding</option>
     <option value="Get to gether">gether</option>
     <option value="other">other</option>
-  </select>
+  </select> 
+
 
 <div class="md-form">
   <input type="text" id="form1" required name = "location" class="form-control">
@@ -72,7 +75,7 @@ Type:<br>
 
  <input type="submit" value="Create" id="createEvent" button class="custom-btn btn-1">
 
-
+</form>
  
 
 
@@ -88,5 +91,7 @@ Type:<br>
 
 
 </body>
+
+
 
 </html>

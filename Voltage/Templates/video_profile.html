@@ -102,12 +102,14 @@
 
 <div class="details"> 
 <p>{{vid.Name}}</p>
+<img id = "profile_phone" src="{% static 'images/contact.png' %}" width = "80px"  style = "border-radius:20%">
+<img id = "profile_email" src="{% static 'images/email.png' %}" width = "80px"  style = "border-radius:20%">
 <div class = "contact_profile">
-<p><strong> <img src="{% static 'images/phone.png' %}" width = "30px"  style = "border-radius:20%"> </strong>{{vid.Contact}}</p>
-<p><strong> <img src="{% static 'images/email.png' %}" width = "30px"  style = "border-radius:20%"> </strong>{{vid.ContactEmail}}</p>
+<p><strong>  </strong>{{vid.Contact}}</p>
+<p><strong>  </strong>{{vid.ContactEmail}}</p>
 </div>
 <p><strong>Reservation fee: Rs </strong>{{vid.Fee}}</p>
-<textarea  rows="6" cols="60" style = "color:white" id = "description">{{vid.Description}}</textarea>
+<textarea  rows="6" cols="30" style = "color:white" id = "description">{{vid.Description}}</textarea>
  <input type="text" style="display:none;" value = {{vid.id}} name = "vid" display:none >
 </div>
 <input type="datetime-local" id="daytime1" name="bookingdate">

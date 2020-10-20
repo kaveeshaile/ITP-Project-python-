@@ -33,7 +33,7 @@ def review(request,id,user):
  user = customer.objects.filter(Customer_ID = 88) #temporary hardcoded value, Should be user
  event = events.objects.get(Event_ID = id)
  time =  (timezone.now() - event.OnCreateTime).total_seconds()/60.0
- diff = (100.0 - time)
+ diff = (2.0 - time)
  diffToString = str(diff)[0:5]
  if diff < 0:
      allow = 'you can confirm'
@@ -72,7 +72,7 @@ def DeleteEvent(request,id):
 def ConfirmEvent(request,id):
     event = events.objects.get(Event_ID = id)
     time =  (timezone.now() - event.OnCreateTime).total_seconds()/60.0
-    if time > 100.0: #if time interval between event created time and current time is less than 1hour, admin cannot confirm
+    if time > 2.0: #if time interval between event created time and current time is less than 1hour, admin cannot confirm
       event.Status = 'upcoming'
       event.save()
       return redirect(reservation_manage)
@@ -124,7 +124,8 @@ def sendmail(request):
     'Your reservation has confirmed.We will Contact you soon.Thank you',
     'voltage.en@gmail.com',['udithaj.98@gmail.com'],
     fail_silently=False)
-    return redirect(reservation_manage)
+    messages.error(request, 'Email successfuly sent!')
+    return redirect(request.META.get('HTTP_REFERER')) 
 
 
 def getmonthlyreport(request):

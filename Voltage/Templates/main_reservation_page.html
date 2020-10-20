@@ -1,22 +1,12 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="ISO-8859-1">
-    <title>reservation page</title>
+<meta charset="ISO-8859-1">
+<title>reservation page</title>
 
 
-    <!-- My Css -->
-    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/uditha.css' %}">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1511149521648-612cb6799f07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
-        }
-    </style> {% endcomment %}
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Google Fonts -->
@@ -44,17 +34,16 @@
 
 
 </head>
-
 <body>
 
-    <nav class="nav">
+<nav class="nav">
         <div class="container">
-
+           
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Sign in</a></li>
-                    <li><a href="#">Reservations</a></li>
+					 <li><a href="#">Reservations</a></li>
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Logout</a></li>
                 </ul>
@@ -66,35 +55,35 @@
             </span>
         </div>
     </nav>
+  
 
 
 
 
 
+  
+
+<svg class="viewbox2" viewBox="0 0 633.183 627.287">
+		<linearGradient id="Path_3_j" spreadMethod="pad" x1="0.104" x2="0.782" y1="-0.293" y2="1.082">
+		<path id="Path_3_j" d="M 17.1486988067627 0 L 243.2478942871094 0 L 616.0341186523438 0 C 625.5049438476563 0 633.1828002929688 7.851606369018555 633.1828002929688 17.53705596923828 L 633.1828002929688 609.7499389648438 C 633.1828002929688 619.4353637695313 625.5049438476563 627.2869873046875 616.0341186523438 627.2869873046875 L 17.1486988067627 627.2869873046875 C 7.677733898162842 627.2869873046875 0 619.4353637695313 0 609.7499389648438 L 0 17.53705596923828 C 0 7.851606369018555 7.677733898162842 0 17.1486988067627 0 Z">
+		</path>
+			<stop offset="0" stop-color="#f4f5f5" stop-opacity="1"></stop>
+			<stop offset="1" stop-color="#f1e6f1" stop-opacity="0"></stop>
+		</linearGradient>
+		
+	</svg>
+
+
+	<img id="logo_2" img src="{% static 'images/logo.jpg' %}">
+    
+ 
+
+<div id="Voltage_Entertainment2">
+		<span>Voltage Entertainment</span>
+	</div>
 
 
 
-    <svg class="viewbox2" viewBox="0 0 633.183 627.287">
-        <linearGradient id="Path_3_j" spreadMethod="pad" x1="0.104" x2="0.782" y1="-0.293" y2="1.082">
-            <path id="Path_3_j"
-                d="M 17.1486988067627 0 L 243.2478942871094 0 L 616.0341186523438 0 C 625.5049438476563 0 633.1828002929688 7.851606369018555 633.1828002929688 17.53705596923828 L 633.1828002929688 609.7499389648438 C 633.1828002929688 619.4353637695313 625.5049438476563 627.2869873046875 616.0341186523438 627.2869873046875 L 17.1486988067627 627.2869873046875 C 7.677733898162842 627.2869873046875 0 619.4353637695313 0 609.7499389648438 L 0 17.53705596923828 C 0 7.851606369018555 7.677733898162842 0 17.1486988067627 0 Z">
-            </path>
-            <stop offset="0" stop-color="#f4f5f5" stop-opacity="1"></stop>
-            <stop offset="1" stop-color="#f1e6f1" stop-opacity="0"></stop>
-        </linearGradient>
-
-    </svg>
-
-
-    <img id="logo_2" img src="{% static 'images/logo.jpg' %}">
-
-
-
-    <div id="Voltage_Entertainment2">
-        <span>Voltage Entertainment</span>
-    </div>
-
-<<<<<<< HEAD
 <a href="{% url 'addvideo' %}" class="myButton" id = "cat1">Photography</a>
 <a href="{% url 'displayall' %}" input type = "button" class="myButton" id = "cat2">Videography</a>
 <a href="{% url 'Adminlogin' %}" class="myButton" id = "cat3">Decorations</a>
@@ -102,22 +91,7 @@
 <a href="{% url 'addvideo' %}" class="myButton" id = "cat5">Sound Systems</a>
 <a href="{% url 'addvideo' %}" class="myButton" id = "cat6">Graphic design</a>
 <a href="{% url 'addvideo' %}" class="myButton" id = "cat7">LED walls & Lights</a>
-=======
-<<<<<<< HEAD
->>>>>>> 729c4437678e5ba9bc486796cb797c67421f7825
 
-
-    <a href="{% url 'displaycustomer' %}" class="myButton" id="cat1">Photography</a>
-    <a href="{% url 'displayall' %}" input type="button" class="myButton" id="cat2">Videography</a>
-    <a href="{% url 'Adminlogin' %}" class="myButton" id="cat3">Decorations</a>
-    <a href="{% url 'addvideo' %}" class="myButton" id="cat4">Music Band</a>
-    <a href="{% url 'addvideo' %}" class="myButton" id="cat5">Sound Systems</a>
-    <a href="{% url 'addvideo' %}" class="myButton" id="cat6">Graphic design</a>
-    <a href="{% url 'addvideo' %}" class="myButton" id="cat7">LED walls & Lights</a>
-
-    {% for res in event %}
-    <div class="upcoming_panel">
-=======
 
 
 {% if messages %}
@@ -146,36 +120,17 @@
 </div>
 
 
-<a href="{% url 'CancelEvent' id=res.Event_ID  %}" id = "deleteEvent">Cancel</a>
+<a href="{% url 'CancelEvent' id=res.Event_ID  %}" class="myButton" id = "deleteEvent">Cancel</a>
 </div>
->>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
-        <p><strong>{{res.Event_ID}}</strong></p>
 
-<<<<<<< HEAD
-        <a href="{% url 'submitEvent' %}" class="myButton" id="toreservations">Submit</a>
-        <a href="{% url 'CancelEvent' id=res.Event_ID  %}" id="deleteEvent">Cancel</a>
-=======
-<input type = "submit" class="myButton" value = "Submit" id = "toreservations">
->>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
+<input type = "submit" class="myButton" value = "Submit" id = "submitevent">
 
-        {% endfor %}
 
-<<<<<<< HEAD
-=======
 {% endfor %}
->>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
 </form>
 
-<<<<<<< HEAD
-
-
-
-
-    </div>
-
-=======
 <div class = "myReservations">
 {% for res in reservations %}
 </p>{{res.Resources_Name}}</p>
@@ -183,11 +138,10 @@
 {% endfor %}
 </div> 
                      
->>>>>>> a929b3a6c0411fc4fca374d5e71a57a32a69eb1d
 
 </body>
 
 
 
-
+ 
 </html>

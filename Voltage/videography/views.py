@@ -192,7 +192,7 @@ def bookVideographer(request):
 
 def CreateEvent(request):
     
-     cusID = '12'# temporary hardcode value 
+     cusID = '88'# temporary hardcode value should be login session 
      if request.method == 'POST':
           if request.POST.get('eventDate'):
               
@@ -224,7 +224,7 @@ def CreateEvent(request):
                 return redirect(request.META.get('HTTP_REFERER'))
      else:
          if cusID is None:
-              return render(request,'home.html')
+              return render(request,'home.html')#should redirect to registration page
          else:
               return render(request,'event_create.html')
      
@@ -245,7 +245,7 @@ def submitEvent(request):
      
         else:
             event = events.objects.get(Event_ID = id)
-            messages.warning(request, 'You can"t submit an empty event! Make at least one')
+            messages.warning(request, 'You can"t submit an empty event! Make at least one Reservation')
             return redirect(submitEvent)
 
      
@@ -262,7 +262,8 @@ def CancelEvent(request,id):
     res = reservations.objects.filter(Event_ID=id)
     if res != None:
        res.delete()
-    return render(request,'home.html') 
+    messages.warning(request, 'Event deleted')
+    return redirect(CreateEvent) 
 
 
 
