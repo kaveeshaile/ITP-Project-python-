@@ -25,6 +25,12 @@ h5 {
   font-weight: bold;
 }
 
+.HomeSlider{
+position: absolute;
+left: 680px;
+top: 100px;
+}
+
 
 #Voltage_Entertainment {
   left: 95px;
@@ -1582,6 +1588,7 @@ font-size: 30px;
   background-color: turquoise;
   border-radius: 5px;
   height: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 

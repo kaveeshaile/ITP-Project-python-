@@ -35,10 +35,10 @@
     cursor: pointer;
 
     
-    border: 2px solid #008CBA;
+    border: 2px solid red;
 }
 .Details2:hover {
-    background-color: #008CBA;
+    background-color: #b7ba00;
     color: aquamarine;
 
   }
@@ -114,3 +114,182 @@ color: aqua;
   .pic{
     border-radius: 50px;
   }
+  .nav {
+    width: 100%;
+    height: 65px;
+    position: relative;
+    line-height: 65px;
+    text-align: center;
+  }
+  
+  
+  .nav div.main_list {
+    height: 65px;
+    float: right;
+  }
+  
+  .nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 2rem;
+  }
+  
+  .nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 0.8 rem;
+  }
+  
+  .nav div.main_list ul li a:hover {
+    color: #00E676;
+  }
+  
+  
+  .navTrigger {
+    display: none;
+  }
+  
+  .nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  
+  
+  
+  .navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+  }
+  #logo_2{
+    position: absolute;
+    width: 100px;
+    height: 100.5px;
+    left: 92px;
+    top: 40px;
+    overflow: visible;
+    border-radius:50%;
+  }
+  .nav {
+    width: 100%;
+    height: 65px;
+    position: relative;
+    line-height: 65px;
+    text-align: center;
+  }
+  
+  
+  .nav div.main_list {
+    height: 65px;
+    float: right;
+  }
+  
+  .nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 2rem;
+  }
+  
+  .nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 0.8 rem;
+  }
+  
+  .nav div.main_list ul li a:hover {
+    color: #00E676;
+  }
+  
+  
+  .navTrigger {
+    display: none;
+  }
+  
+  .nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  
+  
+  
+  .navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+  }
+  .Voltage_Entertainment2 {
+    left: 205px;
+    top: 70px;
+    position: absolute;
+    overflow: visible;
+    width: 493px;
+    white-space: nowrap;
+    line-height: 110px;
+    margin-top: -30px;
+    text-align: left;
+    font-family: Jaapokki enchance;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(0,177,255,1);
+  }
+  
+  
+  
+  
+  
+  
