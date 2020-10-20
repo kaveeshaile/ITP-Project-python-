@@ -78,7 +78,7 @@
 <p><img id="event_icon" img src="{% static 'images/event.png' %}">{{eve.Event_type}}</p>
 <p><img id="status_icon" img src="{% static 'images/status.png' %}">{{eve.Status}}</p>
 
-<button type="button" class="myButton"  onclick="location.href='{% url 'MarkAsCompleted' id=res.Event_ID %}'"  id = "MarkCompleted">Mark As Completed</button>
+<button type="button" class="myButton"  onclick="location.href='{% url 'MarkAsCompleted' id=eve.Event_ID %}'"  id = "MarkCompleted">Mark As Completed</button>
 {% endfor %}
 
 </div>

@@ -60,7 +60,7 @@
 
     <ul style="list-style-type:none;">
 
-	  <li>{{res.Date}} <button type="button" class = "admin_button" onclick="location.href='{% url 'viewReservation' id=res.Event_ID user=res.Customer_ID %}'">View</button></li>
+	  <li>{{res.Event_ID}}). {{res.Date}} <button type="button" class = "admin_button" onclick="location.href='{% url 'viewReservation' id=res.Event_ID user=res.Customer_ID %}'">View</button></li>
 
     </ul>
    
@@ -128,7 +128,7 @@
 
     <ul style="list-style-type:none;">
 
-	  <li>{{eve.Event_ID}}  {{eve.Date}}  <button type="button"  class = "admin_button"   onclick="location.href='{% url 'deleteReservation' id=eve.Event_ID user=eve.Customer_ID %}'">View</button></li>
+	  <li>{{eve.Event_ID}}). {{eve.Date}}  <button type="button"  class = "admin_button"   onclick="location.href='{% url 'deleteReservation' id=eve.Event_ID user=eve.Customer_ID %}'">View</button></li>
 
     </ul>
    

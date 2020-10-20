@@ -120,12 +120,11 @@ def AdminPanel(request):
  
  
 def sendmail(request):
-    send_mail('hello',
-    'your reservation has confirmed',
-    'voltage.en@gmail.com',
-    ['begaheh976@justlibre.com'],
+    send_mail('Hello',
+    'Your reservation has confirmed.We will Contact you soon.Thank you',
+    'voltage.en@gmail.com',['udithaj.98@gmail.com'],
     fail_silently=False)
-    return render(request,'admin_login.html')
+    return redirect(reservation_manage)
 
 
 def getmonthlyreport(request):
