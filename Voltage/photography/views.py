@@ -103,32 +103,26 @@ def AdminUpdate(request, id):
         return render(request, 'photo_add.html')
 
 
-<<<<<<< HEAD
-# def displayall(request):
-#     if request.method == 'POST':
-#         if request.POST.get('checkdate'):
-=======
 def displaycustomer(request):
     if request.method == 'POST':
         if request.POST.get('checkdate'):
->>>>>>> 729c4437678e5ba9bc486796cb797c67421f7825
 
-#             date = request.POST.get('checkdate')
-#             booked = reservations.objects.filter(
-#                 Q(S_Time__date=date) | Q(E_Time__date=date))
-#             print('printing check result:')
-#             print(booked)
-#             bookedID = [item.Resources_ID for item in booked]
-#             photo = photo_test.objects.exclude(PID__in=bookedID)
-#             return render(request, 'customer_main.html', {'photo_test': photo})
+            date = request.POST.get('checkdate')
+            booked = reservations.objects.filter(
+                Q(S_Time__date=date) | Q(E_Time__date=date))
+            print('printing check result:')
+            print(booked)
+            bookedID = [item.Resources_ID for item in booked]
+            photo = photo_test.objects.exclude(PID__in=bookedID)
+            return render(request, 'customer_main.html', {'photo_test': photo})
 
-#         else:
-#             messages.warning(request, 'Please Enter the Date!')
-#             return redirect(request.META.get('HTTP_REFERER'))
-#     else:
+        else:
+            messages.warning(request, 'Please Enter the Date!')
+            return redirect(request.META.get('HTTP_REFERER'))
+    else:
 
-#         photo = photo_test.objects.all()
-#         return render(request, 'customer_main.html', {'photo_test': photo})
+        photo = photo_test.objects.all()
+        return render(request, 'customer_main.html', {'photo_test': photo})
 
 
 def photoprofile(request, id):
@@ -136,44 +130,6 @@ def photoprofile(request, id):
     return render(request, 'photo_profile.html', {'photo_test': photo})
 
 
-<<<<<<< HEAD
-# def bookphotographer(request):
-#     if request.method == 'POST':
-#         if request.POST.get('bookingdate') and request.POST.get('enddate'):
-
-#             EventID = request.session['E001']
-#             date = request.POST.get('bookingdate')
-#             photographer = reservations()
-#             photographer.S_Time = request.POST.get('bookingdate')
-#             photographer.E_Time = request.POST.get('enddate')
-#             photographer.Event_ID = EventID
-#             PID = request.POST.get('PID')
-#             photographer.Resources_ID = PID
-#             mydate = date[0:10]
-#             converted_date = datetime.datetime.strptime(
-#                 mydate, "%Y-%m-%d").date()
-
-#             if converted_date < datetime.datetime.now().date():
-#                 messages.warning(request, 'Please Enter a valid Date')
-#                 return redirect(request.META.get('HTTP_REFERER'))
-#             else:
-
-#                 if reservations.objects.filter(S_Time__date=converted_date, Resources_ID=PID):
-
-#                     messages.warning(
-#                         request, 'Please check availability before make a reservation')
-#                     return redirect(request.META.get('HTTP_REFERER'))
-
-#                 else:
-#                     photographer.save()
-#                     return render(request, 'main_reservation_page.html')
-
-#         else:
-#             messages.warning(request, 'Please Fill the required Fields!')
-#             return redirect(request.META.get('HTTP_REFERER'))
-#     else:
-#         return redirect(displayall)
-=======
 def bookphotographer(request):
     if request.method == 'POST':
         if request.POST.get('bookingdate') and request.POST.get('enddate'):
@@ -230,4 +186,3 @@ def getmonthlyreportforphotographer(request):
         return render(request, 'main_report.html', context=context)
 
     return render(request, 'main_report.html')
->>>>>>> 729c4437678e5ba9bc486796cb797c67421f7825
