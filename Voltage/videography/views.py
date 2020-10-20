@@ -53,7 +53,7 @@ def displayall(request):
         date = request.POST.get('checkdate')
         booked = reservations.objects.filter(Q(S_Time__date = date)| Q(E_Time__date = date))
         bookedID = [item.Resources_ID for item in booked]
-        videogrpher = video_add.objects.exclude(id__in = bookedID)
+        videogrpher = video_add.objects.filter(Status='In').exclude(id__in = bookedID)
         return render(request,'video_customer_main.html',{'videography':videogrpher})
      
        else:

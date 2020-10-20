@@ -75,6 +75,10 @@
 		<span>Voltage Entertainment</span>
 	</div>
 
+      <div class = "h4">
+<h4>Upload sample video</h4>
+</div>
+
 <br><br>
 <!-- Grid row -->
 <div class="row">
@@ -136,8 +140,8 @@
 </div>
 
 <div class = "vid1">
-<input type="file" name = "sample"   onchange="readVideoURL(this);" >
-<video id="vidpreview" width="520" height="450" src=""  autoplay loop controls muted  autoplay alt="video">
+<input type="file" id = "addSampleVideo" name = "sample"   onchange="readVideoURL(this);" >
+<video id="vidpreview" width="520" height="400" src=""  autoplay loop controls muted  autoplay alt="video">
 </div>
 
 <div class="add">
@@ -185,7 +189,7 @@
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    $('#vid')
+                    $('#vidpreview')
                         .attr('src', e.target.result)
                         .width(520)
                         .height(450);

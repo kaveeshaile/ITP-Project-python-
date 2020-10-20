@@ -87,7 +87,7 @@
 		<input type="text" name="id" id = "vid_idtoadmin" value = {{vid.Status}} ><br><br>
     <ul class="features-list">
 			<li><strong>{{vid.Name}}</strong></li>
-            <input class="btn-primary" onclick="location.href='{% url 'displayProfiletoAdmin' id=vid.id %}'"  value="View"</button>
+            <input class="btn-primary" id = "viewprofile" onclick="location.href='{% url 'displayProfiletoAdmin' id=vid.id %}'"  value="View"</button>
 	</div>
   </div>
   {% endfor %}
