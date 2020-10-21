@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Sound Test 2</title>
+
+
+
+
+</head>
+<body style="background-color:white;">
+
+
+	
+<h5> Sound Test 2</h5>
+
+
+        
+ 
+
+            <center>
+
+                        <h1> Edit & Update</h1>
+                        </hr>
+                                    {% for sound in soundsystem%}
+                                    <form method = "POST" action = "{% url 'sound_admin_update'%}" >
+                                    {% csrf_token %}
+                  
+                        <table border="1">
+
+                              
+                               <input type = "text" name = "id" value = "{{sound.id}}"
+
+                                <tr>
+
+                                        <td>Package name</td>
+                                         <td><input type="text" name="packname" value="{{sound.Package_name}}"></td>
+
+                                </tr>
+
+
+                                 <tr>
+                                        <td>Suitable For</td>
+                                         <td><input type="text" name="suitable" value="{{sound.Suitable_for}}"></td>
+                                         
+                                </tr>
+
+
+                                
+                                 <tr>
+                                        <td>Brand</td>
+                                         <td><input type="text" name="brand" value="{{sound.Brand}}"></td>
+                                         
+                                </tr>
+
+                                
+                                 <tr>
+                                        <td>Price</td>
+                                         <td><input type="text" name="price" value="{{sound.Price}}"></td>
+                                         
+                                </tr>
+
+                             
+
+                        </table>
+
+                        <input type="submit" value="UPDATE"/>
+
+                        <td><center><a class="btn btn-sm btn-warning"  href="{% url 'sound_delete' id=sound.id %}" ><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+
+                       </form>
+
+                    {% endfor %}
+
+
+
+            </center>
+
+
+
+
+
+ 
+
+
+
+</body>
+</html>
