@@ -15,6 +15,7 @@ from django.utils import timezone
 from xhtml2pdf import pisa
 from django.template.loader import get_template
 from io import BytesIO
+from django.contrib.auth import logout
 # from django.db.models.functions import ExtractYear
 # from django.db.models.functions import ExtractMonth
 # Create your views here.
@@ -60,7 +61,7 @@ def viewReservation(request,id,user):
 
 def deleteReservation(request,id,user): 
  eve = eventbin.objects.filter(Event_ID = id)
- res = reservations.objects.filter(Event_ID = id)# temporary value
+ res = reservations.objects.filter(Event_ID = id)
  user = customer.objects.filter(Customer_ID = user)
  context = {'completed_events' : eve, 'reservations' : res, 'customer' : user}
  return render(request,'admin_delete.html',context=context)
@@ -158,3 +159,16 @@ def getmonthlyreport(request):
         
     else:
         return render(request,'main_report.html')
+    
+    
+    
+    
+def Adminlogout(request,id):
+    
+
+     print( request.session['name'])
+     del request.session['name']
+     return redirect(Adminlogin)
+ 
+
+       
