@@ -244,7 +244,7 @@ table.table .avatar {
 .adminUpdateTable{
 
 	top: 300px;
-	left: 280px;
+	left: 150px;
 	position:absolute;
 
 }
@@ -321,9 +321,7 @@ $(document).ready(function(){
 
 
 
-
-
-
+<center>
 
 
 <div class="adminUpdateTable"
@@ -334,12 +332,9 @@ $(document).ready(function(){
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Package <b>Update</b></h2>
+						<h2>Package <b>Delete and Update</b></h2>
 					</div>
-					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Package</span></a>
-						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
-					</div>
+					
 				</div>
 			</div>
 			<table class="table table-striped table-hover">
@@ -347,20 +342,23 @@ $(document).ready(function(){
 				
 					<tr>
 						<th>
-							<span class="custom-checkbox">
+							<span class="custom-checkbox"
 								<input type="checkbox" id="selectAll">
 								<label for="selectAll"></label>
 							</span>
 						</th>
+                        <th>ID</th>
 						<th>Package Name</th>
 						<th>Suitable For</th>
 						<th>Brand</th>
 						<th>Price</th>
-						<th>Actions</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-						{% for sound in soundsystem %}
+						 {% for sound in soundsystem%}
+                        <form method = "POST" action = "{% url 'sound_admin_update'%}">
+                        {% csrf_token %}
 					<tr>
 						<td>
 							<span class="custom-checkbox">
@@ -368,15 +366,20 @@ $(document).ready(function(){
 								<label for="checkbox1"></label>
 							</span>
 						</td>
-						<td> {{sound.Package_name }} </td>
-						<td>{{sound.Suitable_for}}</td>
-						<td>{{sound.Brand}}</td>
-						<td>{{sound.Price}}</td>
-						<td><center><a class="btn btn-sm btn-warning"  href="{% url 'edit' id=sound.id %}" ><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
-							<!--<a href="{% url 'edit' id=sound.id %}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>-->
-							<!--<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>-->
+
+                         <td><input type="text" name = "id" value = "{{sound.id}}" readonly></td>
+						 <td><input type="text" name="packname" value="{{sound.Package_name}}"></td>
+						 <td><input type="text" name="suitable" value="{{sound.Suitable_for}}"></td>
+						 <td><input type="text" name="brand" value="{{sound.Brand}}"></td>
+                         <td><input type="text" name="price" value="{{sound.Price}}"></td>
+                        
 						
+                        <td><center><input type="submit" class="btn btn-sm btn-warning" value="Update"/></td>
+                        
+                        <td><center><a class="btn btn-sm btn-warning"  href="{% url 'sound_delete' id=sound.id %}" ><span class="glyphicon glyphicon-edit"></span>Delete</a></td>
+
 					</tr>
+                    </form>
 					{% endfor %}
 						
 				</tbody>
@@ -386,7 +389,13 @@ $(document).ready(function(){
 	</div>        
 </div>
 
+</center>
 
+
+
+
+
+    
 
 
 </body>
