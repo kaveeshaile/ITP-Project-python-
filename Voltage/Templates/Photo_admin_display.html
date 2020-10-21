@@ -48,27 +48,35 @@
         <button class="Details1">
             <a href="{% url 'addPhoto' %}">Add New Photographer</a>
         </button>
+
+
+        <button class="Details1">
+            <a href="{% url 'showreport' %}">Check Reservations</a>
+
+
+        </button>
     </div>
 
 
     </div>
 
-    <div class="check">
+    <!--<div class="check">
 
-        <form method="post" action="{% url 'getmonthlyreportforphotographer'%}">
+        <form method="post" action="{% url 'showreport'%}">
             {% csrf_token %}
 
-            <input type="month" id="month" name="month">
-            <input type="submit" value="Get montly report" id="getreport">
+            From:<input type="date" id="month" name="fromdate">
+            To:<input type="date" name="todate">
+            <input type="submit" value="search reservations">
 
         </form>
 
-        {% for res in event %}
+        {% for result in event %}
 
         <p><strong>{{res.Date}}</strong></p>
         {% endfor %}
 
-    </div>
+    </div>-->
 
     <div class="card">
         {% for photo in photo_test %}

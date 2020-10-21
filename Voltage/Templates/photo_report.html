@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: darkcyan;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2>CHECK PHOTOGRAPHERS RESERVATIONS</h2>
+    </center>
+    <div class="check">
+
+        <form method="post" action="{% url 'showreport'%}">
+            {% csrf_token %}
+
+            <input type="date" id="month" name="fromdate">
+            <input type="date" name="todate">
+            <input type="submit" value="search reservations">
+            <br>
+            <br>
+
+
+            {% for result in reservations %}
+
+            <!--<p><strong>{{result.Date}}</strong></p>-->
+            {% endfor %}
+
+    </div>
+    <table>
+        <thead>
+
+
+            <!--<th>Reservation_ID</th>
+            <th>Event_ID</th>
+            <th>S_Time</th>
+            <th>E_Time</th>
+            <th>Resources_ID</th>-->
+            <th>Resources_Name</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+
+        </thead>
+        {% for result in reservations %}
+        <tr>
+
+            <!--<td>{{result.Reservation_ID}}</td>
+            <td>{{result.Event_ID}}</td>
+            <td>{{result.S_Time}}</td>
+            <td>{{result.E_Time}}</td>
+            <td>{{result.Resources_ID}}</td>-->
+            <td>{{result.Resources_Name}}</td>
+
+            <td>{{result.S_Time}}</td>
+            <td>{{result.E_Time}}</td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    </form>
+</body>
+
+</html>

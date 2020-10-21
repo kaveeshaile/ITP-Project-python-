@@ -4,13 +4,44 @@ from django.contrib import messages
 from django.http import HttpResponse
 from admin_panel.models import reservations
 import base64
+
 from django.template import RequestContext
 from datetime import date
-import datetime
+from datetime import datetime
 from admin_panel.models import events
 from admin_panel.models import eventbin
-
+from django.utils import timezone
 from django.db.models import Q
+import calendar
+from django.shortcuts import render
+from admin_panel.models import events, reservations
+from admin_panel.models import eventbin
+from admin_panel.models import customer
+from admin_panel.models import admin_login
+from django.shortcuts import redirect
+from django.contrib import messages
+from django.core.mail import send_mail
+from datetime import date
+from datetime import datetime
+import datetime
+from django.utils import timezone
+import pymysql
+
+
+from django.shortcuts import render
+#
+from xhtml2pdf import pisa
+from django.template.loader import get_template
+from io import BytesIO
+from django.http import HttpResponse
+# import os
+# from django.conf import settings
+# from django.http import HttpResponse
+# from django.template import Context
+# from django.template.loader import get_template
+# import datetime
+# from xhtml2pdf import pisa
+
 
 # Create your views here.
 
@@ -43,7 +74,7 @@ def addPhoto(request):
     else:
         return render(request, 'photo_add.html')
 
- # DISPLAY customer main page
+    # DISPLAY customer main page
 
 
 # show details one by one..
@@ -170,19 +201,41 @@ def bookphotographer(request):
         return redirect(displaycustomer)
 
 
-def getmonthlyreportforphotographer(request):
-    if request.method == 'POST':
-        getmonth = request.POST.get('month')
-        converted_date = datetime.datetime.strptime(getmonth, "%Y-%m").date()
-        year = converted_date.year
-        month = converted_date.month
+def showreport(request):
+    if request.method == "POST":
+        fromdate = request.POST.get('fromdate')
+        print("fromdate :" + str(fromdate))
+        todate = request.POST.get('todate')
+        print("todate :" + str(todate))
 
-        eve = events.objects.filter(Date__year=year).filter(Date__month=month)
-        ended = eventbin.objects.filter(
-            Date__year=year).filter(Date__month=month)
-        context = {'event': eve, 'completed_events': ended,
-                   'getmonth': getmonth}
+        searchresult = reservations.objects.filter(
+            Resources_Name="Photography")
 
-        return render(request, 'main_report.html', context=context)
+        print(searchresult)
 
-    return render(request, 'main_report.html')
+        filteredReserves = []
+
+        for i in searchresult:
+            sDay = datetime.datetime.strptime(fromdate, '%Y-%m-%d')
+            eDay = datetime.datetime.strptime(todate, '%Y-%m-%d')
+
+            if i.S_Time >= sDay and i.E_Time <= eDay:
+                filteredReserves.append(i)
+
+        context = {'reservations': filteredReserves}
+
+        template = get_template("photo_report.html")
+        report = template.render(context)
+        res = BytesIO()
+
+        pdf = pisa.pisaDocument(BytesIO(report.encode("UTF-8")), res)
+
+        if not pdf.err:
+            return HttpResponse(res.getvalue(), content_type="application/pdf")
+        else:
+            return HttpResponse("Error In Generating pdf")
+
+        return render(request, "photo_report.html", context)
+    else:
+        display = reservations.objects.filter(Resources_Name='Photography')
+    return render(request, 'photo_report.html', {'reservations': display})

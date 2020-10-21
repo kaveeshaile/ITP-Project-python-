@@ -19,6 +19,10 @@ urlpatterns = [
     path('customer_main', views.displaycustomer, name='displaycustomer'),
     path('photo_profile', views.bookphotographer, name='bookphotographer'),
     path('customer_main/<id>', views.photoprofile, name='photoprofile'),
-    path('Photo_admin_display', views.getmonthlyreportforphotographer,
-         name='getmonthlyreportforphotographer')
+    path('Photo_admin_display', views.showreport,
+         name='showreport'),
+
+    # pdf
+    #path('photo_report', views.generate_PDF, name='generate_PDF')
+
 ]
