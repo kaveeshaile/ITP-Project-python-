@@ -262,8 +262,14 @@ def CancelEvent(request,id):
     res = reservations.objects.filter(Event_ID=id)
     if res != None:
        res.delete()
-    messages.warning(request, 'Event deleted')
-    return redirect(CreateEvent) 
+       del request.session['eventID']
+       messages.warning(request, 'Event deleted')
+       return redirect(CreateEvent)
+    
+    else:
+      messages.warning(request, 'Somethin went wrong..')
+      return redirect(request.META.get('HTTP_REFERER'))
+
 
 
 

@@ -630,7 +630,7 @@ input[type=email] {
 
 .nav div.main_list ul li a {
     text-decoration: none;
-    color: #fff;
+    color: rgb(143, 224, 235);
     line-height: 65px;
     font-size: 0.8 rem;
 }
@@ -645,7 +645,7 @@ input[type=email] {
 }
 
 .nav {
-    padding-top: 20px;
+    padding-top: 25px;
     padding-bottom: 20px;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
