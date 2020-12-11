@@ -51,10 +51,10 @@
             </span>
         </div>
     </nav>
-
+{% comment %} 
  <div class="head3">
 <h3>Create a portfolio</h3>
-</div>
+</div> {% endcomment %}
 
 <svg class="viewbox2" viewBox="0 0 633.183 627.287">
 		<linearGradient id="Path_3_j" spreadMethod="pad" x1="0.104" x2="0.782" y1="-0.293" y2="1.082">
@@ -75,6 +75,10 @@
 		<span>Voltage Entertainment</span>
 	</div>
 
+      <div class = "h4">
+<h4>Upload sample video</h4>
+</div>
+
 <br><br>
 <!-- Grid row -->
 <div class="row">
@@ -92,7 +96,6 @@
 
 <form method = "POST" enctype = "multipart/form-data">
 {% csrf_token %}
-
 
 
 <div class="upload">
@@ -118,7 +121,7 @@
   <label for="form7">Description</label>
 </div>
 
-<div class = "contact">
+<div class = "Addcontact">
 <div class="md-form">
   <input type="text" id="form1" name = "Contact" class="form-control">
   <label for="form1">Contact</label>
@@ -128,7 +131,7 @@
   <label for="form1">Email</label>
 </div> 
 </div>
- <input type="text" id="setStatus" value="Out" name = "status" class="form-control">
+ <input type="text" style = "color:cyan;" id="setStatus" value="Out" name = "status" class="form-control">
 <div class = "setStatus">
 <label class="switch">
   <input type="checkbox" id = "status" >
@@ -137,9 +140,9 @@
 </div>
 
 <div class = "vid1">
-<input type="file" name = "sample" onchange="readVideoURL(this);" >
-<video id="vid" src=""  autoplay loop controls muted  autoplay alt="video"/>
+<video id="vidpreview" width="520" height="400" src=""  autoplay loop controls muted  autoplay alt="video">
 </div>
+<input type="file" id = "addSampleVideo" name = "sample"   onchange="readVideoURL(this);" >
 
 <div class="add">
 <input class="myButton" id = "addvideographer" input type="submit" value="Add" name="submit">
@@ -186,10 +189,10 @@
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
-                    $('#vid')
+                    $('#vidpreview')
                         .attr('src', e.target.result)
-                        .width(250)
-                        .height(180);
+                        .width(520)
+                        .height(450);
                 };
 
                 reader.readAsDataURL(input.files[0]);

@@ -5,12 +5,12 @@ from django.db import models
 
 class sound_admin(models.Model):
 
-    #id = models.CharField(max_length=10, primary_key=True)     
+    id = models.AutoField(primary_key=True)     
     Package_name=models.CharField(max_length=500)
     Suitable_for=models.CharField(max_length=500)
     Brand=models.CharField(max_length=500)
     Price=models.CharField(max_length=500)
-    Description=models.CharField(max_length=2500)
+    #Description=models.CharField(max_length=2500)
     #packageImg = models.ImageField(null = True,blank = True,upload_to = "samples")
     class Meta:
         db_table = "soundsystem"

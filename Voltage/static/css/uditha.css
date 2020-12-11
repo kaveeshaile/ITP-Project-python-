@@ -1,20 +1,92 @@
 
+
+/* Headers */
 .head3{
 
-    position:absolute;
-        top: 150px;
-        left: 200px;
-        display:block;
-        color: rgb(232, 239, 241);
+  position:absolute;
+      top: 150px;
+      left: 200px;
+      display:block;
+      color: rgb(232, 239, 241);
 }
 
 
 .h4{
-  color: #00BCD4;
-  position: absolute;
-  left: 870px;
-  top: 180px;
+color: #00BCD4;
+position: absolute;
+left: 870px;
+top: 180px;
 }
+
+h5 {
+  display: block;
+  font-size: 2em;
+  color: skyblue;
+  font-weight: bold;
+}
+
+.HomeSlider{
+  position: absolute;
+  left: 680px;
+  top: 100px;
+  }
+  
+
+
+#Voltage_Entertainment {
+  left: 95px;
+  top: 45px;
+  position: absolute;
+  overflow: visible;
+  width: 493px;
+  white-space: nowrap;
+  line-height: 110px;
+  margin-top: -30px;
+  text-align: left;
+  font-family: Jaapokki enchance;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  color: rgba(0,177,255,1);
+}
+
+#Voltage_Entertainment2 {
+  left: 205px;
+  top: 70px;
+  position: absolute;
+  overflow: visible;
+  width: 493px;
+  white-space: nowrap;
+  line-height: 110px;
+  margin-top: -30px;
+  text-align: left;
+  font-family: Jaapokki enchance;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  color: rgba(0,177,255,1);
+}
+
+#Voltage_Entertainment3 {
+left: 550px;
+top: 100px;
+position: absolute;
+overflow: visible;
+width: 493px;
+white-space: nowrap;
+line-height: 110px;
+margin-top: -30px;
+text-align: left;
+font-family: Jaapokki enchance;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+color: rgba(0,177,255,1);
+}
+
+
+/* End of Headers */
+
 
 body{
     background-color:black;
@@ -29,9 +101,63 @@ body{
         top: 200px;
         left: 100px;
         display:block;
-    
-    
+   
 }
+
+#Photography__Videography_ {
+  left: 351px;
+  top: 249px;
+  position: absolute;
+  overflow: visible;
+  width: 244px;
+  white-space: nowrap;
+  line-height: 101px;
+  margin-top: -40.5px;
+  text-align: left;
+  font-family: Jaapokki enchance;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(93,179,217,1);
+}
+
+#Sound_systems__Decorations_ {
+  left: 351px;
+  top: 302px;
+  position: absolute;
+  overflow: visible;
+  width: 254px;
+  white-space: nowrap;
+  line-height: 101px;
+  margin-top: -40.5px;
+  text-align: left;
+  font-family: Jaapokki enchance;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(93,179,217,1);
+}
+
+#Music_band__LED_walls__lights_ {
+  left: 351px;
+  top: 352px;
+  position: absolute;
+  overflow: visible;
+  width: 276px;
+  white-space: nowrap;
+  line-height: 101px;
+  margin-top: -40.5px;
+  text-align: left;
+  font-family: Jaapokki enchance;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(93,179,217,1);
+}
+
+/* End of Home */
+
+/* Videographer */
 
 .name{
     position:absolute;
@@ -43,35 +169,49 @@ body{
 
 .upload{
     position:absolute;
-    top: -160px;
-    left: 160px;
+    top: 30px;
+    left: 170px;
     display:block;
 
 }
 
 #daytime1{
   position:absolute;
-  top: 160px;
+  top: 200px;
+  background-color: turquoise;
+  border-radius: 5px;
   left: 260px;
 }
 
 #daytime2{
   position:absolute;
-  top: 210px;
+  top: 260px;
+  background-color: turquoise;
+  border-radius: 5px;
   left: 260px;
 }
 
+#eventDate{
+  background-color:rgb(106, 170, 223);
+  color: #06020f;
+  height: 35px;
+  border-radius: 5px;
+}
+
+
 #booknow{
   position:absolute;
-  top: 260px;
+  top: 370px;
   background-color: skyblue;
   border: 2px solid skyblue;
-  left: 425px;
+  left: -225px;
 }
 
 #checkdate{
   position:absolute;
   top: 150px;
+  background-color: turquoise;
+  border-radius: 5px;
   left: 900px;
 }
 
@@ -89,6 +229,12 @@ body{
   left: 330px;
 }
 
+.Addcontact{
+  position:absolute;
+  top: 0px;
+  left: 330px;
+}
+
 
 .vidDetails{
   position:absolute;
@@ -100,18 +246,54 @@ body{
 .contact_profile{
   position:absolute;
   top: -100px;
-  left: 290px;
+  left: 220px;
 }
+
 .setStatus{
   position:absolute;
   top: -50px;
   left: 170px;
 }
 
+#addSampleVideo{
+  position:absolute;
+  top: 270px;
+  background-color: turquoise;
+  color: #000;
+  border-radius: 5px;
+  width: 250px;
+  left: 770px;
+
+}
+
+#sample{
+  position:absolute;
+  top: 410px;
+  background-color: turquoise;
+  color: #000;
+  border-radius: 5px;
+  width: 250px;
+  left: 120px;
+}
+
+#profile_pic{
+  background-color: turquoise;
+  color: #000;
+  border-radius: 5px;
+  width: 250px;
+}
+
 .updateStatus{
   position:absolute;
-  top: 90px;
+  top: 100px;
   left: 170px;
+}
+
+.showStatus{
+  position:absolute;
+  top: 148px;
+  color: #00BCD4;
+  left: 0px;
 }
 
 #setStatus{
@@ -133,8 +315,8 @@ body{
 
 #addvideographer{
     position:absolute;
-    top: 430px;
-    left: 1000px;
+    top: 245px;
+    left: 470px;
     display:block;
 }
 
@@ -159,77 +341,7 @@ width: 230px;
 cursor: pointer;
 }
 
-h5 {
-    display: block;
-    font-size: 2em;
-    color: skyblue;
-    font-weight: bold;
-}
 
-.viewbox1 {
-    overflow: visible;
-    position: absolute;
-    width: 633.183px;
-    height: 580.287px;
-    left: 10.5px;
-    top: 25.888px;
-    background-image: linear-gradient(-90deg, black,rgb(53, 158, 207));
-    opacity:0.2;
-    border-radius: 25px;
-    transform: matrix(1,0,0,1,0,0);
-}
-
-.viewbox2 {
-    overflow: visible;
-    position: absolute;
-    width: 633.183px;
-    height: 680.287px;
-    left: 10.5px;
-    top: 28.888px;
-    background-image: linear-gradient(-90deg,black,rgb(66, 170, 202));
-    opacity:0.3;
-    border-radius: 25px;
-    transform: matrix(1,0,0,1,0,0);
-}
-
-.viewbox3 {
-  overflow: visible;
-  position: absolute;
-  width: 400.183px;
-  height: auto;
-  left: 10.5px;
-  top: 170.888px;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 25px;
-  transform: matrix(1,0,0,1,0,0);
-}
-
-.viewbox4 {
-  overflow: visible;
-  position: absolute;
-  width: 400.183px;
-  height: auto;
-  left: 470.5px;
-  top: 170.888px;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 25px;
-  transform: matrix(1,0,0,1,0,0);
-}
-
-.viewbox5 {
-  overflow: visible;
-  position: absolute;
-  width: 400.183px;
-  height: auto;
-  left: 920.5px;
-  top: 170.888px;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 25px;
-  transform: matrix(1,0,0,1,0,0);
-}
 
 #section1{
   overflow: visible;
@@ -277,6 +389,14 @@ input[type=email] {
   opacity: 0.8;
 }
 
+#selectType{
+  background-color:transparent;
+  width: 200px;
+  color: rgb(64, 161, 218);
+  height: 40px;
+}
+
+
 #fee{
   left: 285px;
   top: 125px;
@@ -306,109 +426,9 @@ input[type=email] {
 
 
 
-#Voltage_Entertainment {
-    left: 95px;
-    top: 45px;
-    position: absolute;
-    overflow: visible;
-    width: 493px;
-    white-space: nowrap;
-    line-height: 110px;
-    margin-top: -30px;
-    text-align: left;
-    font-family: Jaapokki enchance;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 50px;
-    color: rgba(0,177,255,1);
-}
-
-#Voltage_Entertainment2 {
-    left: 205px;
-    top: 70px;
-    position: absolute;
-    overflow: visible;
-    width: 493px;
-    white-space: nowrap;
-    line-height: 110px;
-    margin-top: -30px;
-    text-align: left;
-    font-family: Jaapokki enchance;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    color: rgba(0,177,255,1);
-}
-
-#Voltage_Entertainment3 {
-  left: 550px;
-  top: 100px;
-  position: absolute;
-  overflow: visible;
-  width: 493px;
-  white-space: nowrap;
-  line-height: 110px;
-  margin-top: -30px;
-  text-align: left;
-  font-family: Jaapokki enchance;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
-  color: rgba(0,177,255,1);
-}
 
 
 
-#Photography__Videography_ {
-    left: 351px;
-    top: 249px;
-    position: absolute;
-    overflow: visible;
-    width: 244px;
-    white-space: nowrap;
-    line-height: 101px;
-    margin-top: -40.5px;
-    text-align: left;
-    font-family: Jaapokki enchance;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    color: rgba(93,179,217,1);
-}
-
-#Sound_systems__Decorations_ {
-    left: 351px;
-    top: 302px;
-    position: absolute;
-    overflow: visible;
-    width: 254px;
-    white-space: nowrap;
-    line-height: 101px;
-    margin-top: -40.5px;
-    text-align: left;
-    font-family: Jaapokki enchance;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    color: rgba(93,179,217,1);
-}
-
-#Music_band__LED_walls__lights_ {
-    left: 351px;
-    top: 352px;
-    position: absolute;
-    overflow: visible;
-    width: 276px;
-    white-space: nowrap;
-    line-height: 101px;
-    margin-top: -40.5px;
-    text-align: left;
-    font-family: Jaapokki enchance;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    color: rgba(93,179,217,1);
-}
 
 #logo_1 {
     position: absolute;
@@ -482,7 +502,7 @@ input[type=email] {
 
 #toreservations{
   position:absolute;
-  top: 540px;
+  top: 590px;
   left: 850px;
   padding:30px 60px;
 
@@ -528,28 +548,56 @@ input[type=email] {
 #confirm{
 
   position:absolute;
-  top:250px;
-  left: 1000px;
-  width: 100px;
+  top:150px;
+  left: 870px;
+  width: 150px;
   text-align: center;
 }
-#send{
+
+#DeleteCompleted{
+ position:absolute;
+  top:80px;
+  left:710px;
+  width: 150px;
+  text-align: center;
+}
+
+#Deleteback{
+  position:absolute;
+  top:450px;
+  left:910px;
+  width: 70px;
+  text-align: center;
+}
+
+#sendmail{
 
   position:absolute;
-  top:330px;
-  left: 1000px;
-  width: 100px;
+  top:300px;
+  left: 1040px;
+  width: 200px;
   text-align: center;
 }
 #back{
 
   position:absolute;
-  top:410px;
+  top:510px;
+  left: 1000px;
+  width: 215px;
+  text-align: center;
+}
+
+#viewback{
+
+  position:absolute;
+  top:430px;
   left: 1000px;
   width: 215px;
   text-align: center;
 }
     
+
+/* Navigation */
 
 .nav {
     width: 100%;
@@ -583,7 +631,7 @@ input[type=email] {
 
 .nav div.main_list ul li a {
     text-decoration: none;
-    color: #fff;
+    color: rgb(143, 224, 235);
     line-height: 65px;
     font-size: 0.8 rem;
 }
@@ -598,7 +646,7 @@ input[type=email] {
 }
 
 .nav {
-    padding-top: 20px;
+    padding-top: 25px;
     padding-bottom: 20px;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -625,6 +673,8 @@ input[type=email] {
     width: 100%;
     height: 4px;
 }
+
+/* End of Navigation */
 
 
   .container1{
@@ -805,10 +855,18 @@ input[type=email] {
   background-color: rgb(11, 100, 15);
 }
 
+#vidpreview{
+  position: absolute;
+  left: 0px;
+  top: -100px;
+}
+
 #vid_idtoadmin{
-  width: 35px;
+  width: 30px;
   margin-right: 150px;
   border-radius: 50%;
+  color: #d3d3d3;
+  text-align: center;
   font-size: 10px;
   background-color: rgb(11, 100, 15);
 }
@@ -838,21 +896,31 @@ input[type=email] {
 #update{
 
   position:absolute;
-  top:290px;
-  left: 880px;
+  top:360px;
+  left: 320px;
+  width: 130px;
 }
 
 #delete{
 
   position:absolute;
-  top:290px;
-  width: 50px;
-  left: 1020px;
+  top:360px;
+  width: 130px;
+  text-align: center;
+  left: 470px;
 }
 
+#viewprofile{
+  width: 100px;
+  text-align: center;
 
+}
 
-
+#createEvent{
+  position:absolute;
+  top:348px;
+  left: 220px;
+}
  
   .switch {
     position: relative;
@@ -918,10 +986,13 @@ input[type=email] {
   #MarkCompleted{
 
     position:absolute;
-    top:100px;
+    top:60px;
     width: 300px;
     left:800px;
   }
+
+
+  /* Messages */
 
   .messages{
 
@@ -964,7 +1035,7 @@ input[type=email] {
     position: absolute;
     top: 480px;
     width: 250px;
-    left:840px;
+    left:1000px;
   }
   
 
@@ -977,7 +1048,77 @@ input[type=email] {
 
   }
 
-  /* Login */
+  /* End of messages */
+
+
+
+  /* Box */
+
+  
+.viewbox1 {
+  overflow: visible;
+  position: absolute;
+  width: 633.183px;
+  height: 580.287px;
+  left: 10.5px;
+  top: 25.888px;
+  background-image: linear-gradient(-90deg, black,rgb(53, 158, 207));
+  opacity:0.2;
+  border-radius: 25px;
+  transform: matrix(1,0,0,1,0,0);
+}
+
+.viewbox2 {
+  overflow: visible;
+  position: absolute;
+  width: 633.183px;
+  height: 680.287px;
+  left: 10.5px;
+  top: 28.888px;
+  background-image: linear-gradient(-90deg,black,rgb(66, 170, 202));
+  opacity:0.3;
+  border-radius: 25px;
+  transform: matrix(1,0,0,1,0,0);
+}
+
+.viewbox3 {
+overflow: visible;
+position: absolute;
+width: 400.183px;
+height: auto;
+left: 10.5px;
+top: 170.888px;
+background-color: transparent;
+border: 2px solid white;
+border-radius: 25px;
+transform: matrix(1,0,0,1,0,0);
+}
+
+.viewbox4 {
+overflow: visible;
+position: absolute;
+width: 400.183px;
+height: auto;
+left: 470.5px;
+top: 170.888px;
+background-color: transparent;
+border: 2px solid white;
+border-radius: 25px;
+transform: matrix(1,0,0,1,0,0);
+}
+
+.viewbox5 {
+overflow: visible;
+position: absolute;
+width: 400.183px;
+height: auto;
+left: 920.5px;
+top: 170.888px;
+background-color: transparent;
+border: 2px solid white;
+border-radius: 25px;
+transform: matrix(1,0,0,1,0,0);
+}
 
 
   #login{
@@ -1044,11 +1185,46 @@ input[type=email] {
     color: #03e9f4;
     font-size: 12px;
   }
+
   
 
+.box1{
+  position:absolute;
+  top:375px;
+  left:240px;
+
+}
+
+.box2{
+  position:absolute;
+  top:375px;
+  left:1130px;
+
+}
 
 
 
+.viewbox_admin {
+  overflow: visible;
+  position: absolute;
+  width: 633.183px;
+  height: 680.287px;
+  left: 700px;
+  top: 28.888px;
+  background-image: linear-gradient(90deg,black,rgb(16, 95, 119));
+  opacity:0.3;
+  border-radius: 25px;
+  transform: matrix(1,0,0,1,0,0);
+}
+
+  
+/* End of box */
+
+
+
+
+
+/* Animations */
 .starsec{
   content: " ";
     position: absolute;
@@ -1092,7 +1268,7 @@ input[type=email] {
   animation: animStar 80s linear infinite;
 }
 
-/* dust Animation */
+
 @keyframes animStar
 {
   0% {
@@ -1104,6 +1280,18 @@ input[type=email] {
 }
 
 
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+/* End of animations */
+
+
+
+
+/* Buttons */
 
 .custom-btn {
   width: 130px;
@@ -1121,10 +1309,11 @@ input[type=email] {
 
 }
 
-/* 1 */
+
+
 .btn-1 {
   /* background: rgba(0,0,0,.5); */
-  background: rgba(12, 21, 27, 0.5);
+  background: rgba(14, 60, 90, 0.5);
   border: none; 
 }
 .btn-1:hover {
@@ -1138,81 +1327,49 @@ input[type=email] {
 }
 
 
-/* Admin */
 
 
-#upcoming{
-  left: 150px;
-  top: 200px;
-  position: absolute;
-  overflow: visible;
-  color: rgb(100, 197, 152);
-  font-size: 30px;
-}
-#review{
-left: 600px;
-top: 200px;
-position: absolute;
-overflow: visible;
-color: rgb(100, 197, 152);
-font-size: 30px;
-}
-#bin{
-left: 1090px;
-top: 200px;
-position: absolute;
-overflow: visible;
-color: rgb(100, 197, 152);
-font-size: 30px;
-}
 
-
-.upcoming{
-
+#submitevent{
   position:absolute;
-  top:100px;
-  left:70px;
-  color: #00E676;
-  font-size: 20px;
- 
+  top:550px;
+  left:990px;
 }
 
-.waiting{
-
+#deleteEvent{
   position:absolute;
-  top:260px;
-  left:560px;
-  color: #00E676;
-  font-size: 20px;
- 
+  top:402px;
+  left:140px;
 }
 
-
-.bin{
-
-  position:absolute;
-  top:260px;
-  left:1000px;
-  color: #00E676;
-  font-size: 20px;
- 
+.btn {
+  display: inline-block;
+  margin: 0;
+  border-width: 0;
+  padding: 15px 15px;
+  max-width: 100%;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 0 2px #000000;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background: linear-gradient(#478DBD, #37729a);
 }
 
-.upcoming_panel{
-  position:absolute;
-  top:200px;
-  left:900px;
-  color: #3a5ccc;
-  font-size: 15px;
-
+.btn:hover {
+    background: linear-gradient(#64A7D6, #3c90cb);
 }
 
-#monthReport{
-  position:absolute;
-  top:120px;
-  left:900px;
+.btn:active {
+    color: #d3d3d3;
+  background: linear-gradient(#366B90, #284f6b);
 }
-
 
 #getreportbtn {
   position:absolute;
@@ -1241,6 +1398,147 @@ font-size: 30px;
 	top:1px;
 }
 
+.admin_button {
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	background-color:#007dc1;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:3px 8px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+}
+.admin_button:hover {
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	background-color:#0061a7;
+}
+.admin_button:active {
+	position:relative;
+	top:1px;
+}
+
+/* End of buttons */
+
+
+
+
+/* Titles */
+
+#upcoming{
+  left: 150px;
+  top: 200px;
+  position: absolute;
+  overflow: visible;
+  color: rgb(100, 197, 152);
+  font-size: 30px;
+}
+
+#review{
+left: 600px;
+top: 200px;
+position: absolute;
+overflow: visible;
+color: rgb(100, 197, 152);
+font-size: 30px;
+}
+
+#bin{
+left: 1090px;
+top: 200px;
+position: absolute;
+overflow: visible;
+color: rgb(100, 197, 152);
+font-size: 30px;
+}
+
+
+.UserName{
+
+  position:absolute;
+  top:250px;
+  left:200px;
+  color: #f0f7f8;
+  font-size: 20px;
+ 
+}
+
+
+.adminID{
+  position:absolute;
+  top:130px;
+  left:250px;
+  color: #59df3f;
+}
+
+.eventtitle{
+  position:absolute;
+  top:150px;
+  left:200px;
+  color: #f0f7f8;
+  font-size: 40px;
+}
+
+.restitle{
+  position:absolute;
+  top:150px;
+  left:600px;
+  color: #f0f7f8;
+  font-size: 40px;
+}
+
+/* End of titles */
+
+
+
+
+/* Panels */
+
+.upcoming{
+
+  position:absolute;
+  top:100px;
+  left:70px;
+  color: #34cbd6;
+  font-size: 15px;
+ 
+}
+
+.waiting{
+
+  position:absolute;
+  top:260px;
+  left:560px;
+  color:  #34cbd6;
+  font-size: 15px;
+ 
+}
+
+
+.bin{
+
+  position:absolute;
+  top:260px;
+  left:1000px;
+  color:  #34cbd6;
+  font-size: 15px;
+ 
+}
+
+.upcoming_panel{
+  position:absolute;
+  top:200px;
+  left:900px;
+  color: #3a5ccc;
+  font-size: 15px;
+
+}
+
+
 .editEvent{
   position:absolute;
   top:150px;
@@ -1254,8 +1552,8 @@ font-size: 30px;
 {
   position:absolute;
   top:180px;
-  color: #35da4b;
-  font-size: 20px;
+  color: #1eb6e4;
+  font-size: 15px;
   left:750px;
 }
 
@@ -1280,50 +1578,35 @@ font-size: 30px;
 }
 
 
-.UserName{
+/* End of panels */
 
+
+
+#monthReport{
   position:absolute;
-  top:250px;
-  left:200px;
-  color: #f0f7f8;
-  font-size: 20px;
- 
+  top:110px;
+  left:900px;
+  background-color: turquoise;
+  border-radius: 5px;
+  height: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.eventtitle{
-  position:absolute;
-  top:150px;
-  left:200px;
-  color: #f0f7f8;
-  font-size: 40px;
-}
 
-.restitle{
-  position:absolute;
-  top:150px;
-  left:600px;
-  color: #f0f7f8;
-  font-size: 40px;
-}
 
 .remaining{
   position:absolute;
-  top:480px;
-  left:1005px;
+  top:340px;
+  left:1050px;
   color: #e6a442;
   font-size: 15px;
   animation: blinker 1s linear infinite;
 }
 
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
 
 .allow_to_update_notification{
   position:absolute;
-  top:500px;
+  top:390px;
   left:1080px;
   color: #17b63f;
   font-size: 20px;
@@ -1338,6 +1621,9 @@ font-size: 30px;
   font-size: 15px;
 
 }
+
+
+/* Image Icons */
 
 #contact_icon{
   position: absolute;
@@ -1366,6 +1652,20 @@ font-size: 30px;
  
 }
 
+#profile_phone{
+  position: absolute;
+  width: 100px;
+  left:150px;
+  top:-120px;
+}
+
+#profile_email{
+  position: absolute;
+  width: 100px;
+  left:150px;
+  top:-80px;
+}
+
 #date_icon{
   position: absolute;
   width: 100px;
@@ -1390,60 +1690,8 @@ font-size: 30px;
   overflow: visible;
 }
 
+/* End of Image Icons */
 
-
-.admin_button{
-	box-shadow:inset 0px 0px 15px 3px #23395e;
-	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
-	background-color:#2e466e;
-	border-radius:17px;
-	border:1px solid #1f2f47;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 13px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #263666;
-}
-.admin_button:hover {
-	background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
-	background-color:#415989;
-}
-.admin_button:active {
-	position:relative;
-	top:1px;
-}
-
-.box1{
-  position:absolute;
-  top:375px;
-  left:240px;
-
-}
-
-.box2{
-  position:absolute;
-  top:375px;
-  left:1130px;
-
-}
-
-
-
-.viewbox_admin {
-  overflow: visible;
-  position: absolute;
-  width: 633.183px;
-  height: 680.287px;
-  left: 700px;
-  top: 28.888px;
-  background-image: linear-gradient(90deg,black,rgb(16, 95, 119));
-  opacity:0.3;
-  border-radius: 25px;
-  transform: matrix(1,0,0,1,0,0);
-}
 
 
 
@@ -1541,14 +1789,6 @@ background: #f1f1f1;
 
 
 
-
-
-
-
-
-
-
-
 .isVisuallyHidden {
   width: 1px;
   height: 1px;
@@ -1561,34 +1801,7 @@ background: #f1f1f1;
 }
 
 
-.btn {
-    display: inline-block;
-    margin: 0;
-    border-width: 0;
-    padding: 15px 15px;
-    max-width: 100%;
-    color: #ffffff;
-    font-size: 18px;
-    text-align: center;
-    box-shadow: 0 0 2px #000000;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 3px;
-    cursor: pointer;
-    background: linear-gradient(#478DBD, #37729a);
-}
 
-.btn:hover {
-      background: linear-gradient(#64A7D6, #3c90cb);
-}
-
-.btn:active {
-      color: #d3d3d3;
-    background: linear-gradient(#366B90, #284f6b);
-}
  
 
 

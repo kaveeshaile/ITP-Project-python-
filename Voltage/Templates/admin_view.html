@@ -25,11 +25,11 @@
            
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{% url 'reservation_manage' %}">Home</a></li>
                     <li><a href="#">Sign in</a></li>
-					 <li><a href="#">Reservations</a></li>
+					 <li><a href="{% url 'reservation_manage' %}">Reservations</a></li>
                     <li><a href="#">About us</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="{% url 'AdminPanel' %}">Panel</a></li>
                 </ul>
             </div>
             <span class="navTrigger">
@@ -78,7 +78,7 @@
 <p><img id="event_icon" img src="{% static 'images/event.png' %}">{{eve.Event_type}}</p>
 <p><img id="status_icon" img src="{% static 'images/status.png' %}">{{eve.Status}}</p>
 
-<button type="button" class="myButton"  onclick="location.href='{% url 'MarkAsCompleted' id=res.Event_ID %}'"  id = "MarkCompleted">Mark As Completed</button>
+<button type="button" class="myButton"  onclick="location.href='{% url 'MarkAsCompleted' id=eve.Event_ID %}'"  id = "MarkCompleted">Mark As Completed</button>
 {% endfor %}
 
 </div>
@@ -95,7 +95,7 @@
 
 </div>
 
-<a href="#" class="myButton" id = "back">back</a>
+<a href="#" class="myButton" id = "viewback">back</a>
 
 
 

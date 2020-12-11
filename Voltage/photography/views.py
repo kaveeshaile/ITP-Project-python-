@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from admin_panel.models import reservations
 import base64
+import admin_panel.views
 
 from django.template import RequestContext
 from datetime import date
@@ -34,13 +35,6 @@ from xhtml2pdf import pisa
 from django.template.loader import get_template
 from io import BytesIO
 from django.http import HttpResponse
-# import os
-# from django.conf import settings
-# from django.http import HttpResponse
-# from django.template import Context
-# from django.template.loader import get_template
-# import datetime
-# from xhtml2pdf import pisa
 
 
 # Create your views here.
@@ -97,13 +91,6 @@ def admindelete(request, id):
     photographer = photo_test.objects.filter(id=id)
     photographer.delete()
     return render(request, 'photo_admin_display.html', {'photo_test': photo_test.objects.all()})
-
-   # photo = photo_test.objects.get(id=id)
-
-    # if request.method == "POST":
-    # photo_test.delete()
-    # return redirect("photo_admin_display.html")
-    # return render(request, "photo_admin_display.html", context)
 
 
 def GetDetailsForUpdate(request, id):

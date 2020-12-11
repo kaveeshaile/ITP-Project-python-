@@ -85,7 +85,7 @@
 		<input type="text" name="id" id = "vid_id" value = {{vid.id}} ><br><br>
     <ul class="features-list">
 			<li><strong>{{vid.Name}}</strong></li>
-      <li><input class="btn-primary" onclick="location.href='{% url 'VideographerProfile' id=vid.id %}'" value="View"</button></li>
+      <li><input class="btn-primary" id ="viewprofile" onclick="location.href='{% url 'VideographerProfile' id=vid.id %}'" value="View"</button></li>
 	</div>
   </div>
 

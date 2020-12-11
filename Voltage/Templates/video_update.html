@@ -29,6 +29,7 @@
   <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
   <!-- My Css -->
+
   <link rel="stylesheet" type="text/css" href="{% static 'css/uditha.css' %}">
 
 
@@ -101,73 +102,93 @@
 
 
         <div class="upload">
+          <div class="media d-block d-md-flex">
+            <img src="\media\{{vid.profile_pic}}" id="vidprofilepic" width="140px" height="140px"
+              style="border-radius:50%" alt="Avatar">
+            <div class="media-body text-center text-md-left ml-md-3 ml-0">
 
-          <span><i class="fas fa-cloud-upload-alt mr-2"></i>Choose files</span>
-          <input type="file" onchange="readURL(this);" id="profile_pic" name="profile_pic">
-
-        </div>
-
-
-        <div class="media d-block d-md-flex">
-          <img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" src="\media\{{vid.profile_pic}}"
-            id="vidprofilepic" width="140px" height="140px" style="border-radius:50%" alt="Avatar">
-          <div class="media-body text-center text-md-left ml-md-3 ml-0">
-
-
-            <input type="text" name="id" id="idonupdate" value={{vid.id }}><br><br>
-
-            <div class="vidDetails">
-
-              <div class="md-form">
-                <input type="text" name="Name" id="name" value="{{vid.Name}}" class="form-control">
-                <label for="form1">Name</label>
-              </div>
-              <div class="md-form">
-                <input type="text" Name="fee" id="form1" value="{{vid.Fee}}" class="form-control">
-                <label for="form1">Reservation fee</label>
-              </div>
-              <br>
-              <div class="md-form">
-                <textarea id="form7" name="description" class="md-textarea form-control"
-                  rows="3">{{vid.Description}}</textarea>
-                <label for="form7">Description</label>
-              </div>
+              <span><i class="fas fa-cloud-upload-alt mr-2"></i>Choose files</span>
+              <input type="file" onchange="readURL(this);" id="profile_pic" name="profile_pic">
 
             </div>
-
-            <div class="contact">
-              <div class="md-form">
-                <input type="text" id="form1" name="Contact" value="{{vid.Contact}}" class="form-control">
-                <label for="form1">Contact</label>
-              </div>
-              <div class="md-form">
-                <input type="text" id="form1" name="ContactEmail" value="{{vid.ContactEmail}}" class="form-control">
-                <label for="form1">Email</label>
-              </div>
-            </div>
-
-            {% for res in resources %}
-            <input type="text" id="setStatus" value="{{res.Status}}" name="status" class="form-control">
-            <div class="Status">
-              <label class="switch">
-                <input type="checkbox" id="status">
-                <span class="slider round"></span>
-              </label>
-            </div>
-            {% endfor %}
+            <input type="text" name="id" id="idonupdate" value={{vid.id}}><br><br>
+            {% comment %} <input type="text" name="id" id="idonupdate" value={{vid.id|slice:"5:" }}><br><br>
+            {% endcomment %}
 
 
 
-            {% for sam in video_samples %}
-            <div class="vid1">
-              <video id="vid" src="\media\{{sam.Samples}}" width="520" height="450" autoplay loop controls muted
-                autoplay alt="video" />
-              </video>
-              <input type="file" id="sample" name="sample" onchange="readVideoURL(this);">
-            </div>
+            <div class="media d-block d-md-flex">
+              <img class="d-flex rounded-circle avatar z-depth-1-half mb-3 mx-auto" src="\media\{{vid.profile_pic}}"
+                id="vidprofilepic" width="140px" height="140px" style="border-radius:50%" alt="Avatar">
+              <div class="media-body text-center text-md-left ml-md-3 ml-0">
 
 
-            <input class="myButton" id="update" input type="submit" value="Update" name="submit">
+                <input type="text" name="id" id="idonupdate" value={{vid.id }}><br><br>
+
+                <div class="vidDetails">
+                  {% for res in resources %}
+                  <div class="showStatus">
+                    <input type="text" id="setStatus" style="color:cyan;" value="{{res.Status}}" name="status"
+                      class="form-control">
+                  </div>
+                  <div class="updateStatus">
+                    <label class="switch">
+                      <input type="checkbox" id="status">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  {% endfor %}
+
+                  <div class="md-form">
+                    <input type="text" name="Name" id="name" value="{{vid.Name}}" class="form-control">
+                    <label for="form1">Name</label>
+                  </div>
+                  <div class="md-form">
+                    <input type="text" Name="fee" id="form1" value="{{vid.Fee}}" class="form-control">
+                    <label for="form1">Reservation fee</label>
+                  </div>
+                  <br>
+                  <div class="md-form">
+                    <textarea id="form7" name="description" class="md-textarea form-control"
+                      rows="3">{{vid.Description}}</textarea>
+                    <label for="form7">Description</label>
+                  </div>
+
+                </div>
+
+                <div class="contact">
+                  <div class="md-form">
+                    <input type="text" id="form1" name="Contact" value="{{vid.Contact}}" class="form-control">
+                    <label for="form1">Contact</label>
+                  </div>
+                  <div class="md-form">
+                    <input type="text" id="form1" name="ContactEmail" value="{{vid.ContactEmail}}" class="form-control">
+                    <label for="form1">Email</label>
+                  </div>
+                </div>
+
+                {% for res in resources %}
+                <input type="text" id="setStatus" value="{{res.Status}}" name="status" class="form-control">
+                <div class="Status">
+                  <label class="switch">
+                    <input type="checkbox" id="status">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                {% endfor %}
+
+
+
+                {% for sam in video_samples %}
+                <div class="vid1">
+                  <video id="vid" src="\media\{{sam.Samples}}" width="520" height="450" autoplay loop controls muted
+                    autoplay alt="video" />
+                  </video>
+                  <input type="file" id="sample" name="sample" onchange="readVideoURL(this);">
+                </div>
+
+
+                <input class="myButton" id="update" input type="submit" value="Update" name="submit">
 
       </form>
       <input class="myButton" onclick="location.href='{% url 'RemoveVideoGrapher' id=vid.id %}'" id="delete"

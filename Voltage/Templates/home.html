@@ -16,9 +16,9 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
 <!-- My Css -->
 <link rel="stylesheet" type = "text/css" href="{% static 'css/uditha.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'engine1/style.css'%}" >
 
-<script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'engine2/style.css'%}" >
+<script type="text/javascript" src="{% static 'engine2/jquery.js' %}"></script>
 
 </head>
 <body>
@@ -33,6 +33,7 @@
 					 <li><a href="#">My reservations</a></li>
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Contact</a></li>
+					<li><a href="{% url 'Adminlogin' %}">Admin</a></li>
                 </ul>
             </div>
             <span class="navTrigger">
@@ -43,6 +44,7 @@
         </div>
     </nav>
   
+
 
 <svg class="viewbox1" viewBox="0 0 633.183 627.287">
 		<linearGradient id="Path_3_j" spreadMethod="pad" x1="0.104" x2="0.782" y1="-0.293" y2="1.082">
@@ -70,27 +72,38 @@
 		<span>Music band | LED walls &amp; lights</span><br>
 	</div>
 
-<a href="#" class="myButton" id = "explore">Explore</a>
+<a href="#" class="myButton" id = "explore">Sign up</a>
 <a href="{% url 'CreateEvent' %}" class="myButton" id = "asktoregister">Make a reservation</a>
 
 
-<div id="wowslider-container1">
+<div class = "HomeSlider">
+
+	<div id="wowslider-container2">
 	<div class="ws_images"><ul>
-		<li><img src="{% static 'data1/images/slide3.jpg'%}" alt="slide3" title="slide3" id="wows1_0"/></li>
-		<li><a href="http://wowslider.net"><img src="{% static 'data1/images/slide1.jpg'%}" alt="wow slider" title="slide1" id="wows1_1"/></a></li>
-		<li><img src="{% static 'data1/images/slide2.jpg'%}" alt="slide2" title="slide2" id="wows1_2"/></li>
+		<li><img src="{% static 'data2/images/alexanderpopovjhynlbip18unsplash.jpg'%}" alt="Sound Systems" title="Sound Systems" id="wows2_0"/></li>
+		<li><img src="{% static 'data2/images/anniesprattkq6so8m1zdeunsplash.jpg'%}" alt="Decorations" title="Decorations" id="wows2_1"/></li>
+		<li><img src="{% static 'data2/images/fidelfernandoguh4_xtknnmunsplash.jpg'%}" alt="Photography/Videography" title="Photography/Videography" id="wows2_2"/></li>
+		<li><a href="http://wowslider.net"><img src="{% static 'data2/images/imansoleimanyzadeh2mxwz9ufqcyunsplash.jpg'%}" alt="jquery slider" title="Graphic design" id="wows2_3"/></a></li>
+		<li><img src="{% static 'data2/images/yvettedewitnyrvisodq2munsplash.jpg'%}" alt="Music" title="Music" id="wows2_4"/></li>
 	</ul></div>
 	<div class="ws_bullets"><div>
-		<a href="#" title="slide3"><span><img src="{% static 'data1/tooltips/slide3.jpg'%}" alt="slide3"/>1</span></a>
-		<a href="#" title="slide1"><span><img src="{% static 'data1/tooltips/slide1.jpg'%}"/>2</span></a>
-		<a href="#" title="slide2"><span><img src="{% static 'data1/tooltips/slide2.jpg'%}"/>3</span></a>
-	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">javascript slideshow</a> by WOWSlider.com v9.0</div>
+		<a href="#" title="Sound Systems"><span><img src="{% static 'data2/tooltips/alexanderpopovjhynlbip18unsplash.jpg'%}" alt="Sound Systems"/>1</span></a>
+		<a href="#" title="Decorations"><span><img src="{% static 'data2/tooltips/anniesprattkq6so8m1zdeunsplash.jpg'%}" alt="Decorations"/>2</span></a>
+		<a href="#" title="Photography/Videography"><span><img src="{% static 'data2/tooltips/fidelfernandoguh4_xtknnmunsplash.jpg'%}" alt="Photography/Videography"/>3</span></a>
+		<a href="#" title="Graphic design"><span><img src="{% static 'data2/tooltips/imansoleimanyzadeh2mxwz9ufqcyunsplash.jpg'%}" alt="Graphic design"/>4</span></a>
+		<a href="#" title="Music"><span><img src="{% static 'data2/tooltips/yvettedewitnyrvisodq2munsplash.jpg'%}" alt="Music"/>5</span></a>
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">javascript photo gallery</a> by WOWSlider.com v9.0</div>
 	<div class="ws_shadow"></div>
 	</div>	
-	<script type="text/javascript" src="{% static 'engine1/wowslider.js'%}"></script>
-	<script type="text/javascript" src="{% static 'engine1/script.js'%}"></script>
+	<script type="text/javascript" src="{% static 'engine2/wowslider.js' %}"></script>
+	<script type="text/javascript" src="{% static 'engine2/script.js' %}"></script>
+
+	</div>
 
 </div>
+
+
+
 
 <div>
   <div class="starsec"></div>
@@ -101,10 +114,9 @@
 
 </body>
 
-            
-
-
 </div>
 
- 
+
 </html>
+
+

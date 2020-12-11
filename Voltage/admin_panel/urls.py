@@ -14,7 +14,9 @@ urlpatterns = [
     path('admin_login',views.Adminlogin,name = 'Adminlogin'),
     path('review',views.sendmail,name = 'sendmail'),
     path('main_report',views.getmonthlyreport, name = 'getmonthlyreport'),
-    path('admin_panel',views.AdminPanel, name = 'AdminPanel')
+    path('admin_panel',views.AdminPanel, name = 'AdminPanel'),
+    path('admin_panel/<id>',views.Adminlogout, name = 'Adminlogout'),
+    
     
 ]
 
